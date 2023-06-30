@@ -73,7 +73,7 @@ function BannerItemFull(
             alt={imageAlt}
             width={1220}
             height={600}
-            class="w-full rounded-r-[22%] rounded-tr-[34%] -translate-x-6 md:translate-x-0 md:rounded-none pt-10 md:pt-0"
+            class="w-full rounded-r-[32px] rounded-tr-[52px] -translate-x-6 md:translate-x-0 md:rounded-none pt-10 md:pt-0"
           />
         </Picture>
       )}
@@ -106,16 +106,14 @@ function BannerItemSideToSide(
   }: BannerItemProps,
 ) {
   return (
-    <div class="grid md:grid-cols-2 items-center w-full h-full bg-white items-center justify-between pt-4 md:py-24">
+    <div class="grid md:grid-cols-2 items-center w-full h-full bg-white justify-between pt-4 md:py-24">
       <div class="order-2 md:order-1 card-body w-full items-start md:max-w-xl">
         <h2 class="text-black font-bold text-lg">{subtitle}</h2>
         <h1 class="card-title text-black text-3xl pt-3">{title}</h1>
         <p class="text-black text-normal pt-3 text-normal">{description}</p>
 
         <div class="card-actions justify-start items-center grid grid-cols-2 py-8 gap-x-4 gap-y-8">
-          {price && (
-            <p class="font-bold text-3xl text-black">R$ {price}</p>
-          )}
+          {price && <p class="font-bold text-3xl text-black">R$ {price}</p>}
           <button className="btn border-black bg-transparent text-black rounded-xl hover:bg-white">
             {buttonTitle}
           </button>
@@ -131,7 +129,7 @@ function BannerItemSideToSide(
               alt={imageAlt}
               width={1220}
               height={600}
-              class="w-full rounded-tr-[28%] rounded-br-[18%] md:rounded-tl-[18%] md:rounded-bl-[18%] md:rounded-tr-[0%] md:rounded-br-[0%] -translate-x-6 md:-translate-x-0 pt-10 md:pt-0"
+              class="w-full rounded-tr-[52px] rounded-br-[32px] md:rounded-tl-[32px] md:rounded-bl-[32px] md:rounded-tr-[0%] md:rounded-br-[0%] -translate-x-6 md:-translate-x-0 pt-10 md:pt-0"
             />
           </Picture>
         )}
@@ -143,28 +141,30 @@ function BannerItemSideToSide(
 export default function HeroCarousel(
   { images, interval, type }: HeroCarouselProps,
 ) {
-  if (!type || type === "full") return (
-    <div
-      id={"slide-principal"}
-      class="grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_64px]"
-    >
-      <Slider class="carousel carousel-center w-full col-span-full row-span-full scrollbar-none gap-6">
-        {images?.map((image, index) => (
-          <Slider.Item index={index} class="carousel-item w-full">
-            <BannerItemFull {...image} />
-          </Slider.Item>
-        ))}
-      </Slider>
+  if (!type || type === "full") {
+    return (
+      <div
+        id={"slide-principal"}
+        class="grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_64px]"
+      >
+        <Slider class="carousel carousel-center w-full col-span-full row-span-full scrollbar-none gap-6">
+          {images?.map((image, index) => (
+            <Slider.Item index={index} class="carousel-item w-full">
+              <BannerItemFull {...image} />
+            </Slider.Item>
+          ))}
+        </Slider>
 
-      <Dots images={images} interval={interval} />
+        <Dots images={images} interval={interval} />
 
-      <SliderJS
-        rootId={"slide-principal"}
-        interval={interval && interval * 1e3}
-        infinite
-      />
-    </div>
-  )
+        <SliderJS
+          rootId={"slide-principal"}
+          interval={interval && interval * 1e3}
+          infinite
+        />
+      </div>
+    );
+  }
 
   return (
     <div
