@@ -77,13 +77,13 @@ const DEFAULT_PROPS: Props = {
     },
   }],
   "layout": {
-    "variation": "Grid",
+    "variation": "Slider",
     "headerAlignment": "center",
   },
 };
 
 const Testimonal = ({ image, text, user }: Testimonial) => (
-  <div class="flex flex-col items-center gap-9 text-center">
+  <div class="flex flex-col items-center justify-center gap-9 text-center">
     {image?.src && (
       <Image
         src={image.src}
@@ -92,7 +92,7 @@ const Testimonal = ({ image, text, user }: Testimonial) => (
         height={100}
       />
     )}
-    <h3 class="text-xl lg:text-2xl">
+    <h3 class="px-3 md:px-0 text-sm lg:text-base">
       {text}
     </h3>
     <div class="flex flex-col items-center gap-4">
@@ -133,11 +133,13 @@ export default function Testimonials(
   };
 
   return (
-    <div class="w-full container px-4 py-8 flex flex-col gap-14 lg:gap-20 lg:py-10 lg:px-0">
+    <div class="w-full h-full text-center items-center justify-center bg-[#003153] text-white px-4 py-8 gap-12 flex flex-col lg:px-0">
       <Header
         title={title}
         description={description}
         alignment={layout?.headerAlignment || "center"}
+        fontSize="Large"
+        colorReverse={true}
       />
 
       {layout?.variation === "Grid" && (
@@ -150,27 +152,27 @@ export default function Testimonials(
 
       {layout?.variation !== "Grid" && (
         <div
-          class="relative w-full px-8"
+          class="relative flex items-center justify-center w-full lg:max-w-[80%] px-8"
           id={id}
         >
           <Slider class="carousel carousel-start gap-4 lg:gap-8 row-start-2 row-end-5 w-full">
             {testimonials?.map(({ image, text, user }, index) => (
               <Slider.Item
                 index={index}
-                class="flex flex-col gap-4 carousel-item w-full"
+                class="carousel-item w-full flex items-center justify-center"
               >
                 <Testimonal image={image} text={text} user={user} />
               </Slider.Item>
             ))}
           </Slider>
           <>
-            <div class="z-10 absolute -left-2 lg:-left-8 top-1/2">
-              <Slider.PrevButton class="btn btn-circle btn-outline">
+            <div class="z-10 absolute -left-2 lg:-left-8 bottom-1/2">
+              <Slider.PrevButton class="btn btn-square btn-outline glass">
                 <Icon size={20} id="ChevronLeft" strokeWidth={3} />
               </Slider.PrevButton>
             </div>
-            <div class="z-10 absolute -right-2 lg:-right-8 top-1/2">
-              <Slider.NextButton class="btn btn-circle btn-outline">
+            <div class="z-10 absolute -right-2 lg:-right-8 bottom-1/2">
+              <Slider.NextButton class="btn btn-square btn-outline glass">
                 <Icon size={20} id="ChevronRight" strokeWidth={3} />
               </Slider.NextButton>
             </div>

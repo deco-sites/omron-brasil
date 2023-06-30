@@ -290,29 +290,17 @@ function Footer({
         )}
         {layout?.variation == "Variation 4" && (
           <div class="flex flex-col gap-10">
-            {_newsletter}
-            {layout?.hide?.newsletter ? <></> : <Divider />}
+            <Divider />
             <div class="flex flex-col lg:flex-row gap-10 lg:gap-20 lg:justify-between">
               {_sectionLinks}
-              <div class="flex flex-col md:flex-row lg:flex-col gap-10 lg:gap-10 lg:w-2/5 lg:pl-10">
-                <div class="flex flex-col md:flex-row gap-10 lg:gap-20">
-                  <div class="lg:flex-auto">
-                    {_payments}
-                  </div>
-                  <div class="lg:flex-auto">
-                    {_social}
-                  </div>
-                </div>
-                <div class="flex flex-col gap-10 lg:gap-10">
-                  {_region}
-                  {_apps}
-                </div>
-              </div>
             </div>
             <Divider />
             <div class="flex flex-col md:flex-row md:justify-between gap-10 md:items-center">
               {_logo}
-              <PoweredBy />
+              {_social}
+            </div>
+            <Divider />
+            <div class="flex flex-col md:flex-row md:justify-between gap-10 md:items-center">
             </div>
           </div>
         )}

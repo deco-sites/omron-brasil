@@ -1,17 +1,16 @@
 import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
-import Header from "$store/components/ui/SectionHeader.tsx";
 
 export interface Props {
-  title?: string;
-  description?: string;
   benefits?: Array<{
-    label: string;
+    label?: string;
     icon: AvailableIcons;
+    subIcon: AvailableIcons;
     description: string;
   }>;
   layout?: {
-    variation?: "Simple" | "With border" | "Color reverse";
+    variation?: "Simple" | "Color reverse";
     headerAlignment?: "center" | "left";
+    color?: "white" | "pegion-blue";
   };
 }
 
@@ -19,18 +18,19 @@ export default function Benefits(
   props: Props,
 ) {
   const {
-    title = "",
-    description = "",
     benefits = [{
       icon: "Truck",
+      subIcon: "Plus",
       label: "Entrega em todo Brasil",
       description: "Consulte o prazo no fechamento da compra.",
     }, {
       icon: "Discount",
+      subIcon: "Plus",
       label: "15% na primeira compra",
       description: "Aplicado direto na sacola de compras.",
     }, {
       icon: "ArrowsPointingOut",
+      subIcon: "Plus",
       label: "Devolução grátis",
       description: "Veja as condições para devolver seu produto.",
     }],
@@ -48,11 +48,13 @@ export default function Benefits(
       <div
         class={`${
           reverse ? "bg-primary text-primary-content p-4 lg:px-8 lg:py-4" : ""
-        } flex gap-4 ${
+        } flex flex-row lg:flex-col items-start lg:items-center justify-between lg:justify-center gap-4 ${
           benefitLayout == "piledup" ? "flex-col items-center text-center" : ""
         } ${
           showDivider && benefitLayout !== "piledup"
-            ? "border-b border-neutral-300"
+            ? `border-b ${
+              layout?.color === "pegion-blue" ? "border-white" : "border-black"
+            }`
             : ""
         } ${showDivider ? "pb-4 lg:pr-8 lg:border-r lg:border-b-0" : ""} ${
           showDivider && !reverse ? "lg:pb-0" : ""
@@ -61,7 +63,6 @@ export default function Benefits(
         <div class="flex-none">
           <Icon
             id={benefit.icon}
-            class={reverse ? "text-base-100" : "text-primary"}
             width={36}
             height={36}
             strokeWidth={0.01}
@@ -69,20 +70,25 @@ export default function Benefits(
           />
         </div>
         <div class="flex-auto flex flex-col gap-1 lg:gap-2">
-          <div
-            class={`text-base lg:text-xl leading-7 ${
-              reverse ? "text-base-100" : "text-base-content"
-            }`}
-          >
+          <div class="text-base lg:text-xl leading-7">
             {benefit.label}
           </div>
           <p
             class={`text-sm leading-5 ${
-              reverse ? "text-base-100" : "text-neutral"
-            } ${benefitLayout == "piledup" ? "hidden lg:block" : ""}`}
+              benefitLayout == "piledup" ? "hidden lg:block" : ""
+            }`}
           >
             {benefit.description}
           </p>
+        </div>
+        <div class="flex-none lg:hidden">
+          <Icon
+            id={benefit.subIcon}
+            width={24}
+            height={24}
+            strokeWidth={0.01}
+            fill="currentColor"
+          />
         </div>
       </div>
     );
@@ -92,12 +98,13 @@ export default function Benefits(
     <>
       {!layout?.variation || layout?.variation === "Simple"
         ? (
-          <div class="w-full container px-4 py-8 flex flex-col gap-8 lg:gap-10 lg:py-10 lg:px-0">
-            <Header
-              title={title}
-              description={description}
-              alignment={layout?.headerAlignment || "center"}
-            />
+          <div
+            class={`${
+              layout?.color === "pegion-blue"
+                ? "bg-[#306F95] text-white"
+                : "bg-white"
+            } w-full px-4 py-8 flex flex-col gap-8 lg:gap-10 lg:py-10 lg:px-0`}
+          >
             <div class="w-full flex justify-center">
               <div class="flex flex-col gap-4 lg:gap-8 w-full lg:grid grid-flow-col auto-cols-fr">
                 {listOfBenefits}
@@ -106,27 +113,8 @@ export default function Benefits(
           </div>
         )
         : ""}
-      {layout?.variation === "With border" && (
-        <div class="w-full container flex flex-col px-4 py-8 gap-8 lg:gap-10 lg:py-10 lg:px-0">
-          <Header
-            title={title}
-            description={description}
-            alignment={layout?.headerAlignment || "center"}
-          />
-          <div class="w-full flex justify-center">
-            <div class="grid grid-cols-2 gap-4 w-full py-6 px-4 border border-base-300 lg:gap-8 lg:grid-flow-col lg:auto-cols-fr lg:p-10">
-              {listOfBenefits}
-            </div>
-          </div>
-        </div>
-      )}
       {layout?.variation === "Color reverse" && (
         <div class="w-full container flex flex-col px-4 py-8 gap-8 lg:gap-10 lg:py-10 lg:px-0">
-          <Header
-            title={title}
-            description={description}
-            alignment={layout?.headerAlignment || "center"}
-          />
           <div class="w-full flex justify-center">
             <div class="grid grid-cols-2 gap-4 w-full lg:gap-8 lg:grid-flow-col lg:auto-cols-fr">
               {listOfBenefits}

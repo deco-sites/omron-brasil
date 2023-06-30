@@ -1,4 +1,5 @@
 import Header from "$store/components/ui/SectionHeader.tsx";
+import Icon from "$store/components/ui/Icon.tsx";
 
 export interface Form {
   placeholder?: string;
@@ -14,6 +15,7 @@ export interface Props {
   form?: Form;
   layout?: {
     headerFontSize?: "Large" | "Normal";
+    headerWidth?: "3xl" | "full";
     content?: {
       border?: boolean;
       alignment?: "Center" | "Left" | "Side to side";
@@ -33,6 +35,7 @@ const DEFAULT_PROPS: Props = {
   },
   layout: {
     headerFontSize: "Large",
+    headerWidth: "full",
     content: {
       border: false,
       alignment: "Center",
@@ -50,26 +53,48 @@ export default function Newsletter(props: Props) {
       title={title}
       description={description}
       alignment={layout?.content?.alignment === "Left" ? "left" : "center"}
-      colorReverse={isReverse}
+      colorReverse={!isReverse}
       fontSize={layout?.headerFontSize}
+      width={layout?.headerWidth}
     />
   );
 
   const formLayout = form && (
-    <form action="/" class="flex flex-col gap-4">
-      <div class="flex flex-col lg:flex-row gap-3">
+    <form
+      action="/"
+      class="flex flex-col md:flex-row items-center justify-between gap-6 w-full rounded-xl"
+    >
+      <div class="flex flex-row items-center justify-between px-3 py-1 rounded-xl w-full bg-white">
         <input
-          class="input input-bordered lg:w-80"
+          class="w-full placeholder:text-black text-black focus:outline-none"
           type="text"
           placeholder={form.placeholder}
         />
+
         <button
-          class={`btn ${isReverse ? "btn-accent" : ""}`}
+          class="button p-3 rounded-xl text-white bg-[#005EB8]"
           type="submit"
         >
           {form.buttonText}
+          <Icon
+            id="ChevronRight"
+            width={18}
+            height={18}
+            strokeWidth={0.01}
+            fill="currentColor"
+          />
         </button>
       </div>
+
+      <div class="flex flex-row items-center justify-center gap-4 text-white">
+        <input type="checkbox" checked={false} class="checkbox border-white" />
+        <p>
+          By subscribing to the newsletter, I agree to the OMRON's Terms and
+          Conditions and Privacy Policy, and understand that I may unsubscribe
+          from the newsletter at any time.
+        </p>
+      </div>
+
       {form.helpText && (
         <div
           class="text-sm"
@@ -81,7 +106,7 @@ export default function Newsletter(props: Props) {
 
   const bgLayout = isReverse
     ? "bg-secondary text-secondary-content"
-    : "bg-transparent";
+    : "bg-[#003153]";
 
   return (
     <div
@@ -94,30 +119,30 @@ export default function Newsletter(props: Props) {
       {(!layout?.content?.alignment ||
         layout?.content?.alignment === "Center") && (
         <div
-          class={`container flex flex-col rounded p-4 gap-6 lg:p-16 lg:gap-12 ${bgLayout}`}
+          class={`container flex flex-col rounded p-8 pt-16 gap-6 lg:p-28 lg:gap-12 ${bgLayout}`}
         >
           {headerLayout}
-          <div class="flex justify-center">
+          <div class="flex justify-center w-full">
             {formLayout}
           </div>
         </div>
       )}
       {layout?.content?.alignment === "Left" && (
         <div
-          class={`container flex flex-col rounded p-4 gap-6 lg:p-16 lg:gap-12 ${bgLayout}`}
+          class={`container flex flex-col rounded p-8 pt-16 gap-6 lg:p-32 lg:gap-12 ${bgLayout}`}
         >
           {headerLayout}
-          <div class="flex justify-start">
+          <div class="flex justify-start w-full">
             {formLayout}
           </div>
         </div>
       )}
       {layout?.content?.alignment === "Side to side" && (
         <div
-          class={`container flex flex-col rounded justify-between lg:flex-row p-4 gap-6 lg:p-16 lg:gap-12 ${bgLayout}`}
+          class={`container flex flex-col rounded justify-between lg:flex-row p-8 pt-16 gap-6 lg:p-28 lg:gap-12 ${bgLayout}`}
         >
           {headerLayout}
-          <div class="flex justify-center">
+          <div class="flex justify-center w-full">
             {formLayout}
           </div>
         </div>

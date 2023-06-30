@@ -93,6 +93,48 @@ export interface OptionalColors {
    * @description Will be a readable tone of info if not specified
    */
   "info-content"?: string;
+
+  /**
+   * @format color
+   * @description Will be a readable tone of info if not specified
+   */
+  "dark-gray"?: string;
+
+  /**
+   * @format color
+   * @description Will be a readable tone of info if not specified
+   */
+  "gray"?: string;
+
+  /**
+   * @format color
+   * @description Will be a readable tone of info if not specified
+   */
+  "omrom-blue-in-75-percent"?: string;
+
+  /**
+   * @format color
+   * @description Will be a readable tone of info if not specified
+   */
+  "pigeon-blue-in-75-percent"?: string;
+
+  /**
+   * @format color
+   * @description Will be a readable tone of info if not specified
+   */
+  "mint"?: string;
+
+  /**
+   * @format color
+   * @description Will be a readable tone of info if not specified
+   */
+  "lavender"?: string;
+
+  /**
+   * @format color
+   * @description Will be a readable tone of info if not specified
+   */
+  "red"?: string;
 }
 
 export interface Colors {
@@ -101,6 +143,30 @@ export interface Colors {
    * @default #003232
    */
   "primary": string;
+
+  /**
+   * @format color
+   * @default #003153
+   */
+  "dark-blue"?: string;
+
+  /**
+   * @format color
+   * @default #306f95
+   */
+  "pigeon-blue"?: string;
+
+  /**
+   * @format color
+   * @default #005eb8
+   */
+  "omron-blue"?: string;
+
+  /**
+   * @format color
+   * @default #e5e5e5
+   */
+  "light-gray"?: string;
 
   /**
    * @format color
