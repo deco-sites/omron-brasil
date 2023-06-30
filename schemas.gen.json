@@ -9514,6 +9514,31 @@
       "required": [],
       "title": "RegionOptions"
     },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9mb290ZXIvRm9vdGVyLnRzeA==@FooterInfosItem": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "title": "Label"
+        },
+        "href": {
+          "type": "string",
+          "title": "Href"
+        }
+      },
+      "required": [
+        "label",
+        "href"
+      ],
+      "title": "FooterInfosItem"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9mb290ZXIvRm9vdGVyLnRzeA==@FooterInfosItem[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9mb290ZXIvRm9vdGVyLnRzeA==@FooterInfosItem"
+      },
+      "title": "FooterInfosItem[]"
+    },
     "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9mb290ZXIvRm9vdGVyLnRzeA==@Layout": {
       "type": "object",
       "properties": {
@@ -9638,6 +9663,13 @@
               ],
               "title": "Extra Links"
             },
+            "footerInfo": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Footer Info"
+            },
             "backToTheTop": {
               "type": [
                 "boolean",
@@ -9756,6 +9788,24 @@
         "extraLinks": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9mb290ZXIvRm9vdGVyLnRzeA==@Item[]",
           "title": "Extra Links"
+        },
+        "footerInfos": {
+          "type": "object",
+          "properties": {
+            "items": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9mb290ZXIvRm9vdGVyLnRzeA==@FooterInfosItem[]",
+              "title": "Items"
+            },
+            "copyright": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Copyright"
+            }
+          },
+          "required": [],
+          "title": "Footer Infos"
         },
         "backToTheTop": {
           "type": "object",

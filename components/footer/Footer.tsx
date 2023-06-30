@@ -1,6 +1,7 @@
 import Logo from "$store/components/footer/Logo.tsx";
 import Newsletter from "$store/islands/Newsletter.tsx";
 import FooterItems from "$store/components/footer/FooterItems.tsx";
+import FooterInfo from "$store/components/footer/FooterInfo.tsx";
 import Social from "$store/components/footer/Social.tsx";
 import PaymentMethods from "$store/components/footer/PaymentMethods.tsx";
 import MobileApps from "$store/components/footer/MobileApps.tsx";
@@ -56,6 +57,11 @@ export interface NewsletterForm {
   helpText?: string;
 }
 
+export interface FooterInfosItem {
+  label: string;
+  href: string;
+}
+
 export interface Layout {
   backgroundColor?:
     | "Primary"
@@ -78,6 +84,7 @@ export interface Layout {
     mobileApps?: boolean;
     regionOptions?: boolean;
     extraLinks?: boolean;
+    footerInfo?: boolean;
     backToTheTop?: boolean;
   };
 }
@@ -105,6 +112,10 @@ export interface Props {
   mobileApps?: MobileApps;
   regionOptions?: RegionOptions;
   extraLinks?: Item[];
+  footerInfos?: {
+    items?: FooterInfosItem[],
+    copyright?: string;
+  };
   backToTheTop?: {
     text?: string;
   };
@@ -163,6 +174,16 @@ function Footer({
   regionOptions = { currency: [], language: [] },
   extraLinks = [],
   backToTheTop,
+  footerInfos = {
+    items: [
+      { label: "Terms of Use", href: "/" },
+      { label: "Privacy Policy", href: "/" },
+      { label: "Cookie Policy", href: "/" },
+      { label: "Sitemap", href: "/" },
+      { label: "Accessibility", href: "/" },
+    ],
+    copyright: "Company name © 2023 All Rights Reserved",
+  },
   layout = {
     backgroundColor: "Primary",
     variation: "Variation 1",
@@ -175,6 +196,7 @@ function Footer({
       mobileApps: false,
       regionOptions: false,
       extraLinks: false,
+      footerInfo: false,
       backToTheTop: false,
     },
   },
@@ -209,6 +231,9 @@ function Footer({
   const _links = layout?.hide?.extraLinks
     ? <></>
     : <ExtraLinks content={extraLinks} />;
+  const _footerInfo = layout?.hide?.footerInfo
+    ? <></>
+    : <FooterInfo content={footerInfos} />;
 
   return (
     <footer
@@ -300,7 +325,8 @@ function Footer({
               {_social}
             </div>
             <Divider />
-            <div class="flex flex-col md:flex-row md:justify-between gap-10 md:items-center">
+            <div>
+              {_footerInfo}
             </div>
           </div>
         )}
