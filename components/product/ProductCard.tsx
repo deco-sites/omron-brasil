@@ -230,6 +230,7 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
                     <div className="rating rating-xs md:rating-sm">
                       <input
                         type="radio"
+                        id="radio-1"
                         aria-label="rating"
                         readOnly
                         name="rating-5"
@@ -237,6 +238,7 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
                       />
                       <input
                         type="radio"
+                        id="radio-2"
                         aria-label="rating"
                         readOnly
                         name="rating-5"
@@ -245,6 +247,7 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
                       />
                       <input
                         type="radio"
+                        id="radio-3"
                         aria-label="rating"
                         readOnly
                         name="rating-5"
@@ -252,6 +255,7 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
                       />
                       <input
                         type="radio"
+                        id="radio-4"
                         aria-label="rating"
                         readOnly
                         name="rating-5"
@@ -259,6 +263,7 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
                       />
                       <input
                         type="radio"
+                        id="radio-5"
                         aria-label="rating"
                         readOnly
                         name="rating-5"

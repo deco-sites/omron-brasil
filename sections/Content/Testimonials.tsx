@@ -152,7 +152,7 @@ export default function Testimonials(
 
       {layout?.variation !== "Grid" && (
         <div
-          class="relative flex items-center justify-center w-full lg:max-w-[80%] px-8"
+          class="relative flex items-center justify-center w-full lg:max-w-[80%] px-8 md:px-12 lg:px-8"
           id={id}
         >
           <Slider class="carousel carousel-start gap-4 lg:gap-8 row-start-2 row-end-5 w-full">

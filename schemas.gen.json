@@ -102,6 +102,7 @@
               "deco-sites/omron-brasil/sections/Images/Carousel.tsx",
               "deco-sites/omron-brasil/sections/Images/HeroCarousel.tsx",
               "deco-sites/omron-brasil/sections/Images/ImageGallery.tsx",
+              "deco-sites/omron-brasil/sections/Images/SectionRounded.tsx",
               "deco-sites/omron-brasil/sections/Images/ShoppableBanner.tsx",
               "deco-sites/omron-brasil/sections/Links/LinkTree.tsx",
               "deco-sites/omron-brasil/sections/Links/Shortcuts.tsx",
@@ -10381,7 +10382,10 @@
           "title": "Description"
         },
         "price": {
-          "type": "number",
+          "type": [
+            "number",
+            "null"
+          ],
           "title": "Price"
         },
         "buttonTitle": {
@@ -10395,7 +10399,6 @@
         "subtitle",
         "title",
         "description",
-        "price",
         "buttonTitle"
       ],
       "title": "BannerItemProps"
@@ -10410,6 +10413,22 @@
     "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvSW1hZ2VzL0hlcm9DYXJvdXNlbC50c3g=@HeroCarouselProps": {
       "type": "object",
       "properties": {
+        "type": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "full",
+              "default": "full"
+            },
+            {
+              "type": "string",
+              "const": "side-to-side",
+              "default": "side-to-side"
+            }
+          ],
+          "type": "string",
+          "title": "Type"
+        },
         "images": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvSW1hZ2VzL0hlcm9DYXJvdXNlbC50c3g=@BannerItemProps[]",
           "title": "Images"
@@ -10642,6 +10661,42 @@
       },
       "required": [],
       "title": "deco-sites/omron-brasil/sections/Images/ImageGallery.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvSW1hZ2VzL1NlY3Rpb25Sb3VuZGVkLnRzeA==@SectionRoundedProps": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "description": {
+          "type": "string",
+          "title": "Description"
+        },
+        "buttonTitle": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Button Title"
+        },
+        "backgroundImage": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Background Image"
+        },
+        "imageAlt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Image Alt"
+        }
+      },
+      "required": [
+        "title",
+        "description"
+      ],
+      "title": "deco-sites/omron-brasil/sections/Images/SectionRounded.tsx@SectionRoundedProps"
     },
     "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvSW1hZ2VzL1Nob3BwYWJsZUJhbm5lci50c3g=@Pin": {
       "type": "object",
@@ -15018,6 +15073,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvSW1hZ2VzL1NlY3Rpb25Sb3VuZGVkLnRzeA==": {
+      "title": "deco-sites/omron-brasil/sections/Images/SectionRounded.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvSW1hZ2VzL1NlY3Rpb25Sb3VuZGVkLnRzeA==@SectionRoundedProps"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/omron-brasil/sections/Images/SectionRounded.tsx"
+          ],
+          "default": "deco-sites/omron-brasil/sections/Images/SectionRounded.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvSW1hZ2VzL1Nob3BwYWJsZUJhbm5lci50c3g=": {
       "title": "deco-sites/omron-brasil/sections/Images/ShoppableBanner.tsx",
       "type": "object",
@@ -16527,6 +16603,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvSW1hZ2VzL0ltYWdlR2FsbGVyeS50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvSW1hZ2VzL1NlY3Rpb25Sb3VuZGVkLnRzeA=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvSW1hZ2VzL1Nob3BwYWJsZUJhbm5lci50c3g="

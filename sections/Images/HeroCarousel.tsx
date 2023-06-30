@@ -10,11 +10,12 @@ export interface BannerItemProps {
   subtitle: string;
   title: string;
   description: string;
-  price: number;
+  price?: number;
   buttonTitle: string;
 }
 
 export interface HeroCarouselProps {
+  type?: "full" | "side-to-side";
   images?: BannerItemProps[];
   interval?: number;
 }
@@ -51,7 +52,7 @@ function Dots({ images, interval = 0 }: HeroCarouselProps) {
   );
 }
 
-function BannerItem(
+function BannerItemFull(
   {
     backgroundImage,
     imageAlt,
@@ -93,10 +94,56 @@ function BannerItem(
   );
 }
 
-export default function HeroCarousel(
-  { images, interval }: HeroCarouselProps,
+function BannerItemSideToSide(
+  {
+    backgroundImage,
+    imageAlt,
+    subtitle,
+    title,
+    description,
+    price,
+    buttonTitle,
+  }: BannerItemProps,
 ) {
   return (
+    <div class="grid md:grid-cols-2 items-center w-full h-full bg-white items-center justify-between pt-4 md:py-24">
+      <div class="order-2 md:order-1 card-body w-full items-start md:max-w-xl">
+        <h2 class="text-black font-bold text-lg">{subtitle}</h2>
+        <h1 class="card-title text-black text-3xl pt-3">{title}</h1>
+        <p class="text-black text-normal pt-3 text-normal">{description}</p>
+
+        <div class="card-actions justify-start items-center grid grid-cols-2 py-8 gap-x-4 gap-y-8">
+          {price && (
+            <p class="font-bold text-3xl text-black">R$ {price}</p>
+          )}
+          <button className="btn border-black bg-transparent text-black rounded-xl hover:bg-white">
+            {buttonTitle}
+          </button>
+        </div>
+      </div>
+
+      <div class="order-1 md:order-2 left-0 md:right-0">
+        {backgroundImage && (
+          <Picture>
+            <Image
+              media="(min-width: 220px, max-width: 767px)"
+              src={backgroundImage}
+              alt={imageAlt}
+              width={1220}
+              height={600}
+              class="w-full rounded-tr-[28%] rounded-br-[18%] md:rounded-tl-[18%] md:rounded-bl-[18%] md:rounded-tr-[0%] md:rounded-br-[0%] -translate-x-6 md:-translate-x-0 pt-10 md:pt-0"
+            />
+          </Picture>
+        )}
+      </div>
+    </div>
+  );
+}
+
+export default function HeroCarousel(
+  { images, interval, type }: HeroCarouselProps,
+) {
+  if (!type || type === "full") return (
     <div
       id={"slide-principal"}
       class="grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_64px]"
@@ -104,7 +151,7 @@ export default function HeroCarousel(
       <Slider class="carousel carousel-center w-full col-span-full row-span-full scrollbar-none gap-6">
         {images?.map((image, index) => (
           <Slider.Item index={index} class="carousel-item w-full">
-            <BannerItem {...image} />
+            <BannerItemFull {...image} />
           </Slider.Item>
         ))}
       </Slider>
@@ -116,6 +163,21 @@ export default function HeroCarousel(
         interval={interval && interval * 1e3}
         infinite
       />
+    </div>
+  )
+
+  return (
+    <div
+      id={"slide-principal"}
+      class="grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_64px]"
+    >
+      <Slider class="carousel carousel-center w-full col-span-full row-span-full scrollbar-none gap-6">
+        {images?.map((image, index) => (
+          <Slider.Item index={index} class="carousel-item w-full">
+            <BannerItemSideToSide {...image} />
+          </Slider.Item>
+        ))}
+      </Slider>
     </div>
   );
 }

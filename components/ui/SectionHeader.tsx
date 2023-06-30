@@ -40,9 +40,7 @@ function Header(props: Props) {
                 <h2
                   class={`
                   leading-6 lg:leading-8
-                  ${
-                    props.colorReverse ? "text-primary-content" : "text-black"
-                  }
+                  ${props.colorReverse ? "text-primary-content" : "text-black"}
                   ${props.width === "full" ? "w-full" : "3xl"}
                   ${props.fontSize === "Normal" ? "lg:text-lg" : "lg:text-2xl"}
                 `}
