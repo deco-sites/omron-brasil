@@ -48,7 +48,11 @@ function Navbar({ logo, items, searchbar }: {
         <div class="flex-none w-64">
           {logo && (
             <div class="flex items-center justify-center gap-3">
-              <a href="/" aria-label="Store logo" class="block py-3 w-[180px] h-full">
+              <a
+                href="/"
+                aria-label="Store logo"
+                class="block py-3 w-[180px] h-full"
+              >
                 <Image
                   src={logo}
                   aria-label="Logo"

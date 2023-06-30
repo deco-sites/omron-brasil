@@ -1,6 +1,5 @@
 import Slider from "$store/components/ui/Slider.tsx";
 import SliderJS from "$store/islands/SliderJS.tsx";
-import Image from "deco-sites/std/components/Image.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import Icon from "$store/components/ui/Icon.tsx";
 
@@ -100,6 +99,7 @@ function Section(
       {backgroundImage && (
         <picture class="flex items-center justify-center">
           <img
+            media="(min-width: 220px, max-width: 767px)"
             src={backgroundImage}
             alt={imageAlt}
             class="lg:w-full lg:h-full object-fit"
@@ -111,7 +111,9 @@ function Section(
       <div class="flex flex-col gap-10 justify-end max-w-md w-full">
         <div class="flex items-center justify-between w-full">
           <div className="tabs w-full">
-            <span className="tab tab-bordered tab-active text-white">Tab 1</span>
+            <span className="tab tab-bordered tab-active text-white">
+              Tab 1
+            </span>
             <span className="tab tab-bordered text-white">Tab 2</span>
           </div>
         </div>

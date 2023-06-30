@@ -63,6 +63,7 @@ function Solution({ title, image, alt, size }: SolutionProps) {
         {image && (
           <figure class="flex w-[300px] h-[300px]">
             <Image
+              media="(min-width: 220px, max-width: 767px)"
               class="w-full h-full object-fit"
               src={image}
               alt={alt}
@@ -97,6 +98,7 @@ function Solution({ title, image, alt, size }: SolutionProps) {
       {image && (
         <figure>
           <Image
+            media="(min-width: 220px, max-width: 767px)"
             src={image}
             alt={alt}
             width={180}

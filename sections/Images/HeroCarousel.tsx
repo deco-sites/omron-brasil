@@ -1,6 +1,8 @@
 import Slider from "$store/components/ui/Slider.tsx";
 import SliderJS from "$store/islands/SliderJS.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import { Picture } from "deco-sites/std/components/Picture.tsx";
+import Image from "deco-sites/std/components/Image.tsx";
 
 export interface BannerItemProps {
   backgroundImage: LiveImage;
@@ -63,13 +65,16 @@ function BannerItem(
   return (
     <div class="md:card md:rounded-none w-full h-full image-full bg-[#003153] items-center">
       {backgroundImage && (
-        <figure>
-          <img
+        <Picture>
+          <Image
+            media="(min-width: 220px, max-width: 767px)"
             src={backgroundImage}
             alt={imageAlt}
-            class="w-full h-full rounded-r-[22%] rounded-tr-[34%] -translate-x-6 md:translate-x-0 md:rounded-none pt-10 md:pt-0"
+            width={1220}
+            height={600}
+            class="w-full rounded-r-[22%] rounded-tr-[34%] -translate-x-6 md:translate-x-0 md:rounded-none pt-10 md:pt-0"
           />
-        </figure>
+        </Picture>
       )}
 
       <div class="card-body w-full items-start md:max-w-xl">

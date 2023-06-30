@@ -1,3 +1,4 @@
+import { Picture } from "deco-sites/std/components/Picture.tsx";
 import Image from "deco-sites/std/components/Image.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
@@ -19,9 +20,16 @@ export default function Banner(
 ) {
   return (
     <div class="md:card md:rounded-none w-full h-full image-full bg-[#F2F2F2] items-center">
-      <figure>
-        <img src={bgImage} alt={bgImageAlt} class="w-full h-full" />
-      </figure>
+      <Picture>
+        <Image
+          media="(min-width: 220px, max-width: 767px)"
+          src={bgImage}
+          alt={bgImageAlt}
+          width={1220}
+          height={600}
+          class="w-full h-full"
+        />
+      </Picture>
 
       <div class="card-body px-16 w-full items-center md:items-start md:max-w-xl">
         <h2 class="card-title text-black font-normal text-4xl">{title}</h2>

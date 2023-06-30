@@ -1,6 +1,7 @@
 import Header from "$store/components/ui/SectionHeader.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import Image from "deco-sites/std/components/Image.tsx";
+import { Picture } from "deco-sites/std/components/Picture.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
 export interface PostProps {
@@ -27,9 +28,10 @@ const DEFAULT_PROPS = {
 function Post({ title, description, image, imageAlt }: PostProps) {
   return (
     <div className="card card-compact w-full h-full rounded-none bg-[#FFFFFF]">
-      <figure>
+      <Picture>
         {image && (
           <Image
+            media="(min-width: 220px, max-width: 767px)"
             class="w-full h-full object-contain"
             src={image}
             alt={imageAlt}
@@ -38,7 +40,7 @@ function Post({ title, description, image, imageAlt }: PostProps) {
             loading="lazy"
           />
         )}
-      </figure>
+      </Picture>
       <div className="flex flex-col gap-4 pt-7">
         <h2 className="card-title">{title}</h2>
         <p>{description}</p>
