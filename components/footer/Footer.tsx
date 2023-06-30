@@ -113,7 +113,7 @@ export interface Props {
   regionOptions?: RegionOptions;
   extraLinks?: Item[];
   footerInfos?: {
-    items?: FooterInfosItem[],
+    items?: FooterInfosItem[];
     copyright?: string;
   };
   backToTheTop?: {

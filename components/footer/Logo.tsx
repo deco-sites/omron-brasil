@@ -15,7 +15,7 @@ export default function Logo({ logo }: Props) {
           <div class="w-28 max-h-16">
             <img
               src={logo?.image}
-              alt={logo?.description}
+              alt={logo?.description ?? "Logo"}
               width={200}
               height={200}
             />

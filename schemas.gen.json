@@ -8870,6 +8870,15 @@
           "default": "#003232",
           "title": "Primary"
         },
+        "pale-gray": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "color",
+          "default": "#F2F2F2",
+          "title": "Pale-gray"
+        },
         "dark-blue": {
           "type": [
             "string",
@@ -9958,12 +9967,9 @@
     "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9oZWFkZXIvSGVhZGVyLnRzeA==@Props": {
       "type": "object",
       "properties": {
-        "alerts": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "title": "Alerts"
+        "logo": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Logo"
         },
         "searchbar": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9zZWFyY2gvU2VhcmNoYmFyLnRzeA==@EditableProps",
@@ -9985,7 +9991,7 @@
         }
       },
       "required": [
-        "alerts"
+        "logo"
       ],
       "title": "deco-sites/omron-brasil/components/header/Header.tsx@Props"
     },

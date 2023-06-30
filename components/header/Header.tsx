@@ -1,10 +1,11 @@
+import Divider from "$store/components/footer/Divider.tsx";
 import Modals from "$store/islands/HeaderModals.tsx";
 import type { Image } from "deco-sites/std/components/types.ts";
+import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import type { EditableProps as SearchbarProps } from "$store/components/search/Searchbar.tsx";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { Product, Suggestion } from "deco-sites/std/commerce/types.ts";
 
-import Alert from "./Alert.tsx";
 import Navbar from "./Navbar.tsx";
 import { headerHeight } from "./constants.ts";
 
@@ -26,7 +27,7 @@ export interface NavItem {
 }
 
 export interface Props {
-  alerts: string[];
+  logo: LiveImage;
   /** @title Search Bar */
   searchbar?: SearchbarProps;
   /**
@@ -48,9 +49,9 @@ export interface Props {
 }
 
 function Header({
-  alerts,
   searchbar: _searchbar,
   products,
+  logo,
   navItems = [],
   suggestions,
 }: Props) {
@@ -58,9 +59,17 @@ function Header({
   return (
     <>
       <header style={{ height: headerHeight }}>
-        <div class="bg-base-100 fixed w-full z-50">
-          <Alert alerts={alerts} />
-          <Navbar items={navItems} searchbar={searchbar} />
+        <div class="bg-base-100 fixed w-full z-50 py-2 md:px-12">
+          <div class="w-full hidden lg:flex flex-col">
+            <div class="flex gap-8 items-center justify-end py-3">
+              <span class="font-bold">Consumers</span>
+              <span>Healthcare professionals</span>
+            </div>
+
+            <Divider />
+          </div>
+
+          <Navbar logo={logo} items={navItems} searchbar={searchbar} />
         </div>
 
         <Modals

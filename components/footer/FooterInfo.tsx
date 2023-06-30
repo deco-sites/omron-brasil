@@ -5,7 +5,7 @@ export interface FooterInfosItem {
 
 export interface FooterInfosProps {
   content?: {
-    items?: FooterInfosItem[],
+    items?: FooterInfosItem[];
     copyright?: string;
   };
 }
@@ -23,5 +23,5 @@ export default function FooterInfo({ content }: FooterInfosProps) {
 
       <span>{content?.copyright}</span>
     </div>
-  )
+  );
 }

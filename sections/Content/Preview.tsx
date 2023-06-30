@@ -111,8 +111,8 @@ function Section(
       <div class="flex flex-col gap-10 justify-end max-w-md w-full">
         <div class="flex items-center justify-between w-full">
           <div className="tabs w-full">
-            <a className="tab tab-bordered tab-active text-white">Tab 1</a>
-            <a className="tab tab-bordered text-white">Tab 2</a>
+            <span className="tab tab-bordered tab-active text-white">Tab 1</span>
+            <span className="tab tab-bordered text-white">Tab 2</span>
           </div>
         </div>
 

@@ -37,10 +37,11 @@ export default function Social(
                     aria-label={`${item.label} Logo`}
                     class="flex gap-2 items-center"
                   >
-                    <span class="block p-1 border rounded-full">
+                    <span class="block p-1 border bg-white rounded-full">
                       <Icon
                         width={20}
                         height={20}
+                        class="text-primary"
                         id={item.label}
                       />
                     </span>

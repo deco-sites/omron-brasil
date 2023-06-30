@@ -73,6 +73,8 @@ export default function Newsletter(props: Props) {
 
         <button
           class="button p-3 rounded-xl text-white bg-[#005EB8]"
+          aria-label="Subscribe button to newsletter"
+          title="Subscribe to newsletter"
           type="submit"
         >
           {form.buttonText}
@@ -87,7 +89,7 @@ export default function Newsletter(props: Props) {
       </div>
 
       <div class="flex flex-row items-center justify-center gap-4 text-white">
-        <input type="checkbox" checked={false} class="checkbox border-white" />
+        <input type="checkbox" aria-label="Checkbox" alt="checkbox" checked={false} class="checkbox border-white" />
         <p>
           By subscribing to the newsletter, I agree to the OMRON's Terms and
           Conditions and Privacy Policy, and understand that I may unsubscribe

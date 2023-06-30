@@ -146,6 +146,12 @@ export interface Colors {
 
   /**
    * @format color
+   * @default #F2F2F2
+   */
+  "pale-gray"?: string;
+
+  /**
+   * @format color
    * @default #003153
    */
   "dark-blue"?: string;

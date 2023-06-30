@@ -148,6 +148,13 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
             productID={productID}
           />
         </div>
+        <div
+          class="absolute top-3 z-10 left-2"
+        >
+          <div class="flex w-full rounded-md bg-[#005EB829] text-sm font-bold py-1 px-2 items-center justify-center">
+            OMRON Connect compatible
+          </div>
+        </div>
         {/* Product Images */}
         <a
           href={url && relative(url)}
@@ -192,6 +199,79 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
             />
           )}
         </a>
+        <div
+          class="absolute bottom-2 z-10 left-2 pr-4 w-full flex items-center justify-between"
+        >
+          <div>
+            {l?.hide?.productName && l?.hide?.productDescription
+            ? ""
+            : (
+              <div class="flex flex-col justify-start items-start gap-0">
+                {l?.hide?.productName
+                  ? ""
+                  : (
+                    <h2 class="truncate text-sm text-base-content">
+                      {name?.substring(0, 28).concat('...')}
+                    </h2>
+                  )}
+                {l?.hide?.productDescription
+                  ? ""
+                  : (
+                    <p class="truncate text-sm text-neutral">
+                      {product?.description?.substring(0, 26).concat('...')}
+                    </p>
+                  )}
+              </div>
+            )}
+          </div>
+
+          <div class="flex items-end justify-end">
+            {l?.hide?.allPrices ? "" : (
+              <div class="flex flex-col items-end justify-end">
+                <div class="flex items-center gap-1">
+                  <div className="rating rating-xs">
+                    <input type="radio" name="rating-5" className="mask mask-star-2 bg-black" />
+                    <input type="radio" name="rating-5" className="mask mask-star-2 bg-black" checked />
+                    <input type="radio" name="rating-5" className="mask mask-star-2 bg-black" />
+                    <input type="radio" name="rating-5" className="mask mask-star-2 bg-black" />
+                    <input type="radio" name="rating-5" className="mask mask-star-2 bg-black" />
+                  </div>
+
+                  <div class="text-sm">
+                    (321)
+                  </div>
+                </div>
+
+                <div
+                  class={`flex gap-1 ${
+                    l?.basics?.oldPriceSize === "Normal"
+                      ? "lg:flex-row lg:gap-2"
+                      : ""
+                  } ${align === "center" ? "items-center justify-center" : "justify-start"}`}
+                >
+                  <div class="text-accent text-sm">
+                    {formatPrice(price, offers!.priceCurrency!)}
+                  </div>
+
+                  <div
+                    class={`line-through text-base-300 text-xs ${
+                      l?.basics?.oldPriceSize === "Normal" ? "lg:text-sm" : ""
+                    }`}
+                  >
+                    {formatPrice(listPrice, offers!.priceCurrency!)}
+                  </div>
+                </div>
+                {l?.hide?.installments
+                  ? ""
+                  : (
+                    <div class="text-base-300 text-sm lg:text-base">
+                      ou {installments}
+                    </div>
+                  )}
+              </div>
+            )}
+          </div>
+        </div>
         <figcaption
           class={`
           absolute bottom-1 left-0 w-full flex flex-col gap-3 p-2
@@ -227,56 +307,6 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
               </ul>
             )}
           </>
-        )}
-
-        {l?.hide?.productName && l?.hide?.productDescription
-          ? ""
-          : (
-            <div class="flex flex-col gap-0">
-              {l?.hide?.productName
-                ? ""
-                : (
-                  <h2 class="truncate text-base lg:text-lg text-base-content">
-                    {name}
-                  </h2>
-                )}
-              {l?.hide?.productDescription
-                ? ""
-                : (
-                  <p class="truncate text-sm lg:text-sm text-neutral">
-                    {product.description}
-                  </p>
-                )}
-            </div>
-          )}
-        {l?.hide?.allPrices ? "" : (
-          <div class="flex flex-col gap-2">
-            <div
-              class={`flex flex-col gap-0 ${
-                l?.basics?.oldPriceSize === "Normal"
-                  ? "lg:flex-row lg:gap-2"
-                  : ""
-              } ${align === "center" ? "justify-center" : "justify-start"}`}
-            >
-              <div
-                class={`line-through text-base-300 text-xs ${
-                  l?.basics?.oldPriceSize === "Normal" ? "lg:text-xl" : ""
-                }`}
-              >
-                {formatPrice(listPrice, offers!.priceCurrency!)}
-              </div>
-              <div class="text-accent text-base lg:text-xl">
-                {formatPrice(price, offers!.priceCurrency!)}
-              </div>
-            </div>
-            {l?.hide?.installments
-              ? ""
-              : (
-                <div class="text-base-300 text-sm lg:text-base">
-                  ou {installments}
-                </div>
-              )}
-          </div>
         )}
 
         {/* SKU Selector */}
