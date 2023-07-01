@@ -1,1 +1,1 @@
-export { default } from '$store/islands/ProductSlider.tsx';
+export { default } from "$store/islands/ProductSlider.tsx";

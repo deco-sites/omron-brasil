@@ -2,7 +2,7 @@ import Slider from "$store/components/ui/Slider.tsx";
 import SliderJS from "$store/islands/SliderJS.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import Icon from "$store/components/ui/Icon.tsx";
-import { JSX } from 'preact/jsx-runtime'
+import { JSX } from "preact/jsx-runtime";
 
 export interface SectionProps {
   backgroundImage: LiveImage;
@@ -84,7 +84,7 @@ function Buttons({ children }: ButtonProps) {
         </Slider.NextButton>
       </div>
     </div>
-  )
+  );
 }
 
 function Section(
@@ -98,7 +98,10 @@ function Section(
   }: SectionPropsExtended,
 ) {
   return (
-    <section id={"slide-product"} class="w-full h-full grid md:grid-cols-2 items-center bg-white text-black px-8 py-16 gap-12 lg:px-0 lg:py-0">
+    <section
+      id={"slide-product"}
+      class="w-full h-full grid md:grid-cols-2 items-center bg-white text-black px-8 py-16 gap-12 lg:px-0 lg:py-0"
+    >
       <div class="order-2 lg:order-1 flex flex-col gap-3 justify-center max-w-lg w-full lg:pl-12">
         <span class="font-bold text-sm">{subtitle}</span>
         <h1 class="text-4xl tracking-wide leading-tight pb-6">{title}</h1>
