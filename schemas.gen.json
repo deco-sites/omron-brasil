@@ -8652,6 +8652,27 @@
         "productDescription": {
           "type": "string",
           "title": "Product Description"
+        },
+        "backgroundColor": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Light-Gray",
+              "default": "Light-Gray"
+            },
+            {
+              "type": "string",
+              "const": "Dark-Blue",
+              "default": "Dark-Blue"
+            },
+            {
+              "type": "string",
+              "const": "Pigeon-Blue",
+              "default": "Pigeon-Blue"
+            }
+          ],
+          "type": "string",
+          "title": "Background Color"
         }
       },
       "required": [
@@ -8685,6 +8706,27 @@
             "null"
           ],
           "title": "Interval"
+        },
+        "backgroundColor": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Light-Gray",
+              "default": "Light-Gray"
+            },
+            {
+              "type": "string",
+              "const": "Dark-Blue",
+              "default": "Dark-Blue"
+            },
+            {
+              "type": "string",
+              "const": "Pigeon-Blue",
+              "default": "Pigeon-Blue"
+            }
+          ],
+          "type": "string",
+          "title": "Background Color"
         }
       },
       "required": [],

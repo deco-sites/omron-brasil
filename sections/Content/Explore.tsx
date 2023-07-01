@@ -53,7 +53,9 @@ function MobileSection({ title, items, interval }: ExploreProps) {
             <h1 class="font-bold text-sm">{title}</h1>
 
             <div class="flex flex-col items-start h-full justify-between gap-12 py-8">
-              <h1 key={item.title} class="leading-tight text-2xl">{item.title}</h1>
+              <h1 key={item.title} class="leading-tight text-2xl">
+                {item.title}
+              </h1>
 
               <span class="flex items-start justify-center text-sm font-bold gap-2 cursor-pointer hover:underline">
                 Learn more
@@ -79,7 +81,7 @@ function MobileSection({ title, items, interval }: ExploreProps) {
         infinite
       />
     </div>
-  )
+  );
 }
 
 function GridSection({ title, items }: ExploreProps) {
@@ -90,7 +92,9 @@ function GridSection({ title, items }: ExploreProps) {
       <div class="grid grid-cols-3 divide-x divide-x-black gap-x-12 w-full h-full items-start justify-start pt-12">
         {items?.map((item) => (
           <div class="flex flex-col items-start h-full justify-between gap-12 pl-16 first:pl-0">
-            <h1 key={item.title} class="leading-tight text-2xl">{item.title}</h1>
+            <h1 key={item.title} class="leading-tight text-2xl">
+              {item.title}
+            </h1>
 
             <span class="flex items-start justify-center text-sm font-bold gap-2 cursor-pointer hover:underline">
               Learn more
@@ -107,16 +111,16 @@ function GridSection({ title, items }: ExploreProps) {
         ))}
       </div>
     </div>
-  )
+  );
 }
 
 export default function Explore({ title, items }: ExploreProps) {
   return (
     <section class="flex items-center justify-center py-20 w-full min-h-[420px] bg-[#306F95] text-white">
       <>
-      <MobileSection title={title} items={items} />
-      <GridSection title={title} items={items} />
+        <MobileSection title={title} items={items} />
+        <GridSection title={title} items={items} />
       </>
     </section>
-  )
+  );
 }
