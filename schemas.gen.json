@@ -95,6 +95,7 @@
               "deco-sites/omron-brasil/sections/Content/Faq.tsx",
               "deco-sites/omron-brasil/sections/Content/Logos.tsx",
               "deco-sites/omron-brasil/sections/Content/Preview.tsx",
+              "deco-sites/omron-brasil/sections/Content/ProductSection.tsx",
               "deco-sites/omron-brasil/sections/Content/ProductSlider.tsx",
               "deco-sites/omron-brasil/sections/Content/Solutions.tsx",
               "deco-sites/omron-brasil/sections/Content/TabsSection.tsx",
@@ -8825,6 +8826,337 @@
       "required": [],
       "title": "deco-sites/omron-brasil/sections/Content/Preview.tsx@PreviewProps"
     },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9Qcm9kdWN0U2VjdGlvbi50c3g=@ButtonProps": {
+      "type": "object",
+      "properties": {
+        "background": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "transparent",
+              "default": "transparent"
+            },
+            {
+              "type": "string",
+              "const": "omron-blue",
+              "default": "omron-blue"
+            }
+          ],
+          "type": "string",
+          "title": "Background"
+        },
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "hasCartIcon": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "Has Cart Icon"
+        },
+        "hasTitleAppearWithCartIcon": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "Has Title Appear With Cart Icon"
+        }
+      },
+      "required": [
+        "background",
+        "title"
+      ],
+      "title": "ButtonProps"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9Qcm9kdWN0U2VjdGlvbi50c3g=@ButtonProps[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9Qcm9kdWN0U2VjdGlvbi50c3g=@ButtonProps"
+      },
+      "title": "ButtonProps[]"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9wcm9kdWN0L1Byb2R1Y3RDYXJkLnRzeA==@Layout": {
+      "type": "object",
+      "properties": {
+        "basics": {
+          "type": "object",
+          "properties": {
+            "contentAlignment": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Left",
+                  "default": "Left"
+                },
+                {
+                  "type": "string",
+                  "const": "Center",
+                  "default": "Center"
+                }
+              ],
+              "type": "string",
+              "title": "Content Alignment"
+            },
+            "oldPriceSize": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Small",
+                  "default": "Small"
+                },
+                {
+                  "type": "string",
+                  "const": "Normal",
+                  "default": "Normal"
+                }
+              ],
+              "type": "string",
+              "title": "Old Price Size"
+            },
+            "ctaText": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Cta Text"
+            }
+          },
+          "required": [],
+          "title": "Basics"
+        },
+        "elementsPositions": {
+          "type": "object",
+          "properties": {
+            "skuSelector": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Top",
+                  "default": "Top"
+                },
+                {
+                  "type": "string",
+                  "const": "Bottom",
+                  "default": "Bottom"
+                }
+              ],
+              "type": "string",
+              "title": "Sku Selector"
+            },
+            "favoriteIcon": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Top right",
+                  "default": "Top right"
+                },
+                {
+                  "type": "string",
+                  "const": "Top left",
+                  "default": "Top left"
+                }
+              ],
+              "type": "string",
+              "title": "Favorite Icon"
+            }
+          },
+          "required": [],
+          "title": "Elements Positions"
+        },
+        "hide": {
+          "type": "object",
+          "properties": {
+            "productName": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Product Name"
+            },
+            "productDescription": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Product Description"
+            },
+            "allPrices": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "All Prices"
+            },
+            "installments": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Installments"
+            },
+            "skuSelector": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Sku Selector"
+            },
+            "cta": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Cta"
+            }
+          },
+          "required": [],
+          "title": "Hide"
+        },
+        "onMouseOver": {
+          "type": "object",
+          "properties": {
+            "image": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Change image",
+                  "default": "Change image"
+                },
+                {
+                  "type": "string",
+                  "const": "Zoom image",
+                  "default": "Zoom image"
+                }
+              ],
+              "type": "string",
+              "title": "Image"
+            },
+            "card": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "None",
+                  "default": "None"
+                },
+                {
+                  "type": "string",
+                  "const": "Move up",
+                  "default": "Move up"
+                }
+              ],
+              "type": "string",
+              "title": "Card"
+            },
+            "showFavoriteIcon": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Show Favorite Icon"
+            },
+            "showSkuSelector": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Show Sku Selector"
+            },
+            "showCardShadow": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Show Card Shadow"
+            },
+            "showCta": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Show Cta"
+            }
+          },
+          "required": [],
+          "title": "On Mouse Over"
+        }
+      },
+      "required": [],
+      "title": "Layout"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9Qcm9kdWN0U2VjdGlvbi50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "subtitle": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Subtitle"
+        },
+        "productSubtitle": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Product Subtitle"
+        },
+        "productTitle": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Product Title"
+        },
+        "productDescription": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Product Description"
+        },
+        "productImage": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Product Image"
+        },
+        "imageAlt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Image Alt"
+        },
+        "buttons": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9Qcm9kdWN0U2VjdGlvbi50c3g=@ButtonProps[]",
+          "title": "Buttons"
+        },
+        "products": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]|null",
+          "title": "Products"
+        },
+        "cardLayout": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9wcm9kdWN0L1Byb2R1Y3RDYXJkLnRzeA==@Layout",
+          "title": "Card Layout"
+        },
+        "endButtonTitle": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "End Button Title"
+        }
+      },
+      "required": [
+        "title",
+        "products"
+      ],
+      "title": "deco-sites/omron-brasil/sections/Content/ProductSection.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9Tb2x1dGlvbnMudHN4@SolutionProps": {
       "type": "object",
       "properties": {
@@ -11923,214 +12255,6 @@
         "page"
       ],
       "title": "deco-sites/omron-brasil/components/product/ProductDetails.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9wcm9kdWN0L1Byb2R1Y3RDYXJkLnRzeA==@Layout": {
-      "type": "object",
-      "properties": {
-        "basics": {
-          "type": "object",
-          "properties": {
-            "contentAlignment": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "Left",
-                  "default": "Left"
-                },
-                {
-                  "type": "string",
-                  "const": "Center",
-                  "default": "Center"
-                }
-              ],
-              "type": "string",
-              "title": "Content Alignment"
-            },
-            "oldPriceSize": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "Small",
-                  "default": "Small"
-                },
-                {
-                  "type": "string",
-                  "const": "Normal",
-                  "default": "Normal"
-                }
-              ],
-              "type": "string",
-              "title": "Old Price Size"
-            },
-            "ctaText": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "title": "Cta Text"
-            }
-          },
-          "required": [],
-          "title": "Basics"
-        },
-        "elementsPositions": {
-          "type": "object",
-          "properties": {
-            "skuSelector": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "Top",
-                  "default": "Top"
-                },
-                {
-                  "type": "string",
-                  "const": "Bottom",
-                  "default": "Bottom"
-                }
-              ],
-              "type": "string",
-              "title": "Sku Selector"
-            },
-            "favoriteIcon": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "Top right",
-                  "default": "Top right"
-                },
-                {
-                  "type": "string",
-                  "const": "Top left",
-                  "default": "Top left"
-                }
-              ],
-              "type": "string",
-              "title": "Favorite Icon"
-            }
-          },
-          "required": [],
-          "title": "Elements Positions"
-        },
-        "hide": {
-          "type": "object",
-          "properties": {
-            "productName": {
-              "type": [
-                "boolean",
-                "null"
-              ],
-              "title": "Product Name"
-            },
-            "productDescription": {
-              "type": [
-                "boolean",
-                "null"
-              ],
-              "title": "Product Description"
-            },
-            "allPrices": {
-              "type": [
-                "boolean",
-                "null"
-              ],
-              "title": "All Prices"
-            },
-            "installments": {
-              "type": [
-                "boolean",
-                "null"
-              ],
-              "title": "Installments"
-            },
-            "skuSelector": {
-              "type": [
-                "boolean",
-                "null"
-              ],
-              "title": "Sku Selector"
-            },
-            "cta": {
-              "type": [
-                "boolean",
-                "null"
-              ],
-              "title": "Cta"
-            }
-          },
-          "required": [],
-          "title": "Hide"
-        },
-        "onMouseOver": {
-          "type": "object",
-          "properties": {
-            "image": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "Change image",
-                  "default": "Change image"
-                },
-                {
-                  "type": "string",
-                  "const": "Zoom image",
-                  "default": "Zoom image"
-                }
-              ],
-              "type": "string",
-              "title": "Image"
-            },
-            "card": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "None",
-                  "default": "None"
-                },
-                {
-                  "type": "string",
-                  "const": "Move up",
-                  "default": "Move up"
-                }
-              ],
-              "type": "string",
-              "title": "Card"
-            },
-            "showFavoriteIcon": {
-              "type": [
-                "boolean",
-                "null"
-              ],
-              "title": "Show Favorite Icon"
-            },
-            "showSkuSelector": {
-              "type": [
-                "boolean",
-                "null"
-              ],
-              "title": "Show Sku Selector"
-            },
-            "showCardShadow": {
-              "type": [
-                "boolean",
-                "null"
-              ],
-              "title": "Show Card Shadow"
-            },
-            "showCta": {
-              "type": [
-                "boolean",
-                "null"
-              ],
-              "title": "Show Cta"
-            }
-          },
-          "required": [],
-          "title": "On Mouse Over"
-        }
-      },
-      "required": [],
-      "title": "Layout"
     },
     "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9wcm9kdWN0L1Byb2R1Y3RTaGVsZi50c3g=@Props": {
       "type": "object",
@@ -15273,6 +15397,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9Qcm9kdWN0U2VjdGlvbi50c3g=": {
+      "title": "deco-sites/omron-brasil/sections/Content/ProductSection.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9Qcm9kdWN0U2VjdGlvbi50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/omron-brasil/sections/Content/ProductSection.tsx"
+          ],
+          "default": "deco-sites/omron-brasil/sections/Content/ProductSection.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9Qcm9kdWN0U2xpZGVyLnRzeA==": {
       "title": "deco-sites/omron-brasil/sections/Content/ProductSlider.tsx",
       "type": "object",
@@ -17034,6 +17179,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9QcmV2aWV3LnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9Qcm9kdWN0U2VjdGlvbi50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9Qcm9kdWN0U2xpZGVyLnRzeA=="

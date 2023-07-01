@@ -23,9 +23,11 @@ export default function SectionRounded(
             {description}
           </p>
 
-          <button className="flex items-center justify-center btn border-black bg-transparent text-black rounded-xl hover:bg-white">
-            {buttonTitle}
-          </button>
+          {buttonTitle && (
+            <button className="flex items-center justify-center btn border-black bg-transparent text-black rounded-xl hover:bg-white">
+              {buttonTitle}
+            </button>
+          )}
         </div>
 
         <div class="order-1 md:order-2 left-0 md:right-0">
