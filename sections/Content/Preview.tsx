@@ -32,13 +32,17 @@ interface ButtonProps {
 
 function Buttons({ children, backgroundColor }: ButtonProps) {
   const bgColor = backgroundColor;
-  const borderColor = bgColor === "Light-Gray" ? 'border-black' : 'border-white';
-  const textColor = bgColor === "Light-Gray" ? 'text-black' : 'text-white';
+  const borderColor = bgColor === "Light-Gray"
+    ? "border-black"
+    : "border-white";
+  const textColor = bgColor === "Light-Gray" ? "text-black" : "text-white";
 
   return (
     <div class="flex items-start justify-start md:items-center md:justify-between gap-8">
       <div class="hidden md:flex items-center justify-center z-10 col-start-1 row-start-2">
-        <Slider.PrevButton class={`${borderColor} btn btn-square bg-transparent`}>
+        <Slider.PrevButton
+          class={`${borderColor} btn btn-square bg-transparent`}
+        >
           <Icon
             class={textColor}
             size={20}
@@ -51,7 +55,9 @@ function Buttons({ children, backgroundColor }: ButtonProps) {
       {children}
 
       <div class="hidden md:flex items-center justify-center z-10 col-start-1 row-start-2">
-        <Slider.NextButton class={`${borderColor} btn btn-square bg-transparent`}>
+        <Slider.NextButton
+          class={`${borderColor} btn btn-square bg-transparent`}
+        >
           <Icon
             class={textColor}
             size={20}
@@ -66,7 +72,9 @@ function Buttons({ children, backgroundColor }: ButtonProps) {
 
 function Dots({ images, interval = 0, backgroundColor }: PreviewProps) {
   const bgColor = backgroundColor;
-  const transitionColor = bgColor === "Light-Gray" ? 'from-black to-[#F2F2F2]' : 'from-white to-[#C9C9C9]';
+  const transitionColor = bgColor === "Light-Gray"
+    ? "from-black to-[#F2F2F2]"
+    : "from-white to-[#C9C9C9]";
 
   return (
     <>
@@ -113,17 +121,19 @@ function Section(
   }: SectionPropsExtended,
 ) {
   const bgColor = backgroundColor;
-  const textColor = bgColor === "Light-Gray" ? 'text-black' : 'text-white';
+  const textColor = bgColor === "Light-Gray" ? "text-black" : "text-white";
 
   return (
-    <section class={`${
-      bgColor === "Dark-Blue" && 'bg-[#003153]' || 
-      bgColor === "Pigeon-Blue" && 'bg-[#306F95]' || 
-      bgColor === "Light-Gray" && 'bg-[#E5E5E5]'}
-      ${!bgColor && 'bg-[#003153]'}
+    <section
+      class={`${
+        bgColor === "Dark-Blue" && "bg-[#003153]" ||
+        bgColor === "Pigeon-Blue" && "bg-[#306F95]" ||
+        bgColor === "Light-Gray" && "bg-[#E5E5E5]"
+      }
+      ${!bgColor && "bg-[#003153]"}
       ${textColor}
-      w-full h-full flex flex-col lg:flex-row justify-between px-8 py-8 gap-12 md:gap-0 lg:py-28 lg:px-16`
-    }>
+      w-full h-full flex flex-col lg:flex-row justify-between px-8 py-8 gap-12 md:gap-0 lg:py-28 lg:px-16`}
+    >
       <div class="flex flex-col gap-3 items-start justify-start max-w-lg w-full">
         <span class="font-bold text-sm">{subtitle}</span>
         <h1 class="text-4xl tracking-wide leading-tight">{title}</h1>
@@ -183,7 +193,7 @@ export default function Preview(
             </Section>
           </Slider.Item>
         ))}
-      </Slider>      
+      </Slider>
 
       <SliderJS
         rootId={"slide-product"}

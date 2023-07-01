@@ -72,6 +72,7 @@
               "./islands/SearchControls.tsx",
               "./islands/ShippingSimulation.tsx",
               "./islands/SliderJS.tsx",
+              "./islands/Tabs.tsx",
               "./islands/WishlistButton.tsx",
               "$live/handlers/devPage.ts",
               "$live/handlers/fresh.ts",
@@ -96,6 +97,7 @@
               "deco-sites/omron-brasil/sections/Content/Preview.tsx",
               "deco-sites/omron-brasil/sections/Content/ProductSlider.tsx",
               "deco-sites/omron-brasil/sections/Content/Solutions.tsx",
+              "deco-sites/omron-brasil/sections/Content/TabsSection.tsx",
               "deco-sites/omron-brasil/sections/Content/Testimonials.tsx",
               "deco-sites/omron-brasil/sections/DesignSystem/DesignSystem.tsx",
               "deco-sites/omron-brasil/sections/Footer/Footer.tsx",
@@ -7290,6 +7292,97 @@
       ],
       "title": "deco-sites/omron-brasil/components/ui/ShippingSimulation.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy91aS9UYWJzLnRzeA==@TabsProps": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Label"
+        },
+        "item": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Title"
+            },
+            "description": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Description"
+            },
+            "subitems": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string",
+                    "title": "Label"
+                  }
+                },
+                "required": [
+                  "label"
+                ]
+              },
+              "title": "Subitems"
+            }
+          },
+          "required": [
+            "subitems"
+          ],
+          "title": "Item"
+        }
+      },
+      "required": [
+        "item"
+      ],
+      "title": "TabsProps"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy91aS9UYWJzLnRzeA==@TabsProps[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy91aS9UYWJzLnRzeA==@TabsProps"
+      },
+      "title": "TabsProps[]"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy91aS9UYWJzLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "tabs": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy91aS9UYWJzLnRzeA==@TabsProps[]",
+          "title": "Tabs"
+        },
+        "backgroundColor": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Dark-Blue",
+              "default": "Dark-Blue"
+            },
+            {
+              "type": "string",
+              "const": "Light-Gray",
+              "default": "Light-Gray"
+            }
+          ],
+          "type": "string",
+          "title": "Background Color"
+        }
+      },
+      "required": [
+        "tabs"
+      ],
+      "title": "deco-sites/omron-brasil/components/ui/Tabs.tsx@Props"
+    },
     "ZGVjby1jeC9saXZlL2hhbmRsZXJzL2RldlBhZ2UudHM=@DevConfig": {
       "type": "object",
       "properties": {
@@ -8874,6 +8967,112 @@
       },
       "required": [],
       "title": "deco-sites/omron-brasil/sections/Content/Solutions.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9UYWJzU2VjdGlvbi50c3g=@TabsProps": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Label"
+        },
+        "item": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Title"
+            },
+            "description": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Description"
+            },
+            "subitems": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string",
+                    "title": "Label"
+                  }
+                },
+                "required": [
+                  "label"
+                ]
+              },
+              "title": "Subitems"
+            }
+          },
+          "required": [
+            "subitems"
+          ],
+          "title": "Item"
+        }
+      },
+      "required": [
+        "item"
+      ],
+      "title": "TabsProps"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9UYWJzU2VjdGlvbi50c3g=@TabsProps[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9UYWJzU2VjdGlvbi50c3g=@TabsProps"
+      },
+      "title": "TabsProps[]"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9UYWJzU2VjdGlvbi50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "subtitle": {
+          "type": "string",
+          "title": "Subtitle"
+        },
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "description": {
+          "type": "string",
+          "title": "Description"
+        },
+        "tabs": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9UYWJzU2VjdGlvbi50c3g=@TabsProps[]",
+          "title": "Tabs"
+        },
+        "backgroundColor": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Dark-Blue",
+              "default": "Dark-Blue"
+            },
+            {
+              "type": "string",
+              "const": "Light-Gray",
+              "default": "Light-Gray"
+            }
+          ],
+          "type": "string",
+          "title": "Background Color"
+        }
+      },
+      "required": [
+        "subtitle",
+        "title",
+        "description",
+        "tabs"
+      ],
+      "title": "deco-sites/omron-brasil/sections/Content/TabsSection.tsx@Props"
     },
     "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9UZXN0aW1vbmlhbHMudHN4@Testimonial": {
       "type": "object",
@@ -14602,6 +14801,27 @@
         }
       }
     },
+    "Li9pc2xhbmRzL1RhYnMudHN4": {
+      "title": "./islands/Tabs.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy91aS9UYWJzLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/Tabs.tsx"
+          ],
+          "default": "./islands/Tabs.tsx"
+        }
+      }
+    },
     "Li9pc2xhbmRzL1dpc2hsaXN0QnV0dG9uLnRzeA==": {
       "title": "./islands/WishlistButton.tsx",
       "type": "object",
@@ -15092,6 +15312,27 @@
             "deco-sites/omron-brasil/sections/Content/Solutions.tsx"
           ],
           "default": "deco-sites/omron-brasil/sections/Content/Solutions.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9UYWJzU2VjdGlvbi50c3g=": {
+      "title": "deco-sites/omron-brasil/sections/Content/TabsSection.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9UYWJzU2VjdGlvbi50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/omron-brasil/sections/Content/TabsSection.tsx"
+          ],
+          "default": "deco-sites/omron-brasil/sections/Content/TabsSection.tsx"
         }
       }
     },
@@ -16702,6 +16943,9 @@
           "$ref": "#/definitions/Li9pc2xhbmRzL1NsaWRlckpTLnRzeA=="
         },
         {
+          "$ref": "#/definitions/Li9pc2xhbmRzL1RhYnMudHN4"
+        },
+        {
           "$ref": "#/definitions/Li9pc2xhbmRzL1dpc2hsaXN0QnV0dG9uLnRzeA=="
         }
       ]
@@ -16796,6 +17040,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9Tb2x1dGlvbnMudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9UYWJzU2VjdGlvbi50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9UZXN0aW1vbmlhbHMudHN4"
