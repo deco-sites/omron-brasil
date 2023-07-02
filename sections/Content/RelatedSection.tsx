@@ -42,7 +42,7 @@ function FilterItem() {
         </button>
       </div>
     </div>
-  )
+  );
 }
 
 function RelatedArticleCard({ title }: RelatedArticleCardProps) {
@@ -53,7 +53,7 @@ function RelatedArticleCard({ title }: RelatedArticleCardProps) {
         <span class="text-xs font-bold">Read more</span>
       </button>
     </div>
-  )
+  );
 }
 
 function RelatedArticles({ articles }: RelatedArticlesProps) {
@@ -82,11 +82,13 @@ function RelatedArticles({ articles }: RelatedArticlesProps) {
 
       <div class="hidden lg:grid grid-cols-3 gap-8">
         {articles?.map((article) => (
-          <RelatedArticleCard title={article.title} />
+          <RelatedArticleCard
+            title={article.title}
+          />
         ))}
       </div>
     </div>
-  )
+  );
 }
 
 function RelatedAccesories({ products, cardLayout }: RelatedAccessoriesProps) {
@@ -127,10 +129,12 @@ function RelatedAccesories({ products, cardLayout }: RelatedAccessoriesProps) {
         <SliderJS rootId={"slider-accessories"} />
       </div>
     </div>
-  )
+  );
 }
 
-export default function RelatedSection({ products, articles, cardLayout }: Props) {
+export default function RelatedSection(
+  { products, articles, cardLayout }: Props,
+) {
   return (
     <section class="flex w-full h-full bg-[#E5E5E5] text-black">
       <div class="flex flex-col gap-12 px-6 md:px-12 w-full h-full py-16 md:py-12">
@@ -151,5 +155,5 @@ export default function RelatedSection({ products, articles, cardLayout }: Props
         />
       </div>
     </section>
-  )
+  );
 }

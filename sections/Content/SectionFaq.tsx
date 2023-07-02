@@ -58,5 +58,5 @@ export default function SectionFaq({ faq, section }: Props) {
         </div>
       </div>
     </section>
-  )
+  );
 }

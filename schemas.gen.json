@@ -91,6 +91,8 @@
               "deco-sites/omron-brasil/sections/Category/CategoryBanner.tsx",
               "deco-sites/omron-brasil/sections/Category/CategoryList.tsx",
               "deco-sites/omron-brasil/sections/Content/Benefits.tsx",
+              "deco-sites/omron-brasil/sections/Content/BrowseSection.tsx",
+              "deco-sites/omron-brasil/sections/Content/ConcernSection.tsx",
               "deco-sites/omron-brasil/sections/Content/Explore.tsx",
               "deco-sites/omron-brasil/sections/Content/Faq.tsx",
               "deco-sites/omron-brasil/sections/Content/FilteredProductSection.tsx",
@@ -8469,6 +8471,179 @@
       "required": [],
       "title": "deco-sites/omron-brasil/sections/Content/Benefits.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9Ccm93c2VTZWN0aW9uLnRzeA==@IconProps": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Blood Pressure Monitor",
+              "default": "Blood Pressure Monitor"
+            },
+            {
+              "type": "string",
+              "const": "Respiratory Devices",
+              "default": "Respiratory Devices"
+            },
+            {
+              "type": "string",
+              "const": "Pain Relievers",
+              "default": "Pain Relievers"
+            },
+            {
+              "type": "string",
+              "const": "Digital Scales",
+              "default": "Digital Scales"
+            },
+            {
+              "type": "string",
+              "const": "Thermometers",
+              "default": "Thermometers"
+            },
+            {
+              "type": "string",
+              "const": "Activity Monitors",
+              "default": "Activity Monitors"
+            }
+          ],
+          "type": "string",
+          "title": "Id"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "title": "IconProps"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9Ccm93c2VTZWN0aW9uLnRzeA==@CardProps": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "iconId": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9Ccm93c2VTZWN0aW9uLnRzeA==@IconProps",
+          "title": "Icon Id"
+        },
+        "backgroundImage": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Background Image"
+        },
+        "imageAlt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Image Alt"
+        }
+      },
+      "required": [
+        "title",
+        "iconId"
+      ],
+      "title": "CardProps"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9Ccm93c2VTZWN0aW9uLnRzeA==@CardProps[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9Ccm93c2VTZWN0aW9uLnRzeA==@CardProps"
+      },
+      "title": "CardProps[]"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9Ccm93c2VTZWN0aW9uLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "cards": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9Ccm93c2VTZWN0aW9uLnRzeA==@CardProps[]",
+          "title": "Cards"
+        }
+      },
+      "required": [
+        "title"
+      ],
+      "title": "deco-sites/omron-brasil/sections/Content/BrowseSection.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9Db25jZXJuU2VjdGlvbi50c3g=@InfoProps": {
+      "type": "object",
+      "properties": {
+        "iconId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "CheckCircle",
+              "default": "CheckCircle"
+            },
+            {
+              "type": "string",
+              "const": "Play",
+              "default": "Play"
+            },
+            {
+              "type": "string",
+              "const": "Map",
+              "default": "Map"
+            },
+            {
+              "type": "string",
+              "const": "PairingWatchMobile",
+              "default": "PairingWatchMobile"
+            },
+            {
+              "type": "string",
+              "const": "Distance",
+              "default": "Distance"
+            },
+            {
+              "type": "string",
+              "const": "CheckShield",
+              "default": "CheckShield"
+            }
+          ],
+          "type": "string",
+          "title": "Icon Id"
+        },
+        "label": {
+          "type": "string",
+          "title": "Label"
+        }
+      },
+      "required": [
+        "iconId",
+        "label"
+      ],
+      "title": "InfoProps"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9Db25jZXJuU2VjdGlvbi50c3g=@InfoProps[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9Db25jZXJuU2VjdGlvbi50c3g=@InfoProps"
+      },
+      "title": "InfoProps[]"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9Db25jZXJuU2VjdGlvbi50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "infos": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9Db25jZXJuU2VjdGlvbi50c3g=@InfoProps[]",
+          "title": "Infos"
+        }
+      },
+      "required": [
+        "title",
+        "infos"
+      ],
+      "title": "deco-sites/omron-brasil/sections/Content/ConcernSection.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9FeHBsb3JlLnRzeA==@ItemProps": {
       "type": "object",
       "properties": {
@@ -11216,6 +11391,11 @@
               "type": "string",
               "const": "light-gray",
               "default": "light-gray"
+            },
+            {
+              "type": "string",
+              "const": "dark-blue",
+              "default": "dark-blue"
             }
           ],
           "type": "string",
@@ -11253,6 +11433,11 @@
               "type": "string",
               "const": "side-to-side",
               "default": "side-to-side"
+            },
+            {
+              "type": "string",
+              "const": "side-to-side-with-input",
+              "default": "side-to-side-with-input"
             }
           ],
           "type": "string",
@@ -15463,6 +15648,48 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9Ccm93c2VTZWN0aW9uLnRzeA==": {
+      "title": "deco-sites/omron-brasil/sections/Content/BrowseSection.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9Ccm93c2VTZWN0aW9uLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/omron-brasil/sections/Content/BrowseSection.tsx"
+          ],
+          "default": "deco-sites/omron-brasil/sections/Content/BrowseSection.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9Db25jZXJuU2VjdGlvbi50c3g=": {
+      "title": "deco-sites/omron-brasil/sections/Content/ConcernSection.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9Db25jZXJuU2VjdGlvbi50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/omron-brasil/sections/Content/ConcernSection.tsx"
+          ],
+          "default": "deco-sites/omron-brasil/sections/Content/ConcernSection.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9FeHBsb3JlLnRzeA==": {
       "title": "deco-sites/omron-brasil/sections/Content/Explore.tsx",
       "type": "object",
@@ -17380,6 +17607,12 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9CZW5lZml0cy50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9Ccm93c2VTZWN0aW9uLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9Db25jZXJuU2VjdGlvbi50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9FeHBsb3JlLnRzeA=="

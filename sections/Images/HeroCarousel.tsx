@@ -3,6 +3,7 @@ import SliderJS from "$store/islands/SliderJS.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import { Picture } from "deco-sites/std/components/Picture.tsx";
 import Image from "deco-sites/std/components/Image.tsx";
+import Icon from "$store/components/ui/Icon.tsx";
 
 export interface BannerItemProps {
   backgroundImage: LiveImage;
@@ -12,11 +13,11 @@ export interface BannerItemProps {
   description: string;
   price?: number;
   buttonTitle: string;
-  backgroundColor?: "white" | "light-gray";
+  backgroundColor?: "white" | "light-gray" | "dark-blue";
 }
 
 export interface HeroCarouselProps {
-  type?: "full" | "side-to-side";
+  type?: "full" | "side-to-side" | "side-to-side-with-input";
   images?: BannerItemProps[];
   interval?: number;
 }
@@ -107,10 +108,14 @@ function BannerItemSideToSide(
     backgroundColor,
   }: BannerItemProps,
 ) {
-  const bgColor = !backgroundColor || backgroundColor === "white" ? 'bg-white' : 'bg-[#E5E5E5]';
+  const bgColor = !backgroundColor || backgroundColor === "white"
+    ? "bg-white"
+    : "bg-[#E5E5E5]";
 
   return (
-    <div class={`${bgColor} grid md:grid-cols-2 items-center w-full h-full justify-between pt-4 md:px-6 md:py-24`}>
+    <div
+      class={`${bgColor} grid md:grid-cols-2 items-center w-full h-full justify-between pt-4 md:px-6 md:py-24`}
+    >
       <div class="order-2 md:order-1 card-body w-full items-start md:max-w-xl">
         <h2 class="text-black font-bold text-lg">{subtitle}</h2>
         <h1 class="card-title text-black text-3xl pt-3">{title}</h1>
@@ -134,6 +139,73 @@ function BannerItemSideToSide(
               width={940}
               height={600}
               class="w-full rounded-tr-[52px] rounded-br-[32px] md:rounded-tl-[32px] md:rounded-bl-[32px] md:rounded-tr-[0%] md:rounded-br-[0%] -translate-x-6 md:-translate-x-0 pt-10 md:pt-0"
+            />
+          </Picture>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function BannerItemSideToSideWithInput(
+  {
+    backgroundImage,
+    imageAlt,
+    subtitle,
+    title,
+    description,
+    price,
+    buttonTitle,
+    backgroundColor,
+  }: BannerItemProps,
+) {
+  const bgColor = !backgroundColor || 
+    backgroundColor === "white" && "bg-white" || 
+    backgroundColor === "dark-blue" && 'bg-[#003153]' || 
+    backgroundColor === "light-gray" && 'bg-[#E5E5E5]';
+
+  const textColor = backgroundColor === "white" ? 'text-black' : 'text-white';
+
+  return (
+    <div
+      class={`${bgColor} ${textColor} grid md:grid-cols-2 items-center w-full h-full justify-between pt-4 md:px-6 md:py-24`}
+    >
+      <div class="order-2 md:order-1 card-body w-full items-start md:max-w-xl">
+        <h2 class="font-bold text-lg">{subtitle}</h2>
+        <h1 class="card-title text-3xl pt-3">{title}</h1>
+        <p class="text-normal pt-3 text-normal">{description}</p>
+
+        {price && (
+          <div class="card-actions justify-start items-center grid grid-cols-2 py-8 gap-x-4 gap-y-8">
+            {price && <p class="font-bold text-3xl">R$ {price}</p>}
+          </div>
+        )}
+
+        {buttonTitle && (
+          <div class="flex items-center justify-between mt-8 py-2 px-4 bg-white border border-black rounded-xl w-full max-w-lg">
+            <input type="text" placeholder={buttonTitle} className="w-full max-w-lg focus:outline-none placeholder:text-black" />
+            <Icon
+              id="MagnifyingGlass"
+              class="text-black"
+              width={18}
+              height={18}
+              strokeWidth={0.01}
+              fill="currentColor"
+            />
+          </div>
+        )}
+      </div>
+
+      <div class="order-1 md:order-2 p-3 md:p-0">
+        {backgroundImage && (
+          <Picture>
+            <Image
+              media="(min-width: 220px, max-width: 767px)"
+              src={backgroundImage}
+              alt={imageAlt}
+              width={860}
+              height={800}
+              class="w-full"
             />
           </Picture>
         )}
@@ -166,6 +238,23 @@ export default function HeroCarousel(
           interval={interval && interval * 1e3}
           infinite
         />
+      </div>
+    );
+  }
+
+  if (!type || type === "side-to-side-with-input") {
+    return (
+      <div
+        id={"slide-principal"}
+        class="grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_64px]"
+      >
+        <Slider class="carousel carousel-center w-full col-span-full row-span-full scrollbar-none gap-6">
+          {images?.map((image, index) => (
+            <Slider.Item index={index} class="carousel-item w-full">
+              <BannerItemSideToSideWithInput {...image} />
+            </Slider.Item>
+          ))}
+        </Slider>
       </div>
     );
   }

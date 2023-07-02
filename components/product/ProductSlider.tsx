@@ -96,7 +96,7 @@ function Section(
     backgroundImage,
     imageAlt,
     children,
-    buttonTitle
+    buttonTitle,
   }: SectionPropsExtended,
 ) {
   return (

@@ -55,18 +55,18 @@ function FilterItem() {
       <option selected>Device type</option>
       <option>Greedo</option>
     </select>
-  )
+  );
 }
 
-export default function FilteredProductSection({ products, cardLayout, section }: Props) {
+export default function FilteredProductSection(
+  { products, cardLayout, section }: Props,
+) {
   return (
     <section class="flex w-full h-full bg-[#F2F2F2]">
       <div class="flex flex-col gap-12 px-6 md:px-12 w-full h-full py-16 md:py-12">
         <div class="flex flex-row items-center justify-between w-full">
           <div class="grid lg:hidden">
-            <button
-              className="btn w-full min-w-[80px] rounded-xl flex items-center justify-between gap-1 bg-[#005EB8] text-white hover:opacity-80 hover:bg-[#005EB8]"
-            >
+            <button className="btn w-full min-w-[80px] rounded-xl flex items-center justify-between gap-1 bg-[#005EB8] text-white hover:opacity-80 hover:bg-[#005EB8]">
               <Icon
                 id="FilterList"
                 class="text-white"
@@ -95,9 +95,7 @@ export default function FilteredProductSection({ products, cardLayout, section }
         <div class="flex w-full">
           <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-8">
             {products?.map((product) => (
-              <div
-                class="min-w-[320px] md:min-w-[380px]"
-              >
+              <div class="min-w-[320px] md:min-w-[380px]">
                 <ProductCard
                   product={product}
                   layout={cardLayout}
@@ -106,7 +104,6 @@ export default function FilteredProductSection({ products, cardLayout, section }
             ))}
           </div>
         </div>
-
 
         {section && (
           <Section
@@ -119,9 +116,7 @@ export default function FilteredProductSection({ products, cardLayout, section }
         <div class="flex w-full">
           <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-8">
             {products?.map((product) => (
-              <div
-                class="min-w-[320px] md:min-w-[380px]"
-              >
+              <div class="min-w-[320px] md:min-w-[380px]">
                 <ProductCard
                   product={product}
                   layout={cardLayout}
@@ -138,5 +133,5 @@ export default function FilteredProductSection({ products, cardLayout, section }
         </div>
       </div>
     </section>
-  )
+  );
 }
