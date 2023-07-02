@@ -31,7 +31,7 @@ export interface Props {
   endButtonTitle?: string;
 }
 
-export default function ProductSection({ 
+export default function ProductSection({
   title,
   subtitle,
   productImage,
@@ -42,7 +42,7 @@ export default function ProductSection({
   buttons = [],
   products,
   cardLayout,
-  endButtonTitle
+  endButtonTitle,
 }: Props) {
   if (!products || products.length === 0) {
     return null;
@@ -71,14 +71,21 @@ export default function ProductSection({
           <div class="order-2 md:order-1 flex flex-col w-full items-start md:max-w-xl xl:pt-8">
             <h2 class="text-black font-bold text-lg">{productSubtitle}</h2>
             <h1 class="card-title text-black text-3xl pt-3">{productTitle}</h1>
-            <p class="text-black text-normal pt-3 text-normal">{productDescription}</p>
+            <p class="text-black text-normal pt-3 text-normal">
+              {productDescription}
+            </p>
 
             <div class="card-actions justify-start items-center grid grid-cols-2 pt-10 xl:pt-16 gap-x-4 gap-y-8">
               {buttons.map((button) => (
-                <button className={`
-                  ${button.background === "transparent" ? 'border-black bg-transparent text-black' : 'bg-[#005EB8] text-white'} 
-                  btn rounded-xl flex items-center justify-center gap-1`
-                }>
+                <button
+                  className={`
+                  ${
+                    button.background === "transparent"
+                      ? "border-black bg-transparent text-black hover:bg-transparent"
+                      : "bg-[#005EB8] text-white hover:opacity-80"
+                  } 
+                  btn rounded-xl flex items-center justify-center gap-1`}
+                >
                   {button.hasCartIcon && (
                     <Icon
                       id="ShoppingCart"
@@ -90,7 +97,13 @@ export default function ProductSection({
                     />
                   )}
 
-                  <span class={`${button.hasTitleAppearWithCartIcon ? 'flex' : 'hidden'} md:flex`}>{button.title}</span>
+                  <span
+                    class={`${
+                      button.hasTitleAppearWithCartIcon ? "flex" : "hidden"
+                    } md:flex`}
+                  >
+                    {button.title}
+                  </span>
                 </button>
               ))}
             </div>
@@ -115,7 +128,7 @@ export default function ProductSection({
         <div class="w-full flex">
           <div
             id={"slider"}
-            class="grid grid-cols-[48px_1fr_48px] px-0 sm:px-5"
+            class="grid grid-cols-[48px_1fr_48px] px-0 sm:px-5 w-full"
           >
             <Slider class="carousel carousel-center sm:carousel-end gap-6 col-span-full row-start-2 row-end-5">
               {products?.map((product, index) => (
@@ -162,5 +175,5 @@ export default function ProductSection({
         )}
       </div>
     </section>
-  )
+  );
 }

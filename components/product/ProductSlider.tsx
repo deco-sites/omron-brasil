@@ -10,6 +10,7 @@ export interface SectionProps {
   subtitle: string;
   title: string;
   description: string;
+  buttonTitle?: string;
 }
 
 export interface SectionPropsExtended extends SectionProps {
@@ -95,6 +96,7 @@ function Section(
     backgroundImage,
     imageAlt,
     children,
+    buttonTitle
   }: SectionPropsExtended,
 ) {
   return (
@@ -106,6 +108,11 @@ function Section(
         <span class="font-bold text-sm">{subtitle}</span>
         <h1 class="text-4xl tracking-wide leading-tight pb-6">{title}</h1>
         <p class="border-t-2 border-t-light-gray pt-6">{description}</p>
+        {buttonTitle && (
+          <button class="mt-12 flex items-center justify-center gap-2 btn bg-transparent max-w-[110px] rounded-xl border-black text-black">
+            <span class="text-xs font-bold">Read more</span>
+          </button>
+        )}
 
         <div class="w-full md:w-1/2 pt-12">
           {children}
@@ -119,7 +126,7 @@ function Section(
               media="(min-width: 220px, max-width: 767px)"
               src={backgroundImage}
               alt={imageAlt}
-              class="lg:w-full lg:h-full object-fit"
+              class="lg:w-full lg:h-full object-cover"
               loading="lazy"
             />
           </picture>

@@ -12,6 +12,7 @@ export interface BannerItemProps {
   description: string;
   price?: number;
   buttonTitle: string;
+  backgroundColor?: "white" | "light-gray";
 }
 
 export interface HeroCarouselProps {
@@ -103,10 +104,13 @@ function BannerItemSideToSide(
     description,
     price,
     buttonTitle,
+    backgroundColor,
   }: BannerItemProps,
 ) {
+  const bgColor = !backgroundColor || backgroundColor === "white" ? 'bg-white' : 'bg-[#E5E5E5]';
+
   return (
-    <div class="grid md:grid-cols-2 items-center w-full h-full bg-white justify-between pt-4 md:py-24">
+    <div class={`${bgColor} grid md:grid-cols-2 items-center w-full h-full justify-between pt-4 md:px-6 md:py-24`}>
       <div class="order-2 md:order-1 card-body w-full items-start md:max-w-xl">
         <h2 class="text-black font-bold text-lg">{subtitle}</h2>
         <h1 class="card-title text-black text-3xl pt-3">{title}</h1>
@@ -127,7 +131,7 @@ function BannerItemSideToSide(
               media="(min-width: 220px, max-width: 767px)"
               src={backgroundImage}
               alt={imageAlt}
-              width={1220}
+              width={940}
               height={600}
               class="w-full rounded-tr-[52px] rounded-br-[32px] md:rounded-tl-[32px] md:rounded-bl-[32px] md:rounded-tr-[0%] md:rounded-br-[0%] -translate-x-6 md:-translate-x-0 pt-10 md:pt-0"
             />

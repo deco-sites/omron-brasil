@@ -86,7 +86,7 @@ export default function Benefits(
             id={benefit.subIcon}
             width={24}
             height={24}
-            strokeWidth={0.01}
+            strokeWidth={2}
             fill="currentColor"
           />
         </div>
