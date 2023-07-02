@@ -62,6 +62,7 @@
               "deco-sites/std/loaders/vtex/user.ts",
               "deco-sites/std/loaders/vtex/wishlist.ts",
               "./islands/AddToCartButton.tsx",
+              "./islands/FilteredSectionFaq.tsx",
               "./islands/HeaderButton.tsx",
               "./islands/HeaderModals.tsx",
               "./islands/HeaderSearchbar.tsx",
@@ -96,6 +97,7 @@
               "deco-sites/omron-brasil/sections/Content/Explore.tsx",
               "deco-sites/omron-brasil/sections/Content/Faq.tsx",
               "deco-sites/omron-brasil/sections/Content/FilteredProductSection.tsx",
+              "deco-sites/omron-brasil/sections/Content/FilteredSectionFaq.tsx",
               "deco-sites/omron-brasil/sections/Content/Logos.tsx",
               "deco-sites/omron-brasil/sections/Content/Preview.tsx",
               "deco-sites/omron-brasil/sections/Content/ProductSection.tsx",
@@ -7141,6 +7143,183 @@
       ],
       "title": "deco-sites/std/packs/vtex/loaders/wishlist.ts@Props"
     },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9GYXEudHN4@Question": {
+      "type": "object",
+      "properties": {
+        "question": {
+          "type": "string",
+          "title": "Question"
+        },
+        "answer": {
+          "type": "string",
+          "format": "html",
+          "title": "Answer"
+        }
+      },
+      "required": [
+        "question",
+        "answer"
+      ],
+      "title": "Question"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9GYXEudHN4@Question[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9GYXEudHN4@Question"
+      },
+      "title": "Question[]"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9GYXEudHN4@Contact": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "html",
+          "title": "Description"
+        },
+        "link": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string",
+              "title": "Text"
+            },
+            "href": {
+              "type": "string",
+              "title": "Href"
+            }
+          },
+          "required": [
+            "text",
+            "href"
+          ],
+          "title": "Link"
+        }
+      },
+      "required": [],
+      "title": "Contact"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9GYXEudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Description"
+        },
+        "questions": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9GYXEudHN4@Question[]",
+          "title": "Questions"
+        },
+        "contact": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9GYXEudHN4@Contact",
+          "title": "Contact"
+        },
+        "layout": {
+          "type": "object",
+          "properties": {
+            "variation": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Compact",
+                  "default": "Compact"
+                },
+                {
+                  "type": "string",
+                  "const": "Full",
+                  "default": "Full"
+                },
+                {
+                  "type": "string",
+                  "const": "Side to side",
+                  "default": "Side to side"
+                }
+              ],
+              "type": "string",
+              "title": "Variation"
+            },
+            "headerAlignment": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "center",
+                  "default": "center"
+                },
+                {
+                  "type": "string",
+                  "const": "left",
+                  "default": "left"
+                }
+              ],
+              "type": "string",
+              "title": "Header Alignment"
+            }
+          },
+          "required": [],
+          "title": "Layout"
+        }
+      },
+      "required": [],
+      "title": "Props"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy91aS9GaWx0ZXJlZEZhcS50c3g=@FaqsProps": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "title": "Label"
+        },
+        "faq": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9GYXEudHN4@Props",
+          "title": "Faq"
+        }
+      },
+      "required": [
+        "label",
+        "faq"
+      ],
+      "title": "FaqsProps"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy91aS9GaWx0ZXJlZEZhcS50c3g=@FaqsProps[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy91aS9GaWx0ZXJlZEZhcS50c3g=@FaqsProps"
+      },
+      "title": "FaqsProps[]"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy91aS9GaWx0ZXJlZEZhcS50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "faqs": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy91aS9GaWx0ZXJlZEZhcS50c3g=@FaqsProps[]",
+          "title": "Faqs"
+        }
+      },
+      "required": [
+        "faqs"
+      ],
+      "title": "deco-sites/omron-brasil/components/ui/FilteredFaq.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9mb290ZXIvTmV3c2xldHRlci50c3g=@Form": {
       "type": "object",
       "properties": {
@@ -8689,145 +8868,6 @@
       "required": [],
       "title": "deco-sites/omron-brasil/sections/Content/Explore.tsx@ExploreProps"
     },
-    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9GYXEudHN4@Question": {
-      "type": "object",
-      "properties": {
-        "question": {
-          "type": "string",
-          "title": "Question"
-        },
-        "answer": {
-          "type": "string",
-          "format": "html",
-          "title": "Answer"
-        }
-      },
-      "required": [
-        "question",
-        "answer"
-      ],
-      "title": "Question"
-    },
-    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9GYXEudHN4@Question[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9GYXEudHN4@Question"
-      },
-      "title": "Question[]"
-    },
-    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9GYXEudHN4@Contact": {
-      "type": "object",
-      "properties": {
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "html",
-          "title": "Description"
-        },
-        "link": {
-          "type": "object",
-          "properties": {
-            "text": {
-              "type": "string",
-              "title": "Text"
-            },
-            "href": {
-              "type": "string",
-              "title": "Href"
-            }
-          },
-          "required": [
-            "text",
-            "href"
-          ],
-          "title": "Link"
-        }
-      },
-      "required": [],
-      "title": "Contact"
-    },
-    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9GYXEudHN4@Props": {
-      "type": "object",
-      "properties": {
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Description"
-        },
-        "questions": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9GYXEudHN4@Question[]",
-          "title": "Questions"
-        },
-        "contact": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9GYXEudHN4@Contact",
-          "title": "Contact"
-        },
-        "layout": {
-          "type": "object",
-          "properties": {
-            "variation": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "Compact",
-                  "default": "Compact"
-                },
-                {
-                  "type": "string",
-                  "const": "Full",
-                  "default": "Full"
-                },
-                {
-                  "type": "string",
-                  "const": "Side to side",
-                  "default": "Side to side"
-                }
-              ],
-              "type": "string",
-              "title": "Variation"
-            },
-            "headerAlignment": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "center",
-                  "default": "center"
-                },
-                {
-                  "type": "string",
-                  "const": "left",
-                  "default": "left"
-                }
-              ],
-              "type": "string",
-              "title": "Header Alignment"
-            }
-          },
-          "required": [],
-          "title": "Layout"
-        }
-      },
-      "required": [],
-      "title": "deco-sites/omron-brasil/sections/Content/Faq.tsx@Props"
-    },
     "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9wcm9kdWN0L1Byb2R1Y3RDYXJkLnRzeA==@Layout": {
       "type": "object",
       "properties": {
@@ -9079,6 +9119,51 @@
         "products"
       ],
       "title": "deco-sites/omron-brasil/sections/Content/FilteredProductSection.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9GaWx0ZXJlZFNlY3Rpb25GYXEudHN4@SectionProps": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "label": {
+          "type": "string",
+          "title": "Label"
+        },
+        "buttonTitle": {
+          "type": "string",
+          "title": "Button Title"
+        }
+      },
+      "required": [
+        "title",
+        "label",
+        "buttonTitle"
+      ],
+      "title": "SectionProps"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9GaWx0ZXJlZFNlY3Rpb25GYXEudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "faqs": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy91aS9GaWx0ZXJlZEZhcS50c3g=@FaqsProps[]",
+          "title": "Faqs"
+        },
+        "section": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9GaWx0ZXJlZFNlY3Rpb25GYXEudHN4@SectionProps",
+          "title": "Section"
+        }
+      },
+      "required": [
+        "title",
+        "faqs"
+      ],
+      "title": "deco-sites/omron-brasil/sections/Content/FilteredSectionFaq.tsx@Props"
     },
     "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9Mb2dvcy50c3g=@Image": {
       "type": "object",
@@ -15090,6 +15175,27 @@
         }
       }
     },
+    "Li9pc2xhbmRzL0ZpbHRlcmVkU2VjdGlvbkZhcS50c3g=": {
+      "title": "./islands/FilteredSectionFaq.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy91aS9GaWx0ZXJlZEZhcS50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/FilteredSectionFaq.tsx"
+          ],
+          "default": "./islands/FilteredSectionFaq.tsx"
+        }
+      }
+    },
     "Li9pc2xhbmRzL0hlYWRlckJ1dHRvbi50c3g=": {
       "title": "./islands/HeaderButton.tsx",
       "type": "object",
@@ -15750,6 +15856,27 @@
             "deco-sites/omron-brasil/sections/Content/FilteredProductSection.tsx"
           ],
           "default": "deco-sites/omron-brasil/sections/Content/FilteredProductSection.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9GaWx0ZXJlZFNlY3Rpb25GYXEudHN4": {
+      "title": "deco-sites/omron-brasil/sections/Content/FilteredSectionFaq.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9GaWx0ZXJlZFNlY3Rpb25GYXEudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/omron-brasil/sections/Content/FilteredSectionFaq.tsx"
+          ],
+          "default": "deco-sites/omron-brasil/sections/Content/FilteredSectionFaq.tsx"
         }
       }
     },
@@ -17498,6 +17625,9 @@
           "$ref": "#/definitions/Li9pc2xhbmRzL0FkZFRvQ2FydEJ1dHRvbi50c3g="
         },
         {
+          "$ref": "#/definitions/Li9pc2xhbmRzL0ZpbHRlcmVkU2VjdGlvbkZhcS50c3g="
+        },
+        {
           "$ref": "#/definitions/Li9pc2xhbmRzL0hlYWRlckJ1dHRvbi50c3g="
         },
         {
@@ -17622,6 +17752,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9GaWx0ZXJlZFByb2R1Y3RTZWN0aW9uLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9GaWx0ZXJlZFNlY3Rpb25GYXEudHN4"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9Mb2dvcy50c3g="

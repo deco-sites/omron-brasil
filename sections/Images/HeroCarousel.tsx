@@ -159,12 +159,12 @@ function BannerItemSideToSideWithInput(
     backgroundColor,
   }: BannerItemProps,
 ) {
-  const bgColor = !backgroundColor || 
-    backgroundColor === "white" && "bg-white" || 
-    backgroundColor === "dark-blue" && 'bg-[#003153]' || 
-    backgroundColor === "light-gray" && 'bg-[#E5E5E5]';
+  const bgColor = !backgroundColor ||
+    backgroundColor === "white" && "bg-white" ||
+    backgroundColor === "dark-blue" && "bg-[#003153]" ||
+    backgroundColor === "light-gray" && "bg-[#E5E5E5]";
 
-  const textColor = backgroundColor === "white" ? 'text-black' : 'text-white';
+  const textColor = backgroundColor === "white" ? "text-black" : "text-white";
 
   return (
     <div
@@ -183,7 +183,11 @@ function BannerItemSideToSideWithInput(
 
         {buttonTitle && (
           <div class="flex items-center justify-between mt-8 py-2 px-4 bg-white border border-black rounded-xl w-full max-w-lg">
-            <input type="text" placeholder={buttonTitle} className="w-full max-w-lg focus:outline-none placeholder:text-black" />
+            <input
+              type="text"
+              placeholder={buttonTitle}
+              className="w-full max-w-lg focus:outline-none placeholder:text-black"
+            />
             <Icon
               id="MagnifyingGlass"
               class="text-black"
