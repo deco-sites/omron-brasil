@@ -2,7 +2,9 @@ import type { LoaderReturnType } from "$live/types.ts";
 import Slider from "$store/components/ui/Slider.tsx";
 import SliderJS from "$store/islands/SliderJS.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
-import WebinarsCard, { WebinarCardProps } from "$store/components/blog/WebinarsCard.tsx";
+import WebinarsCard, {
+  WebinarCardProps,
+} from "$store/components/blog/WebinarsCard.tsx";
 import { useId } from "preact/hooks";
 
 export interface WebinarHeaderProps {
@@ -11,7 +13,7 @@ export interface WebinarHeaderProps {
   hasButton?: {
     buttonTitle: string;
     buttonBackground?: "white" | "dark-blue" | "border-black";
-  }
+  };
 }
 
 export interface Props {
@@ -20,7 +22,7 @@ export interface Props {
   interval: number;
 }
 
-type TDots = Omit<Props, "header">
+type TDots = Omit<Props, "header">;
 
 function BlogHeader({ subtitle, title, hasButton }: WebinarHeaderProps) {
   return (
@@ -30,17 +32,22 @@ function BlogHeader({ subtitle, title, hasButton }: WebinarHeaderProps) {
         <h1 class="text-3xl lg:text-5xl">{title}</h1>
       </div>
       {hasButton && (
-        <button className={`
-          ${!hasButton.buttonBackground || 
-            hasButton.buttonBackground === "white" && 'bg-white text-black' || 
-            hasButton.buttonBackground === "dark-blue" && 'bg-[#003153] text-white' ||
-            hasButton.buttonBackground === "border-black" && 'border-black bg-transparent text-black hover:bg-[#003153] hover:text-white'
-          } btn rounded-xl w-full md:w-auto`}>
+        <button
+          className={`
+          ${
+            !hasButton.buttonBackground ||
+            hasButton.buttonBackground === "white" && "bg-white text-black" ||
+            hasButton.buttonBackground === "dark-blue" &&
+              "bg-[#003153] text-white" ||
+            hasButton.buttonBackground === "border-black" &&
+              "border-black bg-transparent text-black hover:bg-[#003153] hover:text-white"
+          } btn rounded-xl w-full md:w-auto`}
+        >
           {hasButton.buttonTitle}
         </button>
       )}
     </header>
-  )
+  );
 }
 
 function Dots({ webinars, interval = 0 }: TDots) {
@@ -135,5 +142,5 @@ export default function WebinarsShelf({ header, webinars, interval }: Props) {
       </div>
       <SliderJS rootId={id} interval={interval && interval * 1e3} infinite />
     </section>
-  )
+  );
 }

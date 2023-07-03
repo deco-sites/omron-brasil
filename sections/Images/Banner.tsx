@@ -56,14 +56,24 @@ export default function Banner(
         />
       </Picture>
 
-      <div class={`${alignment === "center" ? 'items-center md:items-start' : 'items-start'} card-body px-16 w-full md:max-w-2xl`}>
+      <div
+        class={`${
+          alignment === "center" ? "items-center md:items-start" : "items-start"
+        } card-body px-16 w-full md:max-w-2xl`}
+      >
         {subtitle && (
-          <span class="text-[#00F0FF] font-bold text-normal pt-3">{subtitle}</span>
+          <span class="text-[#00F0FF] font-bold text-normal pt-3">
+            {subtitle}
+          </span>
         )}
-        <h2 class={`${textColor} card-title font-normal text-2xl lg:text-4xl`}>{title}</h2>
+        <h2 class={`${textColor} card-title font-normal text-2xl lg:text-4xl`}>
+          {title}
+        </h2>
         <p class={`${textColor} text-normal pt-3`}>{description}</p>
         {duration && (
-          <span class={`${textColor} pt-4 uppercase text-sm font-bold`}>{duration}</span>
+          <span class={`${textColor} pt-4 uppercase text-sm font-bold`}>
+            {duration}
+          </span>
         )}
 
         {buttonTitle && (

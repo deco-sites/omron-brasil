@@ -15,12 +15,12 @@ export interface BannerItemProps {
     label?: string;
     startDate?: string;
     endDate?: string;
-  },
+  };
   price?: number;
   hasButton?: {
     buttonTitle: string;
     buttonBackground?: "white" | "dark-blue" | "border-black";
-  }
+  };
   backgroundColor?: "white" | "light-gray" | "dark-blue";
 }
 
@@ -72,7 +72,7 @@ function BannerItemFull(
     hasDate,
     price,
     hasButton,
-    backgroundColor
+    backgroundColor,
   }: BannerItemProps,
 ) {
   const bgColor = !backgroundColor ||
@@ -83,7 +83,9 @@ function BannerItemFull(
   const textColor = backgroundColor === "white" ? "text-black" : "text-white";
 
   return (
-    <div class={`${bgColor} ${textColor} md:card md:rounded-none w-full h-full image-full items-center`}>
+    <div
+      class={`${bgColor} ${textColor} md:card md:rounded-none w-full h-full image-full items-center`}
+    >
       {backgroundImage && (
         <Picture>
           <Image
@@ -99,13 +101,17 @@ function BannerItemFull(
 
       <div class={`card-body w-full items-start md:max-w-xl ${textColor}`}>
         <h2 class={`font-bold text-sm ${textColor}`}>{subtitle}</h2>
-        <h1 class={`card-title text-2xl lg:text-5xl pt-3 ${textColor}`}>{title}</h1>
+        <h1 class={`card-title text-2xl lg:text-5xl pt-3 ${textColor}`}>
+          {title}
+        </h1>
         <p class="text-normal pt-3 text-normal">{description}</p>
         {hasDate && (
           <div class="flex flex-col gap-1 font-bold text-xs py-3">
             <span>{hasDate.label}</span>
             <span>
-              {hasDate.startDate} {hasDate.startDate && hasDate.endDate && '-'} {hasDate.endDate}
+              {hasDate.startDate} {hasDate.startDate && hasDate.endDate && "-"}
+              {" "}
+              {hasDate.endDate}
             </span>
           </div>
         )}
@@ -113,12 +119,18 @@ function BannerItemFull(
         <div class="card-actions justify-start items-center grid grid-cols-2 py-8 gap-x-4 gap-y-8">
           {price && <p class="font-bold text-3xl">R$ {price}</p>}
           {hasButton && (
-            <button className={`
-              ${!hasButton.buttonBackground || 
-                hasButton.buttonBackground === "white" && 'bg-white text-black' || 
-                hasButton.buttonBackground === "dark-blue" && 'bg-[#003153] text-white' ||
-                hasButton.buttonBackground === "border-black" && 'border-black bg-transparent text-black hover:bg-[#003153]'
-              } btn rounded-xl`}>
+            <button
+              className={`
+              ${
+                !hasButton.buttonBackground ||
+                hasButton.buttonBackground === "white" &&
+                  "bg-white text-black" ||
+                hasButton.buttonBackground === "dark-blue" &&
+                  "bg-[#003153] text-white" ||
+                hasButton.buttonBackground === "border-black" &&
+                  "border-black bg-transparent text-black hover:bg-[#003153]"
+              } btn rounded-xl`}
+            >
               {hasButton.buttonTitle}
             </button>
           )}
@@ -156,14 +168,20 @@ function BannerItemSideToSide(
         <div class="card-actions justify-start items-center grid grid-cols-2 py-8 gap-x-4 gap-y-8">
           {price && <p class="font-bold text-3xl text-black">R$ {price}</p>}
           {hasButton && (
-          <button className={`
-            ${!hasButton.buttonBackground || 
-              hasButton.buttonBackground === "white" && 'bg-white text-black' || 
-              hasButton.buttonBackground === "dark-blue" && 'bg-[#003153] text-white' ||
-              hasButton.buttonBackground === "border-black" && 'border-black bg-transparent text-black hover:bg-[#003153] hover:text-white'
-            } btn rounded-xl`}>
-            {hasButton.buttonTitle}
-          </button>
+            <button
+              className={`
+            ${
+                !hasButton.buttonBackground ||
+                hasButton.buttonBackground === "white" &&
+                  "bg-white text-black" ||
+                hasButton.buttonBackground === "dark-blue" &&
+                  "bg-[#003153] text-white" ||
+                hasButton.buttonBackground === "border-black" &&
+                  "border-black bg-transparent text-black hover:bg-[#003153] hover:text-white"
+              } btn rounded-xl`}
+            >
+              {hasButton.buttonTitle}
+            </button>
           )}
         </div>
       </div>
@@ -276,13 +294,13 @@ export default function HeroCarousel(
 
         {images!.length > 1 && (
           <>
-          <Dots images={images} interval={interval} />
-  
-          <SliderJS
-            rootId={"slide-principal"}
-            interval={interval && interval * 1e3}
-            infinite
-          />
+            <Dots images={images} interval={interval} />
+
+            <SliderJS
+              rootId={"slide-principal"}
+              interval={interval && interval * 1e3}
+              infinite
+            />
           </>
         )}
       </div>
