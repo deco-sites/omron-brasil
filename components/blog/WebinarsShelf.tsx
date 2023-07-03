@@ -86,7 +86,7 @@ export default function WebinarsShelf({ header, webinars, interval }: Props) {
   const id = useId();
 
   return (
-    <section class="flex flex-col gap-16 w-full h-full bg-[#E5E5E5] py-32">
+    <section class="flex flex-col gap-16 w-full h-full bg-[#E5E5E5] py-14 lg:py-32">
       <BlogHeader {...header} />
 
       <div

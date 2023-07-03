@@ -1,15 +1,6 @@
 import Header from "$store/components/ui/SectionHeader.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
-import Image from "deco-sites/std/components/Image.tsx";
-import { Picture } from "deco-sites/std/components/Picture.tsx";
-import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
-
-export interface PostProps {
-  image: LiveImage;
-  imageAlt: string;
-  title: string;
-  description: string;
-}
+import ArticleCard, { type ArticleCardProps } from "$store/components/blog/ArticleCard.tsx";
 
 export interface Props {
   title?: string;
@@ -17,51 +8,15 @@ export interface Props {
   layout?: {
     headerAlignment?: "center" | "left" | "responsive";
   };
-  posts?: PostProps[];
+  posts?: ArticleCardProps[];
+  buttonTitle?: string;
 }
 
 const DEFAULT_PROPS = {
   title: "",
   description: "",
+  buttonTitle: ""
 };
-
-function Post({ title, description, image, imageAlt }: PostProps) {
-  return (
-    <div className="card card-compact w-full h-full rounded-none bg-[#FFFFFF]">
-      <Picture>
-        {image && (
-          <Image
-            media="(min-width: 220px, max-width: 767px)"
-            class="w-full h-full object-contain"
-            src={image}
-            alt={imageAlt}
-            width={402}
-            height={240}
-            loading="lazy"
-          />
-        )}
-      </Picture>
-      <div className="flex flex-col gap-4 pt-7">
-        <h2 className="card-title">{title}</h2>
-        <p>{description}</p>
-
-        <div className="card-actions justify-start pt-6">
-          <span class="flex items-center justify-center text-sm font-bold gap-2 cursor-pointer hover:underline">
-            Read More
-            <Icon
-              id="ChevronRight"
-              class="text-black"
-              width={18}
-              height={18}
-              strokeWidth={0.01}
-              fill="currentColor"
-            />
-          </span>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 export default function Posts(props: Props) {
   const {
@@ -69,6 +24,7 @@ export default function Posts(props: Props) {
     description,
     layout,
     posts = [],
+    buttonTitle
   } = { ...DEFAULT_PROPS, ...props };
 
   return (
@@ -82,21 +38,23 @@ export default function Posts(props: Props) {
         />
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 w-full h-full pt-16">
-          {posts?.map((post) => <Post {...post} />)}
+          {posts?.map((post) => <ArticleCard {...post} />)}
         </div>
 
-        <div class="flex items-center justify-center w-full">
-          <button class="flex items-center justify-center gap-3 max-w-md btn btn-outline border-black text-black hover:text-white">
-            See all Health and Lifestyle
-            <Icon
-              id="ChevronRight"
-              width={18}
-              height={18}
-              strokeWidth={0.01}
-              fill="currentColor"
-            />
-          </button>
-        </div>
+        {buttonTitle && (
+          <div class="flex items-center justify-center w-full">
+            <button class="flex items-center justify-center gap-3 max-w-md btn btn-outline border-black text-black hover:text-white">
+              {buttonTitle}
+              <Icon
+                id="ChevronRight"
+                width={18}
+                height={18}
+                strokeWidth={0.01}
+                fill="currentColor"
+              />
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
