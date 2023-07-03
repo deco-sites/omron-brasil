@@ -89,6 +89,7 @@
               "$live/sections/PageInclude.tsx",
               "$live/sections/Slot.tsx",
               "$live/sections/UseSlot.tsx",
+              "deco-sites/omron-brasil/sections/Blog/PreviousWebinar.tsx",
               "deco-sites/omron-brasil/sections/Category/CategoryBanner.tsx",
               "deco-sites/omron-brasil/sections/Category/CategoryList.tsx",
               "deco-sites/omron-brasil/sections/Content/Benefits.tsx",
@@ -7930,6 +7931,136 @@
       ],
       "title": "deco-cx/live/sections/UseSlot.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9ibG9nL1dlYmluYXJzU2hlbGYudHN4@WebinarHeaderProps": {
+      "type": "object",
+      "properties": {
+        "subtitle": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Subtitle"
+        },
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "hasButton": {
+          "type": "object",
+          "properties": {
+            "buttonTitle": {
+              "type": "string",
+              "title": "Button Title"
+            },
+            "buttonBackground": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "white",
+                  "default": "white"
+                },
+                {
+                  "type": "string",
+                  "const": "dark-blue",
+                  "default": "dark-blue"
+                },
+                {
+                  "type": "string",
+                  "const": "border-black",
+                  "default": "border-black"
+                }
+              ],
+              "type": "string",
+              "title": "Button Background"
+            }
+          },
+          "required": [
+            "buttonTitle"
+          ],
+          "title": "Has Button"
+        }
+      },
+      "required": [
+        "title"
+      ],
+      "title": "WebinarHeaderProps"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9ibG9nL1dlYmluYXJzQ2FyZC50c3g=@WebinarCardProps": {
+      "type": "object",
+      "properties": {
+        "webinarType": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "cardiovascular",
+              "default": "cardiovascular"
+            },
+            {
+              "type": "string",
+              "const": "respiratory",
+              "default": "respiratory"
+            }
+          ],
+          "type": "string",
+          "title": "Webinar Type"
+        },
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "speakers": {
+          "type": "string",
+          "title": "Speakers"
+        }
+      },
+      "required": [
+        "webinarType",
+        "title",
+        "speakers"
+      ],
+      "title": "WebinarCardProps"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9ibG9nL1dlYmluYXJzQ2FyZC50c3g=@WebinarCardProps[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9ibG9nL1dlYmluYXJzQ2FyZC50c3g=@WebinarCardProps"
+      },
+      "title": "WebinarCardProps[]"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9ibG9nL1dlYmluYXJzQ2FyZC50c3g=@WebinarCardProps[]|null": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9ibG9nL1dlYmluYXJzQ2FyZC50c3g=@WebinarCardProps[]"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "WebinarCardProps[]|null"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9ibG9nL1dlYmluYXJzU2hlbGYudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "header": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9ibG9nL1dlYmluYXJzU2hlbGYudHN4@WebinarHeaderProps",
+          "title": "Header"
+        },
+        "webinars": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9ibG9nL1dlYmluYXJzQ2FyZC50c3g=@WebinarCardProps[]|null",
+          "title": "Webinars"
+        },
+        "interval": {
+          "type": "number",
+          "title": "Interval"
+        }
+      },
+      "required": [
+        "header",
+        "webinars",
+        "interval"
+      ],
+      "title": "deco-sites/omron-brasil/components/blog/WebinarsShelf.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy91aS9DYXRlZ29yeUJhbm5lci50c3g=@Banner": {
       "type": "object",
       "properties": {
@@ -11122,6 +11253,22 @@
           "type": "string",
           "title": "Background Color"
         },
+        "alignment": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "center",
+              "default": "center"
+            },
+            {
+              "type": "string",
+              "const": "start",
+              "default": "start"
+            }
+          ],
+          "type": "string",
+          "title": "Alignment"
+        },
         "bgImage": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
           "title": "Bg Image"
@@ -11130,6 +11277,13 @@
           "type": "string",
           "title": "Bg Image Alt"
         },
+        "subtitle": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Subtitle"
+        },
         "title": {
           "type": "string",
           "title": "Title"
@@ -11137,6 +11291,13 @@
         "description": {
           "type": "string",
           "title": "Description"
+        },
+        "duration": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Duration"
         },
         "logos": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvSW1hZ2VzL0Jhbm5lci50c3g=@Logo[]",
@@ -11484,6 +11645,34 @@
           "type": "string",
           "title": "Description"
         },
+        "hasDate": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Label"
+            },
+            "startDate": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Start Date"
+            },
+            "endDate": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "End Date"
+            }
+          },
+          "required": [],
+          "title": "Has Date"
+        },
         "price": {
           "type": [
             "number",
@@ -11491,9 +11680,39 @@
           ],
           "title": "Price"
         },
-        "buttonTitle": {
-          "type": "string",
-          "title": "Button Title"
+        "hasButton": {
+          "type": "object",
+          "properties": {
+            "buttonTitle": {
+              "type": "string",
+              "title": "Button Title"
+            },
+            "buttonBackground": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "white",
+                  "default": "white"
+                },
+                {
+                  "type": "string",
+                  "const": "dark-blue",
+                  "default": "dark-blue"
+                },
+                {
+                  "type": "string",
+                  "const": "border-black",
+                  "default": "border-black"
+                }
+              ],
+              "type": "string",
+              "title": "Button Background"
+            }
+          },
+          "required": [
+            "buttonTitle"
+          ],
+          "title": "Has Button"
         },
         "backgroundColor": {
           "anyOf": [
@@ -11522,8 +11741,7 @@
         "imageAlt",
         "subtitle",
         "title",
-        "description",
-        "buttonTitle"
+        "description"
       ],
       "title": "BannerItemProps"
     },
@@ -15721,6 +15939,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQmxvZy9QcmV2aW91c1dlYmluYXIudHN4": {
+      "title": "deco-sites/omron-brasil/sections/Blog/PreviousWebinar.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9ibG9nL1dlYmluYXJzU2hlbGYudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/omron-brasil/sections/Blog/PreviousWebinar.tsx"
+          ],
+          "default": "deco-sites/omron-brasil/sections/Blog/PreviousWebinar.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ2F0ZWdvcnkvQ2F0ZWdvcnlCYW5uZXIudHN4": {
       "title": "deco-sites/omron-brasil/sections/Category/CategoryBanner.tsx",
       "type": "object",
@@ -17758,6 +17997,9 @@
         },
         {
           "$ref": "#/definitions/JGxpdmUvc2VjdGlvbnMvVXNlU2xvdC50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQmxvZy9QcmV2aW91c1dlYmluYXIudHN4"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ2F0ZWdvcnkvQ2F0ZWdvcnlCYW5uZXIudHN4"
