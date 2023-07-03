@@ -9,7 +9,10 @@ export interface PopularProductCardProps {
   description: string;
 }
 
-export default function PopularProductCard({ backgroundImage, bgImageAlt, subtitle, title, description }: PopularProductCardProps) {
+export default function PopularProductCard(
+  { backgroundImage, bgImageAlt, subtitle, title, description }:
+    PopularProductCardProps,
+) {
   return (
     <div className="flex flex-col max-w-xs lg:w-[90%] 2xl:w-full h-full bg-[#F2F2F2] text-black shadow-xl cursor-pointer hover:scale-105 duration-150 transition">
       {backgroundImage && (
@@ -30,5 +33,5 @@ export default function PopularProductCard({ backgroundImage, bgImageAlt, subtit
         <p>{description}</p>
       </div>
     </div>
-  )
+  );
 }

@@ -89,6 +89,7 @@
               "$live/sections/PageInclude.tsx",
               "$live/sections/Slot.tsx",
               "$live/sections/UseSlot.tsx",
+              "deco-sites/omron-brasil/sections/Blog/AcademyCoursesSection.tsx",
               "deco-sites/omron-brasil/sections/Blog/PopularProductsSection.tsx",
               "deco-sites/omron-brasil/sections/Blog/PreviousWebinar.tsx",
               "deco-sites/omron-brasil/sections/Category/CategoryBanner.tsx",
@@ -7931,6 +7932,85 @@
         "sections"
       ],
       "title": "deco-cx/live/sections/UseSlot.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9ibG9nL0FjYWRlbXlDb3Vyc2VDYXJkLnRzeA==@AcademyCourseCardProps": {
+      "type": "object",
+      "properties": {
+        "backgroundImage": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Background Image"
+        },
+        "bgImageAlt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Bg Image Alt"
+        },
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "description": {
+          "type": "string",
+          "title": "Description"
+        },
+        "duration": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Duration"
+        }
+      },
+      "required": [
+        "title",
+        "description"
+      ],
+      "title": "AcademyCourseCardProps"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9ibG9nL0FjYWRlbXlDb3Vyc2VDYXJkLnRzeA==@AcademyCourseCardProps[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9ibG9nL0FjYWRlbXlDb3Vyc2VDYXJkLnRzeA==@AcademyCourseCardProps"
+      },
+      "title": "AcademyCourseCardProps[]"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9ibG9nL0FjYWRlbXlDb3Vyc2VDYXJkLnRzeA==@AcademyCourseCardProps[]|null": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9ibG9nL0FjYWRlbXlDb3Vyc2VDYXJkLnRzeA==@AcademyCourseCardProps[]"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "AcademyCourseCardProps[]|null"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQmxvZy9BY2FkZW15Q291cnNlc1NlY3Rpb24udHN4@AcademyCoursesProps": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Description"
+        },
+        "courses": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9ibG9nL0FjYWRlbXlDb3Vyc2VDYXJkLnRzeA==@AcademyCourseCardProps[]|null",
+          "title": "Courses"
+        }
+      },
+      "required": [
+        "title",
+        "courses"
+      ],
+      "title": "deco-sites/omron-brasil/sections/Blog/AcademyCoursesSection.tsx@AcademyCoursesProps"
     },
     "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9wcm9kdWN0L1BvcHVsYXJQcm9kdWN0Q2FyZC50c3g=@PopularProductCardProps": {
       "type": "object",
@@ -16030,6 +16110,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQmxvZy9BY2FkZW15Q291cnNlc1NlY3Rpb24udHN4": {
+      "title": "deco-sites/omron-brasil/sections/Blog/AcademyCoursesSection.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQmxvZy9BY2FkZW15Q291cnNlc1NlY3Rpb24udHN4@AcademyCoursesProps"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/omron-brasil/sections/Blog/AcademyCoursesSection.tsx"
+          ],
+          "default": "deco-sites/omron-brasil/sections/Blog/AcademyCoursesSection.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQmxvZy9Qb3B1bGFyUHJvZHVjdHNTZWN0aW9uLnRzeA==": {
       "title": "deco-sites/omron-brasil/sections/Blog/PopularProductsSection.tsx",
       "type": "object",
@@ -18109,6 +18210,9 @@
         },
         {
           "$ref": "#/definitions/JGxpdmUvc2VjdGlvbnMvVXNlU2xvdC50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQmxvZy9BY2FkZW15Q291cnNlc1NlY3Rpb24udHN4"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQmxvZy9Qb3B1bGFyUHJvZHVjdHNTZWN0aW9uLnRzeA=="
