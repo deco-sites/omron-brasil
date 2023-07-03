@@ -61,5 +61,5 @@ export default function FilteredSectionFaq({ title, faqs, section }: Props) {
         </div>
       </div>
     </section>
-  )
+  );
 }

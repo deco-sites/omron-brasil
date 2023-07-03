@@ -8815,6 +8815,13 @@
         "infos": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9Db25jZXJuU2VjdGlvbi50c3g=@InfoProps[]",
           "title": "Infos"
+        },
+        "buttonTitle": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Button Title"
         }
       },
       "required": [
@@ -11099,6 +11106,22 @@
     "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvSW1hZ2VzL0Jhbm5lci50c3g=@BannerProps": {
       "type": "object",
       "properties": {
+        "backgroundColor": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "white",
+              "default": "white"
+            },
+            {
+              "type": "string",
+              "const": "dark-blue",
+              "default": "dark-blue"
+            }
+          ],
+          "type": "string",
+          "title": "Background Color"
+        },
         "bgImage": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
           "title": "Bg Image"
@@ -11118,6 +11141,13 @@
         "logos": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvSW1hZ2VzL0Jhbm5lci50c3g=@Logo[]",
           "title": "Logos"
+        },
+        "buttonTitle": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Button Title"
         }
       },
       "required": [

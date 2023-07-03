@@ -18,6 +18,7 @@ export interface IconProps {
 export interface Props {
   title: string;
   infos: InfoProps[];
+  buttonTitle?: string;
 }
 
 function Icon({ icon }: IconProps) {
@@ -179,7 +180,7 @@ function ConcernIcon({ iconId, label }: InfoProps) {
   );
 }
 
-export default function ConcernSection({ title, infos }: Props) {
+export default function ConcernSection({ title, infos, buttonTitle }: Props) {
   return (
     <section class="flex justify-center items-center lg:items-start w-full h-full py-14 lg:py-0 md:min-h-[829px] bg-white">
       <div class="flex flex-col gap-16 items-center text-center max-w-5xl w-full h-full lg:py-16">
@@ -198,7 +199,17 @@ export default function ConcernSection({ title, infos }: Props) {
           </div>
 
           <button class="flex items-center justify-center gap-2 btn bg-[#005EB8] hover:bg-[#005EB8] w-full max-w-[153px] rounded-xl text-white">
-            <span class="text-xs font-bold">Download</span>
+            <span class="text-xs font-bold">{buttonTitle ?? 'Contact us'}</span>
+            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_9069_20476)">
+                <path d="M19.25 6.09985H4.75C4.34 6.09985 4 6.43985 4 6.84985V17.3499C4 17.7599 4.34 18.0999 4.75 18.0999H19.25C19.66 18.0999 20 17.7599 20 17.3499V6.84985C20 6.43985 19.66 6.09985 19.25 6.09985ZM12 13.0399L6.56 7.59985H17.44L12 13.0399ZM5.5 16.5999V8.65985L11.47 14.6299C11.62 14.7799 11.81 14.8499 12 14.8499C12.19 14.8499 12.38 14.7799 12.53 14.6299L18.5 8.65985V16.5999H5.5Z" fill="white"/>
+              </g>
+              <defs>
+                <clipPath id="clip0_9069_20476">
+                  <rect width="24" height="24" fill="white" transform="translate(0 0.0998535)"/>
+                </clipPath>
+              </defs>
+            </svg>
           </button>
         </div>
       </div>

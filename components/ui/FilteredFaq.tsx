@@ -18,7 +18,7 @@ export default function FilteredFaq({ faqs }: Props) {
   );
 
   const handleSelectChange = (
-    event: JSX.TargetedEvent<HTMLSelectElement, Event>
+    event: JSX.TargetedEvent<HTMLSelectElement, Event>,
   ) => {
     const selectedIndex = event.currentTarget.selectedIndex;
     const selectedOption = faqs[selectedIndex];
@@ -29,7 +29,10 @@ export default function FilteredFaq({ faqs }: Props) {
     <div class="flex flex-col w-full">
       <>
         <div class="flex lg:hidden justify-center w-full pb-6">
-          <select onChange={handleSelectChange} className="select select-bordered bg-transparent border-black w-full md:max-w-md rounded-2xl">
+          <select
+            onChange={handleSelectChange}
+            className="select select-bordered bg-transparent border-black w-full md:max-w-md rounded-2xl"
+          >
             {faqs.map((item, index) => (
               <option key={index} value={index}>
                 {item.label}
@@ -43,7 +46,9 @@ export default function FilteredFaq({ faqs }: Props) {
             <Button
               onClick={() => setSelectedFaq(item)}
               class={`btn-outline ${
-                selectedFaq === item ? "text-[#005EB8] border-[#005EB8]" : "text-black border-black"
+                selectedFaq === item
+                  ? "text-[#005EB8] border-[#005EB8]"
+                  : "text-black border-black"
               } min-h-0 h-9 mx-[10px] mb-3 p-2 rounded-lg bg-transparent normal-case hover:bg-transparent hover:border-[#005EB8] hover:text-[#005EB8]`}
             >
               {item.label}
@@ -54,5 +59,5 @@ export default function FilteredFaq({ faqs }: Props) {
 
       {selectedFaq?.faq && <Faq {...selectedFaq.faq} />}
     </div>
-  )
+  );
 }

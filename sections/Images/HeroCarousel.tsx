@@ -86,7 +86,9 @@ function BannerItemFull(
         <p class="text-white text-normal pt-3 text-normal">{description}</p>
 
         <div class="card-actions justify-start items-center grid grid-cols-2 py-8 gap-x-4 gap-y-8">
-          <p class="font-bold text-3xl text-white">R$ {price}</p>
+          {price && (
+            <p class="font-bold text-3xl text-white">R$ {price}</p>
+          )}
           <button className="btn bg-white text-black rounded-xl">
             {buttonTitle}
           </button>
