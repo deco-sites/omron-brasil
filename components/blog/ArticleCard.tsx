@@ -11,7 +11,9 @@ export interface ArticleCardProps {
   duration?: string;
 }
 
-export default function ArticleCard({ title, description, image, imageAlt, duration }: ArticleCardProps) {
+export default function ArticleCard(
+  { title, description, image, imageAlt, duration }: ArticleCardProps,
+) {
   return (
     <div className="card card-compact w-full h-full rounded-none bg-[#FFFFFF]">
       <Picture>
@@ -30,7 +32,9 @@ export default function ArticleCard({ title, description, image, imageAlt, durat
       <div className="flex flex-col gap-4 pt-7">
         <h2 className="card-title">{title}</h2>
         <p>{description}</p>
-        {duration && <span class="font-bold text-sm uppercase">Read time: {duration}</span>}
+        {duration && (
+          <span class="font-bold text-sm uppercase">Read time: {duration}</span>
+        )}
 
         <div className="card-actions justify-start pt-6">
           <span class="flex items-center justify-center text-sm font-bold gap-2 cursor-pointer hover:underline">
@@ -47,5 +51,5 @@ export default function ArticleCard({ title, description, image, imageAlt, durat
         </div>
       </div>
     </div>
-  )
+  );
 }

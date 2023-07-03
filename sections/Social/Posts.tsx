@@ -1,6 +1,8 @@
 import Header from "$store/components/ui/SectionHeader.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
-import ArticleCard, { type ArticleCardProps } from "$store/components/blog/ArticleCard.tsx";
+import ArticleCard, {
+  type ArticleCardProps,
+} from "$store/components/blog/ArticleCard.tsx";
 
 export interface Props {
   title?: string;
@@ -15,7 +17,7 @@ export interface Props {
 const DEFAULT_PROPS = {
   title: "",
   description: "",
-  buttonTitle: ""
+  buttonTitle: "",
 };
 
 export default function Posts(props: Props) {
@@ -24,7 +26,7 @@ export default function Posts(props: Props) {
     description,
     layout,
     posts = [],
-    buttonTitle
+    buttonTitle,
   } = { ...DEFAULT_PROPS, ...props };
 
   return (
