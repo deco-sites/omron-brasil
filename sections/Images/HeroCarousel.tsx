@@ -97,6 +97,7 @@ function BannerItemFull(
             width={1220}
             height={600}
             class="w-full rounded-r-[32px] rounded-tr-[52px] -translate-x-6 md:translate-x-0 md:rounded-none pt-10 md:pt-0"
+            loading="lazy"
           />
         </Picture>
       )}
@@ -197,6 +198,7 @@ function BannerItemSideToSide(
               alt={imageAlt}
               width={940}
               height={600}
+              loading="lazy"
               class="w-full rounded-tr-[52px] rounded-br-[32px] md:rounded-tl-[32px] md:rounded-bl-[32px] md:rounded-tr-[0%] md:rounded-br-[0%] -translate-x-6 md:-translate-x-0 pt-10 md:pt-0"
             />
           </Picture>
@@ -268,6 +270,7 @@ function BannerItemSideToSideWithInput(
               alt={imageAlt}
               width={860}
               height={800}
+              loading="lazy"
               class="w-full"
             />
           </Picture>
