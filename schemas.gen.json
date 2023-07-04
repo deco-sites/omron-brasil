@@ -7508,7 +7508,8 @@
         }
       },
       "required": [
-        "title"
+        "title",
+        "backgroundImage"
       ],
       "title": "ImageCardProps"
     },
@@ -7525,6 +7526,13 @@
         "images": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9ibG9nL0ltYWdlU2xpZGVyLnRzeA==@ImageCardProps[]",
           "title": "Images"
+        },
+        "interval": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Interval"
         }
       },
       "required": [

@@ -98,7 +98,9 @@ function Icon({ icon }: IconProps) {
   );
 }
 
-export default function ArticlesTab({ articles, titleAlignment }: ArticlesTabProps) {
+export default function ArticlesTab(
+  { articles, titleAlignment }: ArticlesTabProps,
+) {
   const [selectedArticle, setSelectedArticle] = useState(
     articles?.length > 0 ? articles[0] : null,
   );
@@ -114,7 +116,15 @@ export default function ArticlesTab({ articles, titleAlignment }: ArticlesTabPro
   return (
     <div class="flex flex-col w-full h-full bg-white">
       <div class="flex flex-col w-full h-full px-6 lg:px-12 gap-12 py-14 lg:py-28">
-        <h1 class={`${!titleAlignment || titleAlignment === "center" ? "lg:text-center" : "lg:text-start"} text-center text-3xl lg:pb-9`}>{selectedArticle?.title}</h1>
+        <h1
+          class={`${
+            !titleAlignment || titleAlignment === "center"
+              ? "lg:text-center"
+              : "lg:text-start"
+          } text-center text-3xl lg:pb-9`}
+        >
+          {selectedArticle?.title}
+        </h1>
         <>
           <div class="flex lg:hidden justify-center items-center w-full pb-4">
             <div class="flex flex-col gap-9 items-center justify-center w-full">
