@@ -2,12 +2,14 @@ import { useId } from "preact/hooks";
 import Slider from "$store/components/ui/Slider.tsx";
 import SliderJS from "$store/islands/SliderJS.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
-import ArticleCard, { ArticleCardProps } from "$store/components/blog/ArticleCard.tsx";
+import ArticleCard, {
+  ArticleCardProps,
+} from "$store/components/blog/ArticleCard.tsx";
 
 export interface HeaderProps {
   hasSubtitle?: {
     label?: string;
-    color?: "white" | "highlight-blue"
+    color?: "white" | "highlight-blue";
   };
   title: string;
   alignment?: "center" | "start";
@@ -22,22 +24,25 @@ export interface Props {
 type TDots = Omit<Props, "header">;
 
 function Header({ hasSubtitle, title, alignment }: HeaderProps) {
-  const headerAlignment = !alignment || alignment === "center" ? 'text-center items-center' : 'text-start items-start';
-  
+  const headerAlignment = !alignment || alignment === "center"
+    ? "text-center items-center"
+    : "text-start items-start";
+
   return (
     <header class={`${headerAlignment} flex flex-col gap-2`}>
-      {hasSubtitle && 
-        <span class={`font-bold text-lg 
-        ${hasSubtitle.color === "white" ? 'text-white' : 'text-[#00F0FF]'}`
-      }
-        >
-          {hasSubtitle.label}
-        </span>
-      }
+      {hasSubtitle &&
+        (
+          <span
+            class={`font-bold text-lg 
+        ${hasSubtitle.color === "white" ? "text-white" : "text-[#00F0FF]"}`}
+          >
+            {hasSubtitle.label}
+          </span>
+        )}
 
       <h1 class="text-white text-4xl leading-[72px] tracking-tight">{title}</h1>
     </header>
-  )
+  );
 }
 
 function Dots({ articles, interval = 0 }: TDots) {
@@ -72,7 +77,9 @@ function Dots({ articles, interval = 0 }: TDots) {
   );
 }
 
-export default function MostPopularSection({ header, articles, interval = 0 }: Props) {
+export default function MostPopularSection(
+  { header, articles, interval = 0 }: Props,
+) {
   const id = `most-popular-slider-${useId()}`;
 
   return (
@@ -80,7 +87,10 @@ export default function MostPopularSection({ header, articles, interval = 0 }: P
       <div class="flex flex-col gap-16 py-16 md:py-32">
         <Header {...header} />
 
-        <div id={id} class="grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_64px]">
+        <div
+          id={id}
+          class="grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_64px]"
+        >
           <Slider class="carousel carousel-center w-full col-span-full row-span-full scrollbar-none gap-6">
             {articles?.map((article, index) => (
               <Slider.Item
@@ -94,45 +104,49 @@ export default function MostPopularSection({ header, articles, interval = 0 }: P
         </div>
 
         <>
-        <div class="flex items-center justify-center gap-8 w-full">
-          <div class="relative">
-            <Slider.PrevButton
-              style={{
-                minHeight: "48px",
-              }}
-              class="rounded-xl w-12 h-12 btn btn-square absolute opacity-100 bg-opacity-100 -left-8 bg-transparent border-white hover:bg-neutral-100"
-            >
-              <Icon
-                size={24}
-                id="ChevronLeft"
-                strokeWidth={3}
-                class="text-white hover:text-black"
-              />
-            </Slider.PrevButton>
+          <div class="flex items-center justify-center gap-8 w-full">
+            <div class="relative">
+              <Slider.PrevButton
+                style={{
+                  minHeight: "48px",
+                }}
+                class="rounded-xl w-12 h-12 btn btn-square absolute opacity-100 bg-opacity-100 -left-8 bg-transparent border-white hover:bg-neutral-100"
+              >
+                <Icon
+                  size={24}
+                  id="ChevronLeft"
+                  strokeWidth={3}
+                  class="text-white hover:text-black"
+                />
+              </Slider.PrevButton>
+            </div>
+
+            <Dots articles={articles} interval={interval} />
+
+            <div class="relative rounded-2xl">
+              <Slider.NextButton
+                style={{
+                  minHeight: "48px",
+                }}
+                class="rounded-xl w-12 h-12 min-h-fit btn btn-square absolute opacity-100 bg-opacity-100 -right-8 bg-transparent border-white hover:bg-neutral-100"
+              >
+                <Icon
+                  size={24}
+                  id="ChevronRight"
+                  strokeWidth={6}
+                  class="text-white hover:text-black"
+                />
+              </Slider.NextButton>
+            </div>
           </div>
 
-          <Dots articles={articles} interval={interval} />
-
-          <div class="relative rounded-2xl">
-            <Slider.NextButton
-              style={{
-                minHeight: "48px",
-              }}
-              class="rounded-xl w-12 h-12 min-h-fit btn btn-square absolute opacity-100 bg-opacity-100 -right-8 bg-transparent border-white hover:bg-neutral-100"
-            >
-              <Icon
-                size={24}
-                id="ChevronRight"
-                strokeWidth={6}
-                class="text-white hover:text-black"
-              />
-            </Slider.NextButton>
-          </div>
-        </div>
-
-        <SliderJS rootId={id} interval={interval && interval * 1e3} infinite />
+          <SliderJS
+            rootId={id}
+            interval={interval && interval * 1e3}
+            infinite
+          />
         </>
       </div>
     </section>
-  )
+  );
 }

@@ -14,10 +14,13 @@ export interface ArticleCardProps {
 }
 
 export default function ArticleCard(
-  { title, description, image, imageAlt, duration, background, isCarousel }: ArticleCardProps,
+  { title, description, image, imageAlt, duration, background, isCarousel }:
+    ArticleCardProps,
 ) {
-  const bgColor = !background || background === "white" ? 'bg-[#FFFFFF]' : 'bg-[#003153] text-white';
-  const padding = isCarousel && 'px-6 md:px-0';
+  const bgColor = !background || background === "white"
+    ? "bg-[#FFFFFF]"
+    : "bg-[#003153] text-white";
+  const padding = isCarousel && "px-6 md:px-0";
 
   return (
     <div className={`card card-compact w-full h-full rounded-none ${bgColor}`}>
@@ -46,7 +49,11 @@ export default function ArticleCard(
             Read More
             <Icon
               id="ChevronRight"
-              class={`${!background || background === "white" ? 'text-black' : 'text-white'}`}
+              class={`${
+                !background || background === "white"
+                  ? "text-black"
+                  : "text-white"
+              }`}
               width={18}
               height={18}
               strokeWidth={0.01}

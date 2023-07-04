@@ -80,7 +80,9 @@ function BannerItemFull(
     backgroundColor === "dark-blue" && "bg-[#003153]" ||
     backgroundColor === "light-gray" && "bg-[#E5E5E5]";
 
-  const textColor = backgroundColor === "white" ? "text-black md:text-white" : "text-white";
+  const textColor = backgroundColor === "white"
+    ? "text-black md:text-white"
+    : "text-white";
 
   return (
     <div
