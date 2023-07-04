@@ -10,10 +10,13 @@ export interface SectionRoundedProps {
   imageAlt?: string;
 }
 
-export default function SectionRounded(
-  { title, description, buttonTitle, backgroundImage, imageAlt }:
-    SectionRoundedProps,
-) {
+export default function SectionRounded({ 
+  title,
+  description,
+  buttonTitle,
+  backgroundImage,
+  imageAlt 
+}: SectionRoundedProps) {
   return (
     <div class="flex items-center justify-center w-full h-full my-4 mt-8 md:mt-20 px-6 md:px-0">
       <div class="grid md:grid-cols-2 gap-x-2 gap-y-8 w-full h-full min-h-[410px] max-w-3xl xl:max-w-6xl bg-[#E5E5E5] md:rounded-[52px]">

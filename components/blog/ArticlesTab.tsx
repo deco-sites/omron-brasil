@@ -21,6 +21,7 @@ export interface ArticlesProps {
 
 export interface ArticlesTabProps {
   articles: ArticlesProps[];
+  titleAlignment?: "center" | "start";
 }
 
 function Icon({ icon }: IconProps) {
@@ -97,7 +98,7 @@ function Icon({ icon }: IconProps) {
   );
 }
 
-export default function ArticlesTab({ articles }: ArticlesTabProps) {
+export default function ArticlesTab({ articles, titleAlignment }: ArticlesTabProps) {
   const [selectedArticle, setSelectedArticle] = useState(
     articles?.length > 0 ? articles[0] : null,
   );
@@ -113,7 +114,7 @@ export default function ArticlesTab({ articles }: ArticlesTabProps) {
   return (
     <div class="flex flex-col w-full h-full bg-white">
       <div class="flex flex-col w-full h-full px-6 lg:px-12 gap-12 py-14 lg:py-28">
-        <h1 class="text-center text-3xl lg:pb-9">{selectedArticle?.title}</h1>
+        <h1 class={`${!titleAlignment || titleAlignment === "center" ? "lg:text-center" : "lg:text-start"} text-center text-3xl lg:pb-9`}>{selectedArticle?.title}</h1>
         <>
           <div class="flex lg:hidden justify-center items-center w-full pb-4">
             <div class="flex flex-col gap-9 items-center justify-center w-full">
@@ -141,7 +142,7 @@ export default function ArticlesTab({ articles }: ArticlesTabProps) {
                     class={`${
                       selectedArticle === article &&
                       "border-[#005EB8] border-b font-bold"
-                    } pb-4 flex items-center justify-center gap-7 w-full`}
+                    } pb-6 flex items-center justify-center gap-7 w-full`}
                   >
                     <Icon icon={article.icon} />
 

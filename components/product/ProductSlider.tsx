@@ -18,7 +18,7 @@ export interface SectionProps {
     title?: string;
     width?: "full" | "110px";
     bgColor: "border-none" | "omron-blue";
-  }
+  };
 }
 
 export interface SectionPropsExtended extends SectionProps {
@@ -109,25 +109,42 @@ function Section(
     children,
     hasBorderRadiusOnBackgroundImage,
     hasButton,
-  }: SectionPropsExtended
+  }: SectionPropsExtended,
 ) {
-  const orderFirstDivByProps = !order || order === "image-second" ? 'order-2 lg:order-1' : 'order-2';
-  const orderSecondDivByProps = !order || order === "image-second" ? 'order-1 lg:order-2' : 'order-1';
-  const bgColor = !backgroundColor || backgroundColor === "white" ? 'bg-white' : 'bg-[#F2F2F2]';
-  const buttonWidth = !hasButton?.width || hasButton.width === "full" ? 'w-full md:max-w-[110px]' : 'max-w-[110px]';
-  const buttonColor = !hasButton?.bgColor || hasButton?.bgColor === "border-none" ? 'border-black text-black bg-transparent' : 'bg-[#005EB8] text-white';
+  const orderFirstDivByProps = !order || order === "image-second"
+    ? "order-2 lg:order-1"
+    : "order-2";
+  const orderSecondDivByProps = !order || order === "image-second"
+    ? "order-1 lg:order-2"
+    : "order-1";
+  const bgColor = !backgroundColor || backgroundColor === "white"
+    ? "bg-white"
+    : "bg-[#F2F2F2]";
+  const buttonWidth = !hasButton?.width || hasButton.width === "full"
+    ? "w-full md:max-w-[110px]"
+    : "max-w-[110px]";
+  const buttonColor =
+    !hasButton?.bgColor || hasButton?.bgColor === "border-none"
+      ? "border-black text-black bg-transparent"
+      : "bg-[#005EB8] text-white";
 
   return (
     <section
       id={"slide-product"}
-      class={`${bgColor} w-full h-full grid md:grid-cols-2 items-center text-black px-8 py-16 gap-12 lg:px-0 ${!hasPadding && 'lg:py-0'}`}
+      class={`${bgColor} w-full h-full grid md:grid-cols-2 items-center text-black px-8 py-16 gap-12 lg:px-0 ${
+        !hasPadding && "lg:py-0"
+      }`}
     >
-      <div class={`${orderFirstDivByProps} flex flex-col gap-3 justify-center max-w-lg w-full lg:pl-12`}>
+      <div
+        class={`${orderFirstDivByProps} flex flex-col gap-3 justify-center max-w-lg w-full lg:pl-12`}
+      >
         <span class="font-bold text-sm">{subtitle}</span>
         <h1 class="text-4xl tracking-wide leading-tight pb-6">{title}</h1>
         <p class="border-t-2 border-t-light-gray pt-6">{description}</p>
         {hasButton && (
-          <button class={`mt-12 flex items-center justify-center gap-2 btn rounded-xl ${buttonColor} ${buttonWidth}`}>
+          <button
+            class={`mt-12 flex items-center justify-center gap-2 btn rounded-xl ${buttonColor} ${buttonWidth}`}
+          >
             <span class="text-xs font-bold">{hasButton.title}</span>
           </button>
         )}
@@ -144,7 +161,10 @@ function Section(
               media="(min-width: 220px, max-width: 767px)"
               src={backgroundImage}
               alt={imageAlt}
-              class={`w-full h-full object-cover ${hasBorderRadiusOnBackgroundImage && 'rounded-[96px] lg:rounded-r-[220px] lg:rounded-none'}`}
+              class={`w-full h-full object-cover ${
+                hasBorderRadiusOnBackgroundImage &&
+                "rounded-[96px] lg:rounded-r-[220px] lg:rounded-none"
+              }`}
               loading="lazy"
             />
           </picture>
