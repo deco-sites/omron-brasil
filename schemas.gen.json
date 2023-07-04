@@ -94,6 +94,7 @@
               "deco-sites/omron-brasil/sections/Blog/AcademyCoursesSection.tsx",
               "deco-sites/omron-brasil/sections/Blog/FilteredArticlesSection.tsx",
               "deco-sites/omron-brasil/sections/Blog/ImageSliderSection.tsx",
+              "deco-sites/omron-brasil/sections/Blog/MostPopularSection.tsx",
               "deco-sites/omron-brasil/sections/Blog/PopularProductsSection.tsx",
               "deco-sites/omron-brasil/sections/Blog/PreviousWebinar.tsx",
               "deco-sites/omron-brasil/sections/Category/CategoryBanner.tsx",
@@ -7166,6 +7167,22 @@
           "type": "string",
           "title": "Image Alt"
         },
+        "background": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "white",
+              "default": "white"
+            },
+            {
+              "type": "string",
+              "const": "dark-blue",
+              "default": "dark-blue"
+            }
+          ],
+          "type": "string",
+          "title": "Background"
+        },
         "title": {
           "type": "string",
           "title": "Title"
@@ -7180,6 +7197,13 @@
             "null"
           ],
           "title": "Duration"
+        },
+        "isCarousel": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "Is Carousel"
         }
       },
       "required": [
@@ -8310,6 +8334,101 @@
         "courses"
       ],
       "title": "deco-sites/omron-brasil/sections/Blog/AcademyCoursesSection.tsx@AcademyCoursesProps"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQmxvZy9Nb3N0UG9wdWxhclNlY3Rpb24udHN4@HeaderProps": {
+      "type": "object",
+      "properties": {
+        "hasSubtitle": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Label"
+            },
+            "color": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "white",
+                  "default": "white"
+                },
+                {
+                  "type": "string",
+                  "const": "highlight-blue",
+                  "default": "highlight-blue"
+                }
+              ],
+              "type": "string",
+              "title": "Color"
+            }
+          },
+          "required": [],
+          "title": "Has Subtitle"
+        },
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "alignment": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "center",
+              "default": "center"
+            },
+            {
+              "type": "string",
+              "const": "start",
+              "default": "start"
+            }
+          ],
+          "type": "string",
+          "title": "Alignment"
+        }
+      },
+      "required": [
+        "title"
+      ],
+      "title": "HeaderProps"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9ibG9nL0FydGljbGVDYXJkLnRzeA==@ArticleCardProps[]|null": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9ibG9nL0FydGljbGVDYXJkLnRzeA==@ArticleCardProps[]"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "ArticleCardProps[]|null"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQmxvZy9Nb3N0UG9wdWxhclNlY3Rpb24udHN4@Props": {
+      "type": "object",
+      "properties": {
+        "header": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQmxvZy9Nb3N0UG9wdWxhclNlY3Rpb24udHN4@HeaderProps",
+          "title": "Header"
+        },
+        "articles": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9ibG9nL0FydGljbGVDYXJkLnRzeA==@ArticleCardProps[]|null",
+          "title": "Articles"
+        },
+        "interval": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Interval"
+        }
+      },
+      "required": [
+        "header",
+        "articles"
+      ],
+      "title": "deco-sites/omron-brasil/sections/Blog/MostPopularSection.tsx@Props"
     },
     "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9wcm9kdWN0L1BvcHVsYXJQcm9kdWN0Q2FyZC50c3g=@PopularProductCardProps": {
       "type": "object",
@@ -12154,7 +12273,10 @@
           "type": "object",
           "properties": {
             "buttonTitle": {
-              "type": "string",
+              "type": [
+                "string",
+                "null"
+              ],
               "title": "Button Title"
             },
             "buttonBackground": {
@@ -12179,9 +12301,7 @@
               "title": "Button Background"
             }
           },
-          "required": [
-            "buttonTitle"
-          ],
+          "required": [],
           "title": "Has Button"
         },
         "backgroundColor": {
@@ -16486,6 +16606,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQmxvZy9Nb3N0UG9wdWxhclNlY3Rpb24udHN4": {
+      "title": "deco-sites/omron-brasil/sections/Blog/MostPopularSection.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQmxvZy9Nb3N0UG9wdWxhclNlY3Rpb24udHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/omron-brasil/sections/Blog/MostPopularSection.tsx"
+          ],
+          "default": "deco-sites/omron-brasil/sections/Blog/MostPopularSection.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQmxvZy9Qb3B1bGFyUHJvZHVjdHNTZWN0aW9uLnRzeA==": {
       "title": "deco-sites/omron-brasil/sections/Blog/PopularProductsSection.tsx",
       "type": "object",
@@ -18580,6 +18721,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQmxvZy9JbWFnZVNsaWRlclNlY3Rpb24udHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQmxvZy9Nb3N0UG9wdWxhclNlY3Rpb24udHN4"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQmxvZy9Qb3B1bGFyUHJvZHVjdHNTZWN0aW9uLnRzeA=="

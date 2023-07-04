@@ -18,7 +18,7 @@ export interface BannerItemProps {
   };
   price?: number;
   hasButton?: {
-    buttonTitle: string;
+    buttonTitle?: string;
     buttonBackground?: "white" | "dark-blue" | "border-black";
   };
   backgroundColor?: "white" | "light-gray" | "dark-blue";
@@ -80,7 +80,7 @@ function BannerItemFull(
     backgroundColor === "dark-blue" && "bg-[#003153]" ||
     backgroundColor === "light-gray" && "bg-[#E5E5E5]";
 
-  const textColor = backgroundColor === "white" ? "text-black" : "text-white";
+  const textColor = backgroundColor === "white" ? "text-black md:text-white" : "text-white";
 
   return (
     <div
@@ -118,7 +118,7 @@ function BannerItemFull(
 
         <div class="card-actions justify-start items-center grid grid-cols-2 py-8 gap-x-4 gap-y-8">
           {price && <p class="font-bold text-3xl">R$ {price}</p>}
-          {hasButton && (
+          {hasButton && hasButton.buttonTitle && (
             <button
               className={`
               ${

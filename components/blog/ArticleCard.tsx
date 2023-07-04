@@ -6,16 +6,21 @@ import Icon from "$store/components/ui/Icon.tsx";
 export interface ArticleCardProps {
   image: LiveImage;
   imageAlt: string;
+  background?: "white" | "dark-blue";
   title: string;
   description: string;
   duration?: string;
+  isCarousel?: boolean;
 }
 
 export default function ArticleCard(
-  { title, description, image, imageAlt, duration }: ArticleCardProps,
+  { title, description, image, imageAlt, duration, background, isCarousel }: ArticleCardProps,
 ) {
+  const bgColor = !background || background === "white" ? 'bg-[#FFFFFF]' : 'bg-[#003153] text-white';
+  const padding = isCarousel && 'px-6 md:px-0';
+
   return (
-    <div className="card card-compact w-full h-full rounded-none bg-[#FFFFFF]">
+    <div className={`card card-compact w-full h-full rounded-none ${bgColor}`}>
       <Picture>
         {image && (
           <Image
@@ -29,7 +34,7 @@ export default function ArticleCard(
           />
         )}
       </Picture>
-      <div className="flex flex-col gap-4 pt-7">
+      <div className={`${padding} flex flex-col gap-4 pt-7`}>
         <h2 className="card-title">{title}</h2>
         <p>{description}</p>
         {duration && (
@@ -41,7 +46,7 @@ export default function ArticleCard(
             Read More
             <Icon
               id="ChevronRight"
-              class="text-black"
+              class={`${!background || background === "white" ? 'text-black' : 'text-white'}`}
               width={18}
               height={18}
               strokeWidth={0.01}

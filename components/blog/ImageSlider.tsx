@@ -1,4 +1,4 @@
-import { useState, useId } from "preact/hooks";
+import { useId, useState } from "preact/hooks";
 import { Picture } from "deco-sites/std/components/Picture.tsx";
 import Image from "deco-sites/std/components/Image.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
@@ -113,7 +113,7 @@ function MobileSlider({ images, interval }: Props) {
 
       <SliderJS rootId={id} interval={interval && interval * 1e3} infinite />
     </div>
-  )
+  );
 }
 
 export default function ImageSlider({ images }: Props) {
