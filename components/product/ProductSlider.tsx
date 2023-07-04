@@ -5,12 +5,20 @@ import Icon from "$store/components/ui/Icon.tsx";
 import { JSX } from "preact/jsx-runtime";
 
 export interface SectionProps {
+  order?: "image-first" | "image-second";
+  backgroundColor?: "white" | "pale-gray";
   backgroundImage: LiveImage;
+  hasBorderRadiusOnBackgroundImage?: boolean;
+  hasPadding?: boolean;
   imageAlt: string;
   subtitle: string;
   title: string;
   description: string;
-  buttonTitle?: string;
+  hasButton?: {
+    title?: string;
+    width?: "full" | "110px";
+    bgColor: "border-none" | "omron-blue";
+  }
 }
 
 export interface SectionPropsExtended extends SectionProps {
@@ -90,27 +98,37 @@ function Buttons({ children }: ButtonProps) {
 
 function Section(
   {
+    order,
     title,
     subtitle,
+    backgroundColor,
+    hasPadding,
     description,
     backgroundImage,
     imageAlt,
     children,
-    buttonTitle,
-  }: SectionPropsExtended,
+    hasBorderRadiusOnBackgroundImage,
+    hasButton,
+  }: SectionPropsExtended
 ) {
+  const orderFirstDivByProps = !order || order === "image-second" ? 'order-2 lg:order-1' : 'order-2';
+  const orderSecondDivByProps = !order || order === "image-second" ? 'order-1 lg:order-2' : 'order-1';
+  const bgColor = !backgroundColor || backgroundColor === "white" ? 'bg-white' : 'bg-[#F2F2F2]';
+  const buttonWidth = !hasButton?.width || hasButton.width === "full" ? 'w-full md:max-w-[110px]' : 'max-w-[110px]';
+  const buttonColor = !hasButton?.bgColor || hasButton?.bgColor === "border-none" ? 'border-black text-black bg-transparent' : 'bg-[#005EB8] text-white';
+
   return (
     <section
       id={"slide-product"}
-      class="w-full h-full grid md:grid-cols-2 items-center bg-white text-black px-8 py-16 gap-12 lg:px-0 lg:py-0"
+      class={`${bgColor} w-full h-full grid md:grid-cols-2 items-center text-black px-8 py-16 gap-12 lg:px-0 ${!hasPadding && 'lg:py-0'}`}
     >
-      <div class="order-2 lg:order-1 flex flex-col gap-3 justify-center max-w-lg w-full lg:pl-12">
+      <div class={`${orderFirstDivByProps} flex flex-col gap-3 justify-center max-w-lg w-full lg:pl-12`}>
         <span class="font-bold text-sm">{subtitle}</span>
         <h1 class="text-4xl tracking-wide leading-tight pb-6">{title}</h1>
         <p class="border-t-2 border-t-light-gray pt-6">{description}</p>
-        {buttonTitle && (
-          <button class="mt-12 flex items-center justify-center gap-2 btn bg-transparent max-w-[110px] rounded-xl border-black text-black">
-            <span class="text-xs font-bold">Read more</span>
+        {hasButton && (
+          <button class={`mt-12 flex items-center justify-center gap-2 btn rounded-xl ${buttonColor} ${buttonWidth}`}>
+            <span class="text-xs font-bold">{hasButton.title}</span>
           </button>
         )}
 
@@ -119,14 +137,14 @@ function Section(
         </div>
       </div>
 
-      <div class="order-1 lg:order-2 w-full h-full">
+      <div class={`${orderSecondDivByProps} w-full h-full`}>
         {backgroundImage && (
           <picture class="flex items-center justify-center w-full h-full">
             <img
               media="(min-width: 220px, max-width: 767px)"
               src={backgroundImage}
               alt={imageAlt}
-              class="lg:w-full lg:h-full object-cover"
+              class={`w-full h-full object-cover ${hasBorderRadiusOnBackgroundImage && 'rounded-[96px] lg:rounded-r-[220px] lg:rounded-none'}`}
               loading="lazy"
             />
           </picture>

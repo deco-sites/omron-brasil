@@ -7514,9 +7514,55 @@
     "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9wcm9kdWN0L1Byb2R1Y3RTbGlkZXIudHN4@SectionProps": {
       "type": "object",
       "properties": {
+        "order": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "image-first",
+              "default": "image-first"
+            },
+            {
+              "type": "string",
+              "const": "image-second",
+              "default": "image-second"
+            }
+          ],
+          "type": "string",
+          "title": "Order"
+        },
+        "backgroundColor": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "white",
+              "default": "white"
+            },
+            {
+              "type": "string",
+              "const": "pale-gray",
+              "default": "pale-gray"
+            }
+          ],
+          "type": "string",
+          "title": "Background Color"
+        },
         "backgroundImage": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
           "title": "Background Image"
+        },
+        "hasBorderRadiusOnBackgroundImage": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "Has Border Radius On Background Image"
+        },
+        "hasPadding": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "Has Padding"
         },
         "imageAlt": {
           "type": "string",
@@ -7534,12 +7580,53 @@
           "type": "string",
           "title": "Description"
         },
-        "buttonTitle": {
-          "type": [
-            "string",
-            "null"
+        "hasButton": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Title"
+            },
+            "width": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "full",
+                  "default": "full"
+                },
+                {
+                  "type": "string",
+                  "const": "110px",
+                  "default": "110px"
+                }
+              ],
+              "type": "string",
+              "title": "Width"
+            },
+            "bgColor": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "border-none",
+                  "default": "border-none"
+                },
+                {
+                  "type": "string",
+                  "const": "omron-blue",
+                  "default": "omron-blue"
+                }
+              ],
+              "type": "string",
+              "title": "Bg Color"
+            }
+          },
+          "required": [
+            "bgColor"
           ],
-          "title": "Button Title"
+          "title": "Has Button"
         }
       },
       "required": [
