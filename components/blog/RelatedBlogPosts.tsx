@@ -19,7 +19,7 @@ export interface RelatedBlogPostsProps {
 }
 
 export default function RelatedBlogPosts(
-  { images, interval }: RelatedBlogPostsProps,
+  { images, interval = 0 }: RelatedBlogPostsProps,
 ) {
   const id = `mobile-list-${useId()}`;
 
@@ -41,7 +41,7 @@ export default function RelatedBlogPosts(
                     <Image
                       class="card w-full rounded-[52px]"
                       src={item.backgroundImage}
-                      alt={item.imageAlt}
+                      alt={item.imageAlt ?? "Background"}
                       width={293}
                       height={461}
                       loading="lazy"
@@ -75,7 +75,6 @@ export default function RelatedBlogPosts(
         </div>
       </>
 
-      {/* <SliderJS rootId={id} interval={interval && interval * 1e3} infinite /> */}
       <SliderJS rootId={id} />
     </div>
   );

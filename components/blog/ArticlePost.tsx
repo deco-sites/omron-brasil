@@ -42,6 +42,7 @@ export default function ArticlePost({ image, graphicImage }: ArticlePostProps) {
             src={image}
             width={944}
             height={480}
+            alt="Background Image"
             class="w-full h-full"
             loading="lazy"
           />
@@ -87,6 +88,7 @@ export default function ArticlePost({ image, graphicImage }: ArticlePostProps) {
                 src={graphicImage.desktop}
                 width={944}
                 height={696}
+                alt="Background Image"
                 class="w-full h-full"
                 loading="lazy"
               />
@@ -97,6 +99,7 @@ export default function ArticlePost({ image, graphicImage }: ArticlePostProps) {
                 src={graphicImage.mobile}
                 width={380}
                 height={580}
+                alt="Background Image"
                 class="w-full h-full"
                 loading="lazy"
               />
