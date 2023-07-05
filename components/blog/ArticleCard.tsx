@@ -44,7 +44,7 @@ export default function ArticleCard(
           <span class="font-bold text-sm uppercase">Read time: {duration}</span>
         )}
 
-        <div className="card-actions justify-start pt-6">
+        <a href={`/${title}/blog`} className="card-actions justify-start pt-6">
           <span class="flex items-center justify-center text-sm font-bold gap-2 cursor-pointer hover:underline">
             Read More
             <Icon
@@ -60,7 +60,7 @@ export default function ArticleCard(
               fill="currentColor"
             />
           </span>
-        </div>
+        </a>
       </div>
     </div>
   );

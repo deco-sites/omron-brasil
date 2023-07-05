@@ -18,7 +18,9 @@ export interface RelatedBlogPostsProps {
   interval?: number;
 }
 
-export default function RelatedBlogPosts({ images, interval }: RelatedBlogPostsProps) {
+export default function RelatedBlogPosts(
+  { images, interval }: RelatedBlogPostsProps,
+) {
   const id = `mobile-list-${useId()}`;
 
   return (
