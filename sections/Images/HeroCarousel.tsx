@@ -161,7 +161,7 @@ function BannerItemSideToSide(
 
   return (
     <div
-      class={`${bgColor} grid md:grid-cols-2 items-center w-full h-full justify-between pt-4 md:px-6 md:py-24`}
+      class={`${bgColor} grid md:grid-cols-2 items-center w-full h-full justify-between pt-4 md:pl-6 md:py-24`}
     >
       <div class="order-2 md:order-1 card-body w-full items-start md:max-w-xl">
         <h2 class="text-black font-bold text-lg">{subtitle}</h2>

@@ -93,6 +93,7 @@
               "$live/sections/Slot.tsx",
               "$live/sections/UseSlot.tsx",
               "deco-sites/omron-brasil/sections/Blog/AcademyCoursesSection.tsx",
+              "deco-sites/omron-brasil/sections/Blog/BlogDetails.tsx",
               "deco-sites/omron-brasil/sections/Blog/FilteredArticlesSection.tsx",
               "deco-sites/omron-brasil/sections/Blog/ImageSliderSection.tsx",
               "deco-sites/omron-brasil/sections/Blog/MostPopularSection.tsx",
@@ -8375,6 +8376,279 @@
       ],
       "title": "deco-sites/omron-brasil/sections/Blog/AcademyCoursesSection.tsx@AcademyCoursesProps"
     },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9ibG9nL0Jhbm5lclNpZGVUb1NpZGUudHN4@BannerItemProps": {
+      "type": "object",
+      "properties": {
+        "backgroundImage": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Background Image"
+        },
+        "imageAlt": {
+          "type": "string",
+          "title": "Image Alt"
+        },
+        "subtitle": {
+          "type": "string",
+          "title": "Subtitle"
+        },
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "description": {
+          "type": "string",
+          "title": "Description"
+        },
+        "hasDate": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Label"
+            },
+            "startDate": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Start Date"
+            },
+            "endDate": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "End Date"
+            }
+          },
+          "required": [],
+          "title": "Has Date"
+        },
+        "price": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Price"
+        },
+        "hasReadingTime": {
+          "type": "object",
+          "properties": {
+            "time": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Time"
+            }
+          },
+          "required": [],
+          "title": "Has Reading Time"
+        },
+        "hasLearnMore": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "Has Learn More"
+        },
+        "hasButton": {
+          "type": "object",
+          "properties": {
+            "buttonTitle": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Button Title"
+            },
+            "buttonBackground": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "white",
+                  "default": "white"
+                },
+                {
+                  "type": "string",
+                  "const": "dark-blue",
+                  "default": "dark-blue"
+                },
+                {
+                  "type": "string",
+                  "const": "border-black",
+                  "default": "border-black"
+                }
+              ],
+              "type": "string",
+              "title": "Button Background"
+            }
+          },
+          "required": [],
+          "title": "Has Button"
+        },
+        "backgroundColor": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "white",
+              "default": "white"
+            },
+            {
+              "type": "string",
+              "const": "light-gray",
+              "default": "light-gray"
+            },
+            {
+              "type": "string",
+              "const": "dark-blue",
+              "default": "dark-blue"
+            }
+          ],
+          "type": "string",
+          "title": "Background Color"
+        }
+      },
+      "required": [
+        "backgroundImage",
+        "imageAlt",
+        "subtitle",
+        "title",
+        "description"
+      ],
+      "title": "BannerItemProps"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9ibG9nL0FydGljbGVQb3N0LnRzeA==@ArticlePostProps": {
+      "type": "object",
+      "properties": {
+        "image": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Image"
+        },
+        "graphicImage": {
+          "type": "object",
+          "properties": {
+            "desktop": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Desktop"
+            },
+            "mobile": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Mobile"
+            }
+          },
+          "required": [
+            "desktop",
+            "mobile"
+          ],
+          "title": "Graphic Image"
+        }
+      },
+      "required": [
+        "image",
+        "graphicImage"
+      ],
+      "title": "ArticlePostProps"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9ibG9nL1JlbGF0ZWRCbG9nUG9zdHMudHN4@ImageCardProps": {
+      "type": "object",
+      "properties": {
+        "subtitle": {
+          "type": "string",
+          "title": "Subtitle"
+        },
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "readTime": {
+          "type": "string",
+          "title": "Read Time"
+        },
+        "backgroundImage": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Background Image"
+        },
+        "imageAlt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Image Alt"
+        }
+      },
+      "required": [
+        "subtitle",
+        "title",
+        "readTime",
+        "backgroundImage"
+      ],
+      "title": "ImageCardProps"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9ibG9nL1JlbGF0ZWRCbG9nUG9zdHMudHN4@ImageCardProps[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9ibG9nL1JlbGF0ZWRCbG9nUG9zdHMudHN4@ImageCardProps"
+      },
+      "title": "ImageCardProps[]"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9ibG9nL1JlbGF0ZWRCbG9nUG9zdHMudHN4@RelatedBlogPostsProps": {
+      "type": "object",
+      "properties": {
+        "images": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9ibG9nL1JlbGF0ZWRCbG9nUG9zdHMudHN4@ImageCardProps[]",
+          "title": "Images"
+        },
+        "interval": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Interval"
+        }
+      },
+      "required": [
+        "images"
+      ],
+      "title": "RelatedBlogPostsProps"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9ibG9nL0FydGljbGVEZXRhaWxzLnRzeA==@ArticleDetailsProps": {
+      "type": "object",
+      "properties": {
+        "banner": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9ibG9nL0Jhbm5lclNpZGVUb1NpZGUudHN4@BannerItemProps",
+          "title": "Banner"
+        },
+        "post": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9ibG9nL0FydGljbGVQb3N0LnRzeA==@ArticlePostProps",
+          "title": "Post"
+        },
+        "relatedPosts": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9ibG9nL1JlbGF0ZWRCbG9nUG9zdHMudHN4@RelatedBlogPostsProps",
+          "title": "Related Posts"
+        }
+      },
+      "required": [
+        "banner",
+        "post",
+        "relatedPosts"
+      ],
+      "title": "ArticleDetailsProps"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9ibG9nL0Jsb2dEZXRhaWxzLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9ibG9nL0FydGljbGVEZXRhaWxzLnRzeA==@ArticleDetailsProps",
+          "title": "Page"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/omron-brasil/components/blog/BlogDetails.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQmxvZy9Nb3N0UG9wdWxhclNlY3Rpb24udHN4@HeaderProps": {
       "type": "object",
       "properties": {
@@ -16625,6 +16899,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQmxvZy9CbG9nRGV0YWlscy50c3g=": {
+      "title": "deco-sites/omron-brasil/sections/Blog/BlogDetails.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9ibG9nL0Jsb2dEZXRhaWxzLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/omron-brasil/sections/Blog/BlogDetails.tsx"
+          ],
+          "default": "deco-sites/omron-brasil/sections/Blog/BlogDetails.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQmxvZy9GaWx0ZXJlZEFydGljbGVzU2VjdGlvbi50c3g=": {
       "title": "deco-sites/omron-brasil/sections/Blog/FilteredArticlesSection.tsx",
       "type": "object",
@@ -18800,6 +19095,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQmxvZy9BY2FkZW15Q291cnNlc1NlY3Rpb24udHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQmxvZy9CbG9nRGV0YWlscy50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQmxvZy9GaWx0ZXJlZEFydGljbGVzU2VjdGlvbi50c3g="
