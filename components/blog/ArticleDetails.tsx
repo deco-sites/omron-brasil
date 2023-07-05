@@ -92,12 +92,12 @@ export default function ArticleDetails(
             </div>
 
             <div class="flex items-center justify-center gap-8">
-              <button class="px-4 py-3 flex items-center justify-center gap-2 text-black font-bold h-[48px] max-w-[90px] bg-[#CE21414D] rounded-xl">
+              <button aria-label="Like Item" class="px-4 py-3 flex items-center justify-center gap-2 text-black font-bold h-[48px] max-w-[90px] bg-[#CE21414D] rounded-xl">
                 <Icon id="Heart" strokeWidth={2} />
                 <span>128</span>
               </button>
 
-              <button class="px-4 py-3 flex items-center justify-center border border-black font-bold h-[48px] max-w-[90px] bg-transparent rounded-xl">
+              <button onClick={() => navigator.clipboard.writeText('https://deco-sites-omron-brasil.deno.dev/1/blog')} aria-label="Sharing Item" class="px-4 py-3 flex items-center justify-center border border-black font-bold h-[48px] max-w-[90px] bg-transparent rounded-xl">
                 <svg
                   width="18"
                   height="19"
