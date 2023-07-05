@@ -89,7 +89,7 @@ function BannerItemFull(
       class={`${bgColor} ${textColor} md:card md:rounded-none w-full h-full image-full items-center`}
     >
       {backgroundImage && (
-        <Picture>
+        <Picture preload>
           <Image
             media="(min-width: 220px, max-width: 767px)"
             src={backgroundImage}
@@ -97,7 +97,7 @@ function BannerItemFull(
             width={1220}
             height={600}
             class="w-full rounded-r-[32px] rounded-tr-[52px] -translate-x-6 md:translate-x-0 md:rounded-none pt-10 md:pt-0"
-            loading="lazy"
+            loading="eager"
           />
         </Picture>
       )}
@@ -170,7 +170,7 @@ function BannerItemSideToSide(
 
         <div class="card-actions justify-start items-center grid grid-cols-2 py-8 gap-x-4 gap-y-8">
           {price && <p class="font-bold text-3xl text-black">R$ {price}</p>}
-          {hasButton && (
+          {hasButton && hasButton.buttonTitle && (
             <button
               className={`
             ${
@@ -191,14 +191,14 @@ function BannerItemSideToSide(
 
       <div class="order-1 md:order-2 left-0 md:right-0">
         {backgroundImage && (
-          <Picture>
+          <Picture preload>
             <Image
               media="(min-width: 220px, max-width: 767px)"
               src={backgroundImage}
               alt={imageAlt}
               width={940}
               height={600}
-              loading="lazy"
+              loading="eager"
               class="w-full rounded-tr-[52px] rounded-br-[32px] md:rounded-tl-[32px] md:rounded-bl-[32px] md:rounded-tr-[0%] md:rounded-br-[0%] -translate-x-6 md:-translate-x-0 pt-10 md:pt-0"
             />
           </Picture>
@@ -242,7 +242,7 @@ function BannerItemSideToSideWithInput(
           </div>
         )}
 
-        {hasButton && (
+        {hasButton && hasButton.buttonTitle && (
           <div class="flex items-center justify-between mt-8 py-2 px-4 bg-white border border-black rounded-xl w-full max-w-lg">
             <input
               type="text"
@@ -263,14 +263,14 @@ function BannerItemSideToSideWithInput(
 
       <div class="order-1 md:order-2 p-3 md:p-0">
         {backgroundImage && (
-          <Picture>
+          <Picture preload>
             <Image
               media="(min-width: 220px, max-width: 767px)"
               src={backgroundImage}
               alt={imageAlt}
               width={860}
               height={800}
-              loading="lazy"
+              loading="eager"
               class="w-full"
             />
           </Picture>

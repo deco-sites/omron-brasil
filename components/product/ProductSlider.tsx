@@ -141,7 +141,7 @@ function Section(
         <span class="font-bold text-sm">{subtitle}</span>
         <h1 class="text-4xl tracking-wide leading-tight pb-6">{title}</h1>
         <p class="border-t-2 border-t-light-gray pt-6">{description}</p>
-        {hasButton && (
+        {hasButton && hasButton.title && (
           <button
             class={`mt-12 flex items-center justify-center gap-2 btn rounded-xl ${buttonColor} ${buttonWidth}`}
           >

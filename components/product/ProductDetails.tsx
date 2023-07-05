@@ -15,6 +15,10 @@ import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/product
 import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
 import type { LoaderReturnType } from "$live/types.ts";
 
+import ProductRating from "./ProductRating.tsx";
+import ProductFooter from "./ProductFooter.tsx";
+import ProductInfoTab from "$store/islands/ProductInfoTab.tsx";
+import ProductSpecifications from "./ProductSpecifications.tsx";
 import ProductSelector from "./ProductVariantSelector.tsx";
 import ProductImageZoom from "$store/islands/ProductImageZoom.tsx";
 import WishlistButton from "../wishlist/WishlistButton.tsx";
@@ -73,25 +77,38 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
       <Breadcrumb
         itemListElement={breadcrumbList?.itemListElement.slice(0, -1)}
       />
-      {/* Code and name */}
-      <div class="mt-4 sm:mt-8">
-        <div>
-          <span class="text-sm text-base-300">
-            Cod. {gtin}
-          </span>
+      {/* Rating and Wishlist */}
+      <div class="flex items-center justify-between mt-4">
+        <ProductRating />
+
+        <div class="flex items-center justify-center gap-1">
+          <WishlistButton
+            variant="icon"
+            productGroupID={isVariantOf?.productGroupID}
+            productID={productID}
+          />
+
+          <span>Favourites</span>
         </div>
+      </div>
+      {/* Code and name */}
+      <div class="flex flex-col gap-3 mt-4">
         <h1>
           <span class="font-medium text-xl">{name}</span>
         </h1>
+        <h2>
+          <span class="font-medium text-justify">{description}</span>
+        </h2>
+        <p class="font-bold">3 years warranty</p>
       </div>
       {/* Prices */}
       <div class="mt-4">
         <div class="flex flex-row gap-2 items-center">
+          <span class="text-3xl font-bold text-black">
+            {formatPrice(price, offers!.priceCurrency!)}
+          </span>
           <span class="line-through text-base-300 text-xs">
             {formatPrice(listPrice, offers!.priceCurrency!)}
-          </span>
-          <span class="font-medium text-xl text-secondary">
-            {formatPrice(price, offers!.priceCurrency!)}
           </span>
         </div>
         <span class="text-sm text-base-300">
@@ -103,7 +120,7 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
         <ProductSelector product={product} />
       </div>
       {/* Add to Cart and Favorites button */}
-      <div class="mt-4 sm:mt-10 flex flex-col gap-2">
+      <div class="mt-4 sm:mt-8 flex flex-wrap w-full gap-2">
         {availability === "https://schema.org/InStock"
           ? (
             <>
@@ -117,15 +134,32 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
                   productGroupId={product.isVariantOf?.productGroupID ?? ""}
                 />
               )}
-              <WishlistButton
-                variant="full"
-                productGroupID={isVariantOf?.productGroupID}
-                productID={productID}
-              />
+              <button class="btn btn-outline hover:bg-[#005EB8] text-black border border-black px-3 md:min-w-[193px]">
+                Find a store
+              </button>
             </>
           )
           : <OutOfStock productID={productID} />}
       </div>
+      {/* Some Product Info */}
+      <div class="grid grid-cols-3 w-full mt-7 sm:mt-6 gap-x-8 items-center justify-center text-center">
+        <div class="flex flex-col items-center justify-center gap-3">
+          <Icon id="ShoppingCart" width={18} height={18} strokeWidth={1} />
+          <span>Free shipping</span>
+        </div>
+
+        <div class="flex flex-col items-center justify-center gap-3">
+          <Icon id="ShoppingCart" width={18} height={18} strokeWidth={1} />
+          <span>Free shipping</span>
+        </div>
+
+        <div class="flex flex-col items-center justify-center gap-3">
+          <Icon id="ShoppingCart" width={18} height={18} strokeWidth={1} />
+          <span>Free shipping</span>
+        </div>
+      </div>
+      {/* Product Specifications */}
+      <ProductSpecifications />
       {/* Shipping Simulation */}
       <div class="mt-8">
         <ShippingSimulation
@@ -135,17 +169,6 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
             seller: seller ?? "1",
           }]}
         />
-      </div>
-      {/* Description card */}
-      <div class="mt-4 sm:mt-6">
-        <span class="text-sm">
-          {description && (
-            <details>
-              <summary class="cursor-pointer">Descrição</summary>
-              <div class="ml-2 mt-2">{description}</div>
-            </details>
-          )}
-        </span>
       </div>
       {/* Analytics Event */}
       <SendEventOnLoad
@@ -317,7 +340,7 @@ function Details({
           </ul>
 
           {/* Product Info */}
-          <div class="px-4 sm:pr-0 sm:pl-6 sm:col-start-3 sm:col-span-1 sm:row-start-1">
+          <div class="px-4 sm:pr-0 sm:pl-6 sm:col-start-3 sm:col-span-1 sm:row-start-1 md:max-w-[480px]">
             <ProductInfo page={page} />
           </div>
         </div>
@@ -374,8 +397,18 @@ function ProductDetails({ page, variant: maybeVar = "auto" }: Props) {
     : maybeVar;
 
   return (
-    <div class="container py-0 sm:py-10">
-      {page ? <Details page={page} variant={variant} /> : <NotFound />}
+    <div class="py-0 sm:py-10 bg-[#F2F2F2]">
+      <div class="container">
+        {page 
+          ?
+            (<>
+              <Details page={page} variant={variant} />
+              <ProductInfoTab type="specifications" />
+              <ProductFooter />
+            </>) 
+          : <NotFound />
+        }      
+      </div>
     </div>
   );
 }
