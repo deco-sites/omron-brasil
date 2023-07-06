@@ -78,18 +78,12 @@ export default function ProductInfoTab({ type }: ProductInfoProps) {
           </>
         )}
 
-        {selectedInfo === type[0] && (
-          <GridProductSpecifications />
-        )}
+        {selectedInfo === type[0] && <GridProductSpecifications />}
 
-        {selectedInfo === type[1] && (
-          <div>Suporte</div>
-        )}
+        {selectedInfo === type[1] && <div>Suporte</div>}
 
-        {selectedInfo === type[2] && (
-          <Faq />
-        )}
-      </div>      
+        {selectedInfo === type[2] && <Faq />}
+      </div>
     </section>
-  )
+  );
 }

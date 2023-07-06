@@ -68,11 +68,13 @@ export default function RelatedProducts({ relateds }: Props) {
         {selectedRelated && (
           <div class="flex flex-col gap-10 w-full h-full">
             <div class="grid gap-4 w-full h-full items-center justify-center">
-              {selectedRelated?.products?.map((item) => <RelatedProductCard product={item} />)}
+              {selectedRelated?.products?.map((item) => (
+                <RelatedProductCard product={item} />
+              ))}
             </div>
           </div>
         )}
-      </div>      
+      </div>
     </section>
-  )
+  );
 }

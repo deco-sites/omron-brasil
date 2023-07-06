@@ -97,7 +97,7 @@ export default function WebinarsShelf({ header, webinars, interval }: Props) {
           {webinars?.map((webinar, index) => (
             <Slider.Item
               index={index}
-              class="carousel-item w-full md:w-[327px] md:first:pl-12"
+              class="carousel-item w-full md:w-[327px] md:first:pl-12 md:last:pr-12"
             >
               <WebinarsCard {...webinar} />
             </Slider.Item>

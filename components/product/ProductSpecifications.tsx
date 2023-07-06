@@ -48,5 +48,5 @@ export default function ProductSpecifications(props: Props) {
         {questions.map((question) => <Question {...question} />)}
       </div>
     </div>
-  )
+  );
 }

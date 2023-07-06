@@ -17,10 +17,10 @@ export default function GridProductSpecifications() {
     <div class="grid md:grid-cols-2 gap-x-8 gap-y-3 w-full h-full">
       {DEFAULT_INFO.map((item) => (
         <div class="grid md:grid-cols-2 border-b border-b-[#C7C7C7] w-full items-center justify-between text-start pb-3">
-          <span class="font-bold md:font-normal">{item.label}</span>                
-          <span>{item.description}</span>                
+          <span class="font-bold md:font-normal">{item.label}</span>
+          <span>{item.description}</span>
         </div>
       ))}
     </div>
-  )
+  );
 }

@@ -399,15 +399,15 @@ function ProductDetails({ page, variant: maybeVar = "auto" }: Props) {
   return (
     <div class="py-0 sm:py-10 bg-[#F2F2F2]">
       <div class="container">
-        {page 
-          ?
-            (<>
+        {page
+          ? (
+            <>
               <Details page={page} variant={variant} />
               <ProductInfoTab type="specifications" />
               <ProductFooter />
-            </>) 
-          : <NotFound />
-        }      
+            </>
+          )
+          : <NotFound />}
       </div>
     </div>
   );

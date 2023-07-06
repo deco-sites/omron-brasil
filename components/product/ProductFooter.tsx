@@ -7,7 +7,9 @@ interface ProgressReviewProps {
   percentage: number;
 }
 
-function ProgressReview({ position, progress, percentage }: ProgressReviewProps) {
+function ProgressReview(
+  { position, progress, percentage }: ProgressReviewProps,
+) {
   return (
     <div class="flex items-center justify-between gap-2 w-full">
       <span>{position}</span>
@@ -16,7 +18,7 @@ function ProgressReview({ position, progress, percentage }: ProgressReviewProps)
       </div>
       <span>{percentage}%</span>
     </div>
-  )
+  );
 }
 
 function Comment() {
@@ -24,10 +26,14 @@ function Comment() {
     <div class="flex flex-col gap-4 w-full items-start justify-start">
       <ProductRating />
       <h1 class="font-bold">Excellent Heart Monitor</h1>
-      <p class="text-start">OMRON Complete is very easy to use and, in conjunction with the OMRON connect app, is a great medical device for monitoring a range of heart conditions.</p>
+      <p class="text-start">
+        OMRON Complete is very easy to use and, in conjunction with the OMRON
+        connect app, is a great medical device for monitoring a range of heart
+        conditions.
+      </p>
       <span class="text-[#7F7F7F] text-sm">12.04.2023 - Amanda</span>
     </div>
-  )
+  );
 }
 
 export default function ProductFooter() {
@@ -65,5 +71,5 @@ export default function ProductFooter() {
         </div>
       </div>
     </section>
-  )
+  );
 }
