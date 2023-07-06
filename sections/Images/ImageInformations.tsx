@@ -19,23 +19,23 @@ export default function ImageInformations(
 ) {
   return (
     <section class="flex w-full h-full">
-      <div class="relative flex flex-col items-start text-start image-full md:min-h-[823px]">
+      <div class="relative flex flex-col items-start text-start image-full min-h-[900px]">
         {backgroundImage && (
           <Picture>
             <Image
               src={backgroundImage}
               alt={imageAlt}
-              width={1220}
-              height={600}
+              width={1336}
+              height={823}
               class="w-full h-full"
               loading="lazy"
             />
           </Picture>
         )}
 
-        <div class="md:absolute flex flex-col items-start justify-between top-0 bottom-0 text-white bg-[#003153] md:bg-transparent w-full">
-          <div class="flex flex-col items-start justify-start gap-5 pt-16 px-12 md:max-w-xl w-full">
-            <h1 class="text-2xl md:text-4xl leading-[36px] md:leading-[52px]">
+        <div class="xl:absolute flex flex-col items-start justify-between top-0 bottom-20 text-white bg-[#003153] xl:bg-transparent w-full">
+          <div class="flex flex-col items-start justify-start gap-5 pt-16 px-12 xl:max-w-xl w-full">
+            <h1 class="text-2xl xl:text-4xl leading-[36px] xl:leading-[52px]">
               {title}
             </h1>
             <p class="leading-5">{description}</p>
@@ -57,7 +57,7 @@ export default function ImageInformations(
             </div>
           </div>
 
-          <div class="flex pb-12 px-6 md:px-12 w-full">
+          <div class="flex pb-12 px-6 md:px-12 w-full pt-4 xl:pt-0">
             <Benefits {...benefit} />
           </div>
         </div>

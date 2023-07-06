@@ -16,14 +16,15 @@ import * as $$$$$7 from "./islands/Newsletter.tsx";
 import * as $$$$$8 from "./islands/OutOfStock.tsx";
 import * as $$$$$9 from "./islands/ProductImageZoom.tsx";
 import * as $$$$$10 from "./islands/ProductInfoTab.tsx";
-import * as $$$$$11 from "./islands/ProductSlider.tsx";
-import * as $$$$$12 from "./islands/RelatedProducts.tsx";
-import * as $$$$$13 from "./islands/SearchControls.tsx";
-import * as $$$$$14 from "./islands/ShippingSimulation.tsx";
-import * as $$$$$15 from "./islands/SliderJS.tsx";
-import * as $$$$$16 from "./islands/Tabs.tsx";
-import * as $$$$$17 from "./islands/TopicsSection.tsx";
-import * as $$$$$18 from "./islands/WishlistButton.tsx";
+import * as $$$$$11 from "./islands/ProductReview.tsx";
+import * as $$$$$12 from "./islands/ProductSlider.tsx";
+import * as $$$$$13 from "./islands/RelatedProducts.tsx";
+import * as $$$$$14 from "./islands/SearchControls.tsx";
+import * as $$$$$15 from "./islands/ShippingSimulation.tsx";
+import * as $$$$$16 from "./islands/SliderJS.tsx";
+import * as $$$$$17 from "./islands/Tabs.tsx";
+import * as $$$$$18 from "./islands/TopicsSection.tsx";
+import * as $$$$$19 from "./islands/WishlistButton.tsx";
 import * as $$$$$$$$0 from "./sections/Blog/AcademyCoursesSection.tsx";
 import * as $$$$$$$$1 from "./sections/Blog/BlogDetails.tsx";
 import * as $$$$$$$$2 from "./sections/Blog/FilteredArticlesSection.tsx";
@@ -67,13 +68,14 @@ import * as $$$$$$$$39 from "./sections/Miscellaneous/CampaignTimer.tsx";
 import * as $$$$$$$$40 from "./sections/Miscellaneous/CookieConsent.tsx";
 import * as $$$$$$$$41 from "./sections/Newsletter/Newsletter.tsx";
 import * as $$$$$$$$42 from "./sections/Product/ProductDetails.tsx";
-import * as $$$$$$$$43 from "./sections/Product/ProductShelf.tsx";
-import * as $$$$$$$$44 from "./sections/Product/RelatedProducts.tsx";
-import * as $$$$$$$$45 from "./sections/Product/SearchResult.tsx";
-import * as $$$$$$$$46 from "./sections/Product/Wishlist.tsx";
-import * as $$$$$$$$47 from "./sections/Social/InstagramPosts.tsx";
-import * as $$$$$$$$48 from "./sections/Social/Posts.tsx";
-import * as $$$$$$$$49 from "./sections/Social/WhatsApp.tsx";
+import * as $$$$$$$$43 from "./sections/Product/ProductReview.tsx";
+import * as $$$$$$$$44 from "./sections/Product/ProductShelf.tsx";
+import * as $$$$$$$$45 from "./sections/Product/RelatedProducts.tsx";
+import * as $$$$$$$$46 from "./sections/Product/SearchResult.tsx";
+import * as $$$$$$$$47 from "./sections/Product/Wishlist.tsx";
+import * as $$$$$$$$48 from "./sections/Social/InstagramPosts.tsx";
+import * as $$$$$$$$49 from "./sections/Social/Posts.tsx";
+import * as $$$$$$$$50 from "./sections/Social/WhatsApp.tsx";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
 import * as $live_invoke from "$live/routes/live/invoke/index.ts";
@@ -221,14 +223,15 @@ const manifest = {
     "./islands/OutOfStock.tsx": $$$$$8,
     "./islands/ProductImageZoom.tsx": $$$$$9,
     "./islands/ProductInfoTab.tsx": $$$$$10,
-    "./islands/ProductSlider.tsx": $$$$$11,
-    "./islands/RelatedProducts.tsx": $$$$$12,
-    "./islands/SearchControls.tsx": $$$$$13,
-    "./islands/ShippingSimulation.tsx": $$$$$14,
-    "./islands/SliderJS.tsx": $$$$$15,
-    "./islands/Tabs.tsx": $$$$$16,
-    "./islands/TopicsSection.tsx": $$$$$17,
-    "./islands/WishlistButton.tsx": $$$$$18,
+    "./islands/ProductReview.tsx": $$$$$11,
+    "./islands/ProductSlider.tsx": $$$$$12,
+    "./islands/RelatedProducts.tsx": $$$$$13,
+    "./islands/SearchControls.tsx": $$$$$14,
+    "./islands/ShippingSimulation.tsx": $$$$$15,
+    "./islands/SliderJS.tsx": $$$$$16,
+    "./islands/Tabs.tsx": $$$$$17,
+    "./islands/TopicsSection.tsx": $$$$$18,
+    "./islands/WishlistButton.tsx": $$$$$19,
   },
   "sections": {
     "$live/sections/Conditional_Beta.tsx": i2$$$$$0,
@@ -287,13 +290,14 @@ const manifest = {
       $$$$$$$$40,
     "deco-sites/omron-brasil/sections/Newsletter/Newsletter.tsx": $$$$$$$$41,
     "deco-sites/omron-brasil/sections/Product/ProductDetails.tsx": $$$$$$$$42,
-    "deco-sites/omron-brasil/sections/Product/ProductShelf.tsx": $$$$$$$$43,
-    "deco-sites/omron-brasil/sections/Product/RelatedProducts.tsx": $$$$$$$$44,
-    "deco-sites/omron-brasil/sections/Product/SearchResult.tsx": $$$$$$$$45,
-    "deco-sites/omron-brasil/sections/Product/Wishlist.tsx": $$$$$$$$46,
-    "deco-sites/omron-brasil/sections/Social/InstagramPosts.tsx": $$$$$$$$47,
-    "deco-sites/omron-brasil/sections/Social/Posts.tsx": $$$$$$$$48,
-    "deco-sites/omron-brasil/sections/Social/WhatsApp.tsx": $$$$$$$$49,
+    "deco-sites/omron-brasil/sections/Product/ProductReview.tsx": $$$$$$$$43,
+    "deco-sites/omron-brasil/sections/Product/ProductShelf.tsx": $$$$$$$$44,
+    "deco-sites/omron-brasil/sections/Product/RelatedProducts.tsx": $$$$$$$$45,
+    "deco-sites/omron-brasil/sections/Product/SearchResult.tsx": $$$$$$$$46,
+    "deco-sites/omron-brasil/sections/Product/Wishlist.tsx": $$$$$$$$47,
+    "deco-sites/omron-brasil/sections/Social/InstagramPosts.tsx": $$$$$$$$48,
+    "deco-sites/omron-brasil/sections/Social/Posts.tsx": $$$$$$$$49,
+    "deco-sites/omron-brasil/sections/Social/WhatsApp.tsx": $$$$$$$$50,
     "deco-sites/std/sections/Analytics.tsx": i2$$$$$5,
     "deco-sites/std/sections/configButterCMS.global.tsx": i2$$$$$6,
     "deco-sites/std/sections/configOCC.global.tsx": i2$$$$$7,

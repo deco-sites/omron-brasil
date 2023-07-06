@@ -72,6 +72,7 @@
               "./islands/OutOfStock.tsx",
               "./islands/ProductImageZoom.tsx",
               "./islands/ProductInfoTab.tsx",
+              "./islands/ProductReview.tsx",
               "./islands/ProductSlider.tsx",
               "./islands/RelatedProducts.tsx",
               "./islands/SearchControls.tsx",
@@ -137,6 +138,7 @@
               "deco-sites/omron-brasil/sections/Miscellaneous/CookieConsent.tsx",
               "deco-sites/omron-brasil/sections/Newsletter/Newsletter.tsx",
               "deco-sites/omron-brasil/sections/Product/ProductDetails.tsx",
+              "deco-sites/omron-brasil/sections/Product/ProductReview.tsx",
               "deco-sites/omron-brasil/sections/Product/ProductShelf.tsx",
               "deco-sites/omron-brasil/sections/Product/RelatedProducts.tsx",
               "deco-sites/omron-brasil/sections/Product/SearchResult.tsx",
@@ -7655,6 +7657,158 @@
         "type"
       ],
       "title": "deco-sites/omron-brasil/components/product/ProductInfoTab.tsx@ProductInfoProps"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9wcm9kdWN0L1Byb2R1Y3RSZXZpZXcudHN4@TopSectionProps": {
+      "type": "object",
+      "properties": {
+        "subtitle": {
+          "type": "string",
+          "title": "Subtitle"
+        },
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Description"
+        },
+        "image": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Image"
+        },
+        "altImage": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Alt Image"
+        }
+      },
+      "required": [
+        "subtitle",
+        "title",
+        "image"
+      ],
+      "title": "TopSectionProps"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9wcm9kdWN0L1Byb2R1Y3RSZXZpZXcudHN4@MiddleSectionProps": {
+      "type": "object",
+      "properties": {
+        "productImage": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Product Image"
+        },
+        "altImage": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Alt Image"
+        },
+        "description": {
+          "type": "string",
+          "title": "Description"
+        }
+      },
+      "required": [
+        "productImage",
+        "description"
+      ],
+      "title": "MiddleSectionProps"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Video": {
+      "type": "string",
+      "format": "video-uri",
+      "title": "Video"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9wcm9kdWN0L1Byb2R1Y3RSZXZpZXcudHN4@BottomSectionProps": {
+      "type": "object",
+      "properties": {
+        "subtitle": {
+          "type": "string",
+          "title": "Subtitle"
+        },
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Description"
+        },
+        "video": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Video",
+          "title": "Video"
+        },
+        "altVideo": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Alt Video"
+        }
+      },
+      "required": [
+        "subtitle",
+        "title",
+        "video"
+      ],
+      "title": "BottomSectionProps"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9wcm9kdWN0L1Byb2R1Y3RSZXZpZXcudHN4@ProductReviewProps": {
+      "type": "object",
+      "properties": {
+        "topSection": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9wcm9kdWN0L1Byb2R1Y3RSZXZpZXcudHN4@TopSectionProps",
+          "title": "Top Section"
+        },
+        "middleSection": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9wcm9kdWN0L1Byb2R1Y3RSZXZpZXcudHN4@MiddleSectionProps",
+          "title": "Middle Section"
+        },
+        "bottomSection": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9wcm9kdWN0L1Byb2R1Y3RSZXZpZXcudHN4@BottomSectionProps",
+          "title": "Bottom Section"
+        }
+      },
+      "required": [
+        "topSection",
+        "middleSection",
+        "bottomSection"
+      ],
+      "title": "ProductReviewProps"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9wcm9kdWN0L1Byb2R1Y3RSZXZpZXcudHN4@ProductReviewProps[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9wcm9kdWN0L1Byb2R1Y3RSZXZpZXcudHN4@ProductReviewProps"
+      },
+      "title": "ProductReviewProps[]"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9wcm9kdWN0L1Byb2R1Y3RSZXZpZXcudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "products": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9wcm9kdWN0L1Byb2R1Y3RSZXZpZXcudHN4@ProductReviewProps[]",
+          "title": "Products"
+        },
+        "interval": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Interval"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/omron-brasil/components/product/ProductReview.tsx@Props"
     },
     "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9wcm9kdWN0L1Byb2R1Y3RTbGlkZXIudHN4@SectionProps": {
       "type": "object",
@@ -16589,6 +16743,27 @@
         }
       }
     },
+    "Li9pc2xhbmRzL1Byb2R1Y3RSZXZpZXcudHN4": {
+      "title": "./islands/ProductReview.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9wcm9kdWN0L1Byb2R1Y3RSZXZpZXcudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/ProductReview.tsx"
+          ],
+          "default": "./islands/ProductReview.tsx"
+        }
+      }
+    },
     "Li9pc2xhbmRzL1Byb2R1Y3RTbGlkZXIudHN4": {
       "title": "./islands/ProductSlider.tsx",
       "type": "object",
@@ -17933,6 +18108,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvUHJvZHVjdC9Qcm9kdWN0UmV2aWV3LnRzeA==": {
+      "title": "deco-sites/omron-brasil/sections/Product/ProductReview.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvY29tcG9uZW50cy9wcm9kdWN0L1Byb2R1Y3RSZXZpZXcudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/omron-brasil/sections/Product/ProductReview.tsx"
+          ],
+          "default": "deco-sites/omron-brasil/sections/Product/ProductReview.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvUHJvZHVjdC9Qcm9kdWN0U2hlbGYudHN4": {
       "title": "deco-sites/omron-brasil/sections/Product/ProductShelf.tsx",
       "type": "object",
@@ -19204,6 +19400,9 @@
           "$ref": "#/definitions/Li9pc2xhbmRzL1Byb2R1Y3RJbmZvVGFiLnRzeA=="
         },
         {
+          "$ref": "#/definitions/Li9pc2xhbmRzL1Byb2R1Y3RSZXZpZXcudHN4"
+        },
+        {
           "$ref": "#/definitions/Li9pc2xhbmRzL1Byb2R1Y3RTbGlkZXIudHN4"
         },
         {
@@ -19421,6 +19620,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvUHJvZHVjdC9Qcm9kdWN0RGV0YWlscy50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvUHJvZHVjdC9Qcm9kdWN0UmV2aWV3LnRzeA=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvUHJvZHVjdC9Qcm9kdWN0U2hlbGYudHN4"
