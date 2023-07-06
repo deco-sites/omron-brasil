@@ -3,7 +3,10 @@ import Slider from "$store/components/ui/Slider.tsx";
 import SliderJS from "$store/islands/SliderJS.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
-import type { Image as LiveImage, Video as LiveVideo } from "deco-sites/std/components/types.ts";
+import type {
+  Image as LiveImage,
+  Video as LiveVideo,
+} from "deco-sites/std/components/types.ts";
 import { useId } from "preact/hooks";
 
 export interface TopSectionProps {
@@ -39,14 +42,20 @@ export interface Props {
   interval?: number;
 }
 
-function TopSection({ subtitle, title, description, image, altImage }: TopSectionProps) {
+function TopSection(
+  { subtitle, title, description, image, altImage }: TopSectionProps,
+) {
   return (
-    <div class="relative grid lg:grid-cols-[1fr_800px] items-center justify-center w-full h-full lg:min-h-[800px] bg-[#E5E5E5]">
-      <div class="flex items-center justify-center pt-16 px-6 lg:px-0 lg:pt-0">
+    <div class="relative grid lg:grid-cols-[1fr_500px] xl:grid-cols-[1fr_800px] items-center justify-center w-full h-full lg:min-h-[800px] bg-[#E5E5E5]">
+      <div class="flex flex-1 items-center justify-center pt-16 px-6 lg:px-0 lg:pt-0">
         <div class="flex flex-col items-start justify-center text-start gap-2 md:max-w-[510px] lg:-translate-y-24">
           <span class="font-bold">{subtitle}</span>
           <h2 class="text-2xl border-b border-b-[#C9C9C9] pb-7">{title}</h2>
-          {description && <h1 class="pt-5 pb-16 lg:pb-0 text-3xl md:text-5xl font-bold">{description}</h1>}
+          {description && (
+            <h1 class="pt-5 pb-16 lg:pb-0 text-3xl md:text-5xl font-bold">
+              {description}
+            </h1>
+          )}
         </div>
       </div>
 
@@ -79,10 +88,12 @@ function TopSection({ subtitle, title, description, image, altImage }: TopSectio
         </Picture>
       )}
     </div>
-  )
+  );
 }
 
-function MiddleSection({ productImage, altImage, description }: MiddleSectionProps) {
+function MiddleSection(
+  { productImage, altImage, description }: MiddleSectionProps,
+) {
   return (
     <div className="flex-grow relative lg:absolute md:inset-0 lg:-translate-y-48 flex items-center justify-center z-10">
       <div className="flex relative flex-col bg-white max-w-[836px] h-full md:max-h-[376px] text-start items-center justify-center px-6 py-4 md:py-16 group">
@@ -93,17 +104,19 @@ function MiddleSection({ productImage, altImage, description }: MiddleSectionPro
             width={580}
             height={264}
             src={productImage}
-            alt={altImage ?? 'Imagem do produto'}
+            alt={altImage ?? "Imagem do produto"}
           />
         )}
 
         <span class="pb-8">{description}</span>
       </div>
     </div>
-  )
+  );
 }
 
-function BottomSection({ subtitle, title, description, video, altVideo }: BottomSectionProps) {
+function BottomSection(
+  { subtitle, title, description, video, altVideo }: BottomSectionProps,
+) {
   return (
     <div class="relative flex flex-col py-12 lg:py-32 text-center items-center justify-between gap-14 bg-[#003153] w-full h-full">
       <div class="flex flex-col gap-2 text-white lg:pt-52">
@@ -113,10 +126,16 @@ function BottomSection({ subtitle, title, description, video, altVideo }: Bottom
       </div>
 
       {video && (
-        <video loading="lazy" width={1280} height={900} class="px-6 lg:px-0 rounded-[38px]" controls>
+        <video
+          loading="lazy"
+          width={1280}
+          height={900}
+          class="px-6 lg:px-0 rounded-[38px]"
+          controls
+        >
           <source
             src={video}
-            alt={altVideo ?? 'Vídeo demonstrativo do produto'}
+            alt={altVideo ?? "Vídeo demonstrativo do produto"}
             type="video/mp4"
             class="object-cover rounded-[38px]"
             loading="lazy"
@@ -124,7 +143,7 @@ function BottomSection({ subtitle, title, description, video, altVideo }: Bottom
         </video>
       )}
     </div>
-  )
+  );
 }
 
 function Buttons() {
@@ -134,7 +153,7 @@ function Buttons() {
         <div class="flex items-center justify-center z-10 col-start-1 row-start-2">
           <Slider.PrevButton class="btn btn-circle glass">
             <Icon
-              class="text-base-100" 
+              class="text-base-100"
               size={20}
               id="ChevronLeft"
               strokeWidth={3}
@@ -164,16 +183,19 @@ export default function ProductReview({ products, interval = 0 }: Props) {
       <div class="relative flex flex-col h-full">
         <Slider className="carousel carousel-center w-full col-span-full row-span-full scrollbar-none gap-6">
           {products?.map((item, index) => (
-            <Slider.Item index={index} class="carousel-item w-full relative flex flex-col h-full">
+            <Slider.Item
+              index={index}
+              class="carousel-item w-full relative flex flex-col h-full"
+            >
               <>
-              <TopSection {...item.topSection} />
+                <TopSection {...item.topSection} />
 
-              <>
-                <MiddleSection {...item.middleSection} />
-                <Buttons />
-              </>
+                <>
+                  <MiddleSection {...item.middleSection} />
+                  <Buttons />
+                </>
 
-              <BottomSection {...item.bottomSection} />
+                <BottomSection {...item.bottomSection} />
               </>
             </Slider.Item>
           ))}
@@ -182,5 +204,5 @@ export default function ProductReview({ products, interval = 0 }: Props) {
 
       <SliderJS rootId={id} interval={interval && interval * 1e3} infinite />
     </section>
-  )
+  );
 }

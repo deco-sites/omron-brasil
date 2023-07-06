@@ -272,11 +272,11 @@ function Details({
       <>
         <div
           id={id}
-          class="grid grid-cols-1 gap-4 sm:grid-cols-[max-content_40vw_40vw] sm:grid-rows-1 sm:justify-center"
+          class="grid grid-cols-1 gap-4 lg:grid-cols-[max-content_40vw_40vw] md:grid-rows-1 md:justify-center"
         >
           {/* Image Slider */}
-          <div class="relative sm:col-start-2 sm:col-span-1 sm:row-start-1">
-            <Slider class="carousel carousel-center gap-6 w-screen sm:w-[40vw]">
+          <div class="relative md:col-start-2 md:col-span-1 md:row-start-1">
+            <Slider class="carousel carousel-center gap-6 w-full md:w-[40vw]">
               {images.map((img, index) => (
                 <Slider.Item
                   index={index}
@@ -299,14 +299,14 @@ function Details({
             </Slider>
 
             <Slider.PrevButton
-              class="no-animation absolute left-2 top-1/2 btn btn-circle btn-outline"
+              class="no-animation absolute left-2 top-1/2 lg:top-1/4 btn btn-circle btn-outline"
               disabled
             >
               <Icon size={20} id="ChevronLeft" strokeWidth={3} />
             </Slider.PrevButton>
 
             <Slider.NextButton
-              class="no-animation absolute right-2 top-1/2 btn btn-circle btn-outline"
+              class="no-animation absolute right-2 top-1/2 lg:top-1/4 btn btn-circle btn-outline"
               disabled={images.length < 2}
             >
               <Icon size={20} id="ChevronRight" strokeWidth={3} />
@@ -322,9 +322,9 @@ function Details({
           </div>
 
           {/* Dots */}
-          <ul class="flex gap-2 sm:justify-start overflow-auto px-4 sm:px-0 sm:flex-col sm:col-start-1 sm:col-span-1 sm:row-start-1">
+          <ul class="flex gap-2 md:justify-start overflow-auto px-4 md:px-0 md:flex-col md:col-start-1 md:col-span-1 md:row-start-1">
             {images.map((img, index) => (
-              <li class="min-w-[63px] sm:min-w-[100px]">
+              <li class="min-w-[63px] md:min-w-[100px]">
                 <Slider.Dot index={index}>
                   <Image
                     style={{ aspectRatio: ASPECT_RATIO }}
@@ -340,7 +340,7 @@ function Details({
           </ul>
 
           {/* Product Info */}
-          <div class="px-4 sm:pr-0 sm:pl-6 sm:col-start-3 sm:col-span-1 sm:row-start-1 md:max-w-[480px]">
+          <div class="px-4 md:pr-0 md:pl-6 md:col-start-3 md:col-span-1 md:row-start-1 md:max-w-[480px]">
             <ProductInfo page={page} />
           </div>
         </div>
