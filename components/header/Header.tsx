@@ -62,8 +62,8 @@ function Header({
         <div class="bg-base-100 fixed w-full z-50 py-2 md:px-12">
           <div class="w-full hidden lg:flex flex-col">
             <div class="flex gap-8 items-center justify-end py-3">
-              <span class="font-bold">Consumers</span>
-              <span>Healthcare professionals</span>
+              <a href="/" class="font-bold">Consumers</a>
+              <a href="/publishing">Healthcare professionals</a>
             </div>
 
             <Divider />
