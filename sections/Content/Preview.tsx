@@ -3,6 +3,16 @@ import SliderJS from "$store/islands/SliderJS.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import Icon from "$store/components/ui/Icon.tsx";
 import { JSX } from "preact/jsx-runtime";
+import Tabs from "$store/islands/Tabs.tsx";
+
+export interface TabsProps {
+  label?: string;
+  item: {
+    title?: string;
+    description?: string;
+    subitems: { label: string }[];
+  };
+}
 
 export interface SectionProps {
   backgroundImage: LiveImage;
@@ -12,6 +22,7 @@ export interface SectionProps {
   description: string;
   productTitle: string;
   productDescription: string;
+  tabs: TabsProps[];
   backgroundColor?: "Light-Gray" | "Dark-Blue" | "Pigeon-Blue";
 }
 
@@ -118,6 +129,7 @@ function Section(
     productTitle,
     backgroundColor,
     children,
+    tabs
   }: SectionPropsExtended,
 ) {
   const bgColor = backgroundColor;
@@ -153,13 +165,8 @@ function Section(
       )}
 
       <div class="flex flex-col gap-10 justify-end max-w-md w-full">
-        <div class="flex items-center justify-between w-full">
-          <div className="tabs w-full">
-            <span className={`${textColor} tab tab-bordered tab-active`}>
-              Tab 1
-            </span>
-            <span className={`${textColor} tab tab-bordered`}>Tab 2</span>
-          </div>
+        <div class="flex items-start justify-between w-full">
+          <Tabs tabs={...tabs} backgroundColor={backgroundColor} />
         </div>
 
         <div class="flex flex-col items-start gap-2">

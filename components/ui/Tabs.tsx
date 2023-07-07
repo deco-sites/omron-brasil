@@ -12,7 +12,7 @@ export interface TabsProps {
 
 export interface Props {
   tabs: TabsProps[];
-  backgroundColor?: "Dark-Blue" | "Light-Gray";
+  backgroundColor?: "Dark-Blue" | "Light-Gray" | "Pigeon-Blue";
 }
 
 export default function Tabs({ tabs, backgroundColor }: Props) {

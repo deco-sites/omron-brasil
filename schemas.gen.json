@@ -8119,6 +8119,11 @@
               "type": "string",
               "const": "Light-Gray",
               "default": "Light-Gray"
+            },
+            {
+              "type": "string",
+              "const": "Pigeon-Blue",
+              "default": "Pigeon-Blue"
             }
           ],
           "type": "string",
@@ -10505,6 +10510,68 @@
       "required": [],
       "title": "deco-sites/omron-brasil/sections/Content/Logos.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9QcmV2aWV3LnRzeA==@TabsProps": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Label"
+        },
+        "item": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Title"
+            },
+            "description": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Description"
+            },
+            "subitems": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string",
+                    "title": "Label"
+                  }
+                },
+                "required": [
+                  "label"
+                ]
+              },
+              "title": "Subitems"
+            }
+          },
+          "required": [
+            "subitems"
+          ],
+          "title": "Item"
+        }
+      },
+      "required": [
+        "item"
+      ],
+      "title": "TabsProps"
+    },
+    "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9QcmV2aWV3LnRzeA==@TabsProps[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9QcmV2aWV3LnRzeA==@TabsProps"
+      },
+      "title": "TabsProps[]"
+    },
     "ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9QcmV2aWV3LnRzeA==@SectionProps": {
       "type": "object",
       "properties": {
@@ -10536,6 +10603,10 @@
           "type": "string",
           "title": "Product Description"
         },
+        "tabs": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbXJvbi1icmFzaWwvc2VjdGlvbnMvQ29udGVudC9QcmV2aWV3LnRzeA==@TabsProps[]",
+          "title": "Tabs"
+        },
         "backgroundColor": {
           "anyOf": [
             {
@@ -10565,7 +10636,8 @@
         "title",
         "description",
         "productTitle",
-        "productDescription"
+        "productDescription",
+        "tabs"
       ],
       "title": "SectionProps"
     },
