@@ -129,7 +129,7 @@ function Section(
     productTitle,
     backgroundColor,
     children,
-    tabs
+    tabs,
   }: SectionPropsExtended,
 ) {
   const bgColor = backgroundColor;
@@ -164,9 +164,9 @@ function Section(
         </picture>
       )}
 
-      <div class="flex flex-col gap-10 justify-end max-w-md w-full">
+      <div class="flex flex-col gap-10 justify-end max-w-md items-start w-full">
         <div class="flex items-start justify-between w-full">
-          <Tabs tabs={...tabs} backgroundColor={backgroundColor} />
+          <Tabs tabs={tabs} backgroundColor={backgroundColor} />
         </div>
 
         <div class="flex flex-col items-start gap-2">
