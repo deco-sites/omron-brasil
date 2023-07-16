@@ -97,7 +97,7 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
           <span class="font-medium text-xl">{name}</span>
         </h1>
         <h2>
-          <span class="font-medium text-justify">{description}</span>
+          <span class="font-medium text-justify" dangerouslySetInnerHTML={{ __html: description! }} />
         </h2>
         <p class="font-bold">3 years warranty</p>
       </div>
