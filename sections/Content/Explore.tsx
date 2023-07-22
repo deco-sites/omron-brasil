@@ -116,7 +116,7 @@ function GridSection({ title, items }: ExploreProps) {
 
 export default function Explore({ title, items }: ExploreProps) {
   return (
-    <section class="flex items-center justify-center py-20 w-full min-h-[420px] bg-[#306F95] text-white">
+    <section class="flex items-center justify-center py-20 w-full min-h-[420px] bg-pigeon-blue text-white">
       <>
         <MobileSection title={title} items={items} />
         <GridSection title={title} items={items} />

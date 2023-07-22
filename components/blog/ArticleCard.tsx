@@ -18,8 +18,8 @@ export default function ArticleCard(
     ArticleCardProps,
 ) {
   const bgColor = !background || background === "white"
-    ? "bg-[#FFFFFF]"
-    : "bg-[#003153] text-white";
+    ? "bg-white"
+    : "bg-dark-blue text-white";
   const padding = isCarousel && "px-6 md:px-0";
 
   return (

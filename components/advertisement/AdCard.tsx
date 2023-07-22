@@ -24,7 +24,10 @@ export default function AdCard({ product, preload }: AdCardProps) {
   const [front, back] = images ?? [];
 
   return (
-    <div id={id} class="flex flex-col bg-[#e9e7ea] w-full h-full p-3 shadow-md gap-2">
+    <div
+      id={id}
+      class="flex flex-col bg-white-light w-full h-full p-3 shadow-md gap-2"
+    >
       <a class="flex items-center justify-center" href={url && relative(url)}>
         {images && (
           <Image
@@ -32,7 +35,7 @@ export default function AdCard({ product, preload }: AdCardProps) {
             width={375}
             height={225}
             src={front.url!}
-            alt={front.alternateName ?? 'Imagem do produto'}
+            alt={front.alternateName ?? "Imagem do produto"}
             preload={preload}
             loading={preload ? "eager" : "lazy"}
             decoding="async"
@@ -42,15 +45,33 @@ export default function AdCard({ product, preload }: AdCardProps) {
 
       <div class="flex flex-col h-full justify-between">
         <div class="flex flex-col gap-2 pb-4">
-          <h1 class="font-bold">{name ?? 'Monitor de pressão arterial de pulso'}</h1>
-          {description && <p dangerouslySetInnerHTML={{ __html: description.substring(0, 400).concat("...") }} />}
+          <h1 class="font-bold">
+            {name ?? "Monitor de pressão arterial de pulso"}
+          </h1>
+          {description && (
+            <p
+              dangerouslySetInnerHTML={{
+                __html: description.substring(0, 400).concat("..."),
+              }}
+            />
+          )}
         </div>
 
         <div class="flex flex-col md:flex-row items-center justify-start gap-3 w-full">
-          <a href={url && relative(url)} class="bg-[#005EB8] flex items-center justify-center p-2 text-white rounded-sm w-full">Saiba mais</a>        
-          <a href={url && relative(url)} class="bg-[#5090b4] flex items-center justify-center p-2 text-white rounded-sm w-full">Onde comprar</a>        
+          <a
+            href={url && relative(url)}
+            class="bg-omron-blue flex items-center justify-center p-2 text-white rounded-sm w-full"
+          >
+            Saiba mais
+          </a>
+          <a
+            href={url && relative(url)}
+            class="bg-blue-light flex items-center justify-center p-2 text-white rounded-sm w-full"
+          >
+            Onde comprar
+          </a>
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -1,37 +1,37 @@
 export default function ProductRating() {
   return (
     <div class="flex items-end justify-center gap-2">
-      <div className="rating">
+      <div class="rating">
         <input
           aria-label="Item do ranking"
           type="radio"
           name="rating-1"
-          className="mask mask-star bg-[#005EB8]"
+          class="mask mask-star bg-blue-middle"
         />
         <input
           aria-label="Item do ranking"
           type="radio"
           name="rating-1"
-          className="mask mask-star bg-[#005EB8]"
+          class="mask mask-star bg-blue-middle"
         />
         <input
           aria-label="Item do ranking"
           type="radio"
           name="rating-1"
-          className="mask mask-star bg-[#005EB8]"
+          class="mask mask-star bg-blue-middle"
         />
         <input
           aria-label="Item do ranking"
           type="radio"
           name="rating-1"
-          className="mask mask-star bg-[#005EB8]"
+          class="mask mask-star bg-blue-middle"
           checked
         />
         <input
           aria-label="Item do ranking"
           type="radio"
           name="rating-1"
-          className="mask mask-star bg-[#005EB8]"
+          class="mask mask-star bg-blue-middle"
         />
       </div>
 

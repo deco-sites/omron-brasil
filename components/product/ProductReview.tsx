@@ -46,11 +46,11 @@ function TopSection(
   { subtitle, title, description, image, altImage }: TopSectionProps,
 ) {
   return (
-    <div class="relative grid lg:grid-cols-[1fr_500px] xl:grid-cols-[1fr_800px] items-center justify-center w-full h-full lg:min-h-[800px] bg-[#E5E5E5]">
+    <div class="relative grid lg:grid-cols-[1fr_500px] xl:grid-cols-[1fr_800px] items-center justify-center w-full h-full lg:min-h-[800px] bg-light-gray">
       <div class="flex flex-1 items-center justify-center pt-16 px-6 lg:px-0 lg:pt-0">
         <div class="flex flex-col items-start justify-center text-start gap-2 md:max-w-[510px] lg:-translate-y-24">
           <span class="font-bold">{subtitle}</span>
-          <h2 class="text-2xl border-b border-b-[#C9C9C9] pb-7">{title}</h2>
+          <h2 class="text-2xl border-b border-b-gray pb-7">{title}</h2>
           {description && (
             <h1 class="pt-5 pb-16 lg:pb-0 text-3xl md:text-5xl font-bold">
               {description}
@@ -118,9 +118,9 @@ function BottomSection(
   { subtitle, title, description, video, altVideo }: BottomSectionProps,
 ) {
   return (
-    <div class="relative flex flex-col py-12 lg:py-32 text-center items-center justify-between gap-14 bg-[#003153] w-full h-full">
+    <div class="relative flex flex-col py-12 lg:py-32 text-center items-center justify-between gap-14 bg-dark-blue w-full h-full">
       <div class="flex flex-col gap-2 text-white lg:pt-52">
-        <h2 class="text-[#00F0FF]">{subtitle}</h2>
+        <h2 class="text-highlight-blue">{subtitle}</h2>
         <h1 class="text-3xl">{title}</h1>
         {description && <span class="pt-2">{description}</span>}
       </div>

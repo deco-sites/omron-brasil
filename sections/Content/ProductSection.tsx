@@ -49,7 +49,7 @@ export default function ProductSection({
   }
 
   return (
-    <section class="flex items-center justify-center w-full h-full bg-[#F2F2F2]">
+    <section class="flex items-center justify-center w-full h-full bg-pale-gray">
       <div class="flex flex-col gap-12 max-w-6xl w-full h-full items-center justify-center py-28 px-6 md:px-10 xl:px-0">
         <div class="flex flex-col gap-4 mb-16 xl:mb-28">
           <h1 class="font-bold text-3xl">{title}</h1>
@@ -82,7 +82,7 @@ export default function ProductSection({
                   ${
                     button.background === "transparent"
                       ? "border-black bg-transparent text-black hover:bg-transparent"
-                      : "bg-[#005EB8] text-white hover:opacity-80"
+                      : "bg-blue-middle text-white hover:opacity-80"
                   } 
                   btn rounded-xl flex items-center justify-center gap-1`}
                 >

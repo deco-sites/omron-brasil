@@ -10,7 +10,7 @@ export interface Props {
   layout?: {
     variation?: "Simple" | "Color reverse";
     headerAlignment?: "center" | "left";
-    color?: "white" | "pegion-blue";
+    color?: "white" | "pigeon-blue";
   };
 }
 
@@ -53,7 +53,7 @@ export default function Benefits(
         } ${
           showDivider && benefitLayout !== "piledup"
             ? `border-b ${
-              layout?.color === "pegion-blue" ? "border-white" : "border-black"
+              layout?.color === "pigeon-blue" ? "border-white" : "border-black"
             }`
             : ""
         } ${showDivider ? "pb-4 lg:pr-8 lg:border-r lg:border-b-0" : ""} ${
@@ -100,8 +100,8 @@ export default function Benefits(
         ? (
           <div
             class={`${
-              layout?.color === "pegion-blue"
-                ? "bg-[#306F95] text-white"
+              layout?.color === "pigeon-blue"
+                ? "bg-pigeon-blue text-white"
                 : "bg-white"
             } w-full px-4 py-8 flex flex-col gap-8 lg:gap-10 lg:py-10 lg:px-0`}
           >

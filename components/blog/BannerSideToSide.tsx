@@ -41,15 +41,15 @@ export default function BannerItemSideToSide(
 ) {
   const bgColor = !backgroundColor ||
     backgroundColor === "white" && "bg-white text-black" ||
-    backgroundColor === "light-gray" && "bg-[#E5E5E5] text-black" ||
-    backgroundColor === "dark-blue" && "bg-[#003153] text-white";
+    backgroundColor === "light-gray" && "bg-light-gray text-black" ||
+    backgroundColor === "dark-blue" && "bg-dark-blue text-white";
 
   return (
     <div
       class={`${bgColor} grid md:grid-cols-2 items-center w-full h-full justify-between pt-4 md:pt-0 md:pl-6`}
     >
       <div class="order-2 md:order-1 card-body w-full items-start md:max-w-xl">
-        <h2 class="font-bold text-lg text-[#00F0FF]">{subtitle}</h2>
+        <h2 class="font-bold text-lg text-highlight-blue">{subtitle}</h2>
         <h1 class="card-title text-3xl pt-3">{title}</h1>
         <p class="text-normal pt-3 text-normal">{description}</p>
         {hasReadingTime && (
@@ -87,9 +87,9 @@ export default function BannerItemSideToSide(
                 hasButton.buttonBackground === "white" &&
                   "bg-white text-black" ||
                 hasButton.buttonBackground === "dark-blue" &&
-                  "bg-[#003153] text-white" ||
+                  "bg-dark-blue text-white" ||
                 hasButton.buttonBackground === "border-black" &&
-                  "border-black bg-transparent text-black hover:bg-[#003153] hover:text-white"
+                  "border-black bg-transparent text-black hover:bg-dark-blue hover:text-white"
               } btn rounded-xl`}
             >
               {hasButton.buttonTitle}

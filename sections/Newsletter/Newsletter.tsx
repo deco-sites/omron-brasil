@@ -72,7 +72,7 @@ export default function Newsletter(props: Props) {
         />
 
         <button
-          class="button p-3 rounded-xl text-white bg-[#005EB8]"
+          class="button p-3 rounded-xl text-white bg-blue-middle"
           aria-label="Subscribe button to newsletter"
           title="Subscribe to newsletter"
           type="submit"
@@ -114,7 +114,7 @@ export default function Newsletter(props: Props) {
 
   const bgLayout = isReverse
     ? "bg-secondary text-secondary-content"
-    : "bg-[#003153]";
+    : "bg-dark-blue";
 
   return (
     <div

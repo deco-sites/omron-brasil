@@ -57,7 +57,7 @@ export default function ArticlePost({ image, graphicImage }: ArticlePostProps) {
         ]}
       />
 
-      <div class="bg-[#003153] flex items-center justify-center p-6 md:p-16">
+      <div class="bg-dark-blue flex items-center justify-center p-6 md:p-16">
         <p class="text-white font-bold leading-7 text-2xl">
           Remember that you can get readings at home, but only a doctor can make
           a proper diagnosis of hypertension.

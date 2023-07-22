@@ -8,14 +8,14 @@ export default function WebinarsCard(
   { webinarType, title, speakers }: WebinarCardProps,
 ) {
   const borderColor = webinarType === "cardiovascular"
-    ? "border-[#7F74FF]"
-    : "border-[#3EB3A1]";
+    ? "border-lavender"
+    : "border-mint";
   const bgColor = webinarType === "cardiovascular"
-    ? "bg-[#7F74FF4D] hover:bg-[#7F74FF4D]"
-    : "bg-[#3EB3A14D] hover:bg-[#3EB3A14D]";
+    ? "bg-lavender-dark hover:bg-lavender-dark"
+    : "bg-mint-dark hover:bg-mint-dark";
   const hoverColor = webinarType === "cardiovascular"
-    ? "hover:bg-[#7F74FF] hover:text-white"
-    : "hover:bg-[#3EB3A1] hover:text-white";
+    ? "hover:bg-lavender hover:text-white"
+    : "hover:bg-mint hover:text-white";
 
   return (
     <div

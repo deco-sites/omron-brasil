@@ -31,7 +31,7 @@ function Comment() {
         connect app, is a great medical device for monitoring a range of heart
         conditions.
       </p>
-      <span class="text-[#7F7F7F] text-sm">12.04.2023 - Amanda</span>
+      <span class="text-dark-gray text-sm">12.04.2023 - Amanda</span>
     </div>
   );
 }

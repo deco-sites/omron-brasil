@@ -28,7 +28,7 @@ export default function RelatedProducts({ relateds }: Props) {
   };
 
   return (
-    <section class="bg-[#F2F2F2] flex w-full h-full items-center justify-center">
+    <section class="bg-pale-gray flex w-full h-full items-center justify-center">
       <div class="flex flex-col w-full h-full px-6 lg:px-12 gap-12 py-14 md:pb-32 max-w-2xl">
         {relateds && (
           <>
@@ -45,7 +45,7 @@ export default function RelatedProducts({ relateds }: Props) {
               </select>
             </div>
 
-            <div class="hidden lg:flex flex-row justify-center items-center w-full border-b border-b-[#E5E5E5]">
+            <div class="hidden lg:flex flex-row justify-center items-center w-full border-b border-b-light-gray">
               <div class="flex items-start justify-start w-full max-w-xl gap-16">
                 {relateds?.map((related) => (
                   <div class="flex flex-col w-full">
@@ -53,7 +53,7 @@ export default function RelatedProducts({ relateds }: Props) {
                       onClick={() => setSelectedRelated(related)}
                       class={`${
                         selectedRelated === related &&
-                        "border-[#005EB8] border-b font-bold"
+                        "border-blue-middle border-b font-bold"
                       } pb-6`}
                     >
                       <span>{related?.title}</span>

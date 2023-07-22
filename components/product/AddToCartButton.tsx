@@ -27,7 +27,7 @@ function AddToCartButton(
     <Button
       data-deco="add-to-cart"
       {...props}
-      class="btn-primary bg-[#005EB8] border-none md:min-w-[193px]"
+      class="btn-primary bg-blue-middle border-none md:min-w-[193px]"
     >
       Add to cart
     </Button>

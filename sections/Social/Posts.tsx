@@ -30,7 +30,7 @@ export default function Posts(props: Props) {
   } = { ...DEFAULT_PROPS, ...props };
 
   return (
-    <div class="w-full h-full bg-[#FFFFFF] px-4 py-8 flex flex-col gap-4 lg:gap-8 lg:py-24 lg:px-12">
+    <div class="w-full h-full bg-white px-4 py-8 flex flex-col gap-4 lg:gap-8 lg:py-24 lg:px-12">
       <div class="flex flex-col gap-8 lg:gap-10 w-full h-full">
         <Header
           title={title || ""}

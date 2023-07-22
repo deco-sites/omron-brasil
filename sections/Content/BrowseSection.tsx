@@ -196,7 +196,7 @@ function Card({ title, backgroundImage, imageAlt, iconId }: CardProps) {
 
 export default function BrowseSection({ title, cards }: Props) {
   return (
-    <section class="flex justify-center items-center w-full h-full py-14 lg:py-0 md:min-h-[720px] bg-[#E5E5E5]">
+    <section class="flex justify-center items-center w-full h-full py-14 lg:py-0 md:min-h-[720px] bg-light-gray">
       <div class="flex flex-col gap-16 items-center text-center max-w-5xl w-full h-full">
         <h1 class="text-black font-bold text-xl">{title}</h1>
 

@@ -47,9 +47,9 @@ export default function FilteredFaq({ faqs }: Props) {
               onClick={() => setSelectedFaq(item)}
               class={`btn-outline ${
                 selectedFaq === item
-                  ? "text-[#005EB8] border-[#005EB8]"
+                  ? "text-blue-middle border-blue-middle"
                   : "text-black border-black"
-              } min-h-0 h-9 mx-[10px] mb-3 p-2 rounded-lg bg-transparent normal-case hover:bg-transparent hover:border-[#005EB8] hover:text-[#005EB8]`}
+              } min-h-0 h-9 mx-[10px] mb-3 p-2 rounded-lg bg-transparent normal-case hover:bg-transparent hover:border-blue-middle hover:text-blue-middle`}
             >
               {item.label}
             </Button>

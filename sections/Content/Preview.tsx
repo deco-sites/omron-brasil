@@ -84,8 +84,8 @@ function Buttons({ children, backgroundColor }: ButtonProps) {
 function Dots({ images, interval = 0, backgroundColor }: PreviewProps) {
   const bgColor = backgroundColor;
   const transitionColor = bgColor === "Light-Gray"
-    ? "from-black to-[#F2F2F2]"
-    : "from-white to-[#C9C9C9]";
+    ? "from-black to-pale-gray"
+    : "from-white to-gray";
 
   return (
     <>
@@ -138,11 +138,11 @@ function Section(
   return (
     <section
       class={`${
-        bgColor === "Dark-Blue" && "bg-[#003153]" ||
-        bgColor === "Pigeon-Blue" && "bg-[#306F95]" ||
-        bgColor === "Light-Gray" && "bg-[#E5E5E5]"
+        bgColor === "Dark-Blue" && "bg-dark-blue" ||
+        bgColor === "Pigeon-Blue" && "bg-pigeon-blue" ||
+        bgColor === "Light-Gray" && "bg-light-gray"
       }
-      ${!bgColor && "bg-[#003153]"}
+      ${!bgColor && "bg-dark-blue"}
       ${textColor}
       w-full h-full flex flex-col lg:flex-row justify-between px-8 py-8 gap-12 md:gap-0 lg:py-28 lg:px-16`}
     >

@@ -14,7 +14,7 @@ export default function PopularProductCard(
     PopularProductCardProps,
 ) {
   return (
-    <div className="flex flex-col max-w-xs lg:w-[90%] 2xl:w-full h-full bg-[#F2F2F2] text-black shadow-xl cursor-pointer hover:scale-105 duration-150 transition">
+    <div className="flex flex-col max-w-xs lg:w-[90%] 2xl:w-full h-full bg-pale-gray text-black shadow-xl cursor-pointer hover:scale-105 duration-150 transition">
       {backgroundImage && (
         <Picture class="flex w-full h-[218px] bg-white items-center justify-center">
           <img

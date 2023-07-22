@@ -38,9 +38,9 @@ function BlogHeader({ subtitle, title, hasButton }: WebinarHeaderProps) {
             !hasButton.buttonBackground ||
             hasButton.buttonBackground === "white" && "bg-white text-black" ||
             hasButton.buttonBackground === "dark-blue" &&
-              "bg-[#003153] text-white" ||
+              "bg-dark-blue text-white" ||
             hasButton.buttonBackground === "border-black" &&
-              "border-black bg-transparent text-black hover:bg-[#003153] hover:text-white"
+              "border-black bg-transparent text-black hover:bg-dark-blue hover:text-white"
           } btn rounded-xl w-full md:w-auto`}
         >
           {hasButton.buttonTitle}
@@ -86,7 +86,7 @@ export default function WebinarsShelf({ header, webinars, interval }: Props) {
   const id = useId();
 
   return (
-    <section class="flex flex-col gap-16 w-full h-full bg-[#E5E5E5] py-14 lg:py-32">
+    <section class="flex flex-col gap-16 w-full h-full bg-light-gray py-14 lg:py-32">
       <BlogHeader {...header} />
 
       <div

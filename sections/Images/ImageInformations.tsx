@@ -33,7 +33,7 @@ export default function ImageInformations(
           </Picture>
         )}
 
-        <div class="xl:absolute flex flex-col items-start justify-between top-0 bottom-20 text-white bg-[#003153] xl:bg-transparent w-full">
+        <div class="xl:absolute flex flex-col items-start justify-between top-0 bottom-20 text-white bg-dark-blue xl:bg-transparent w-full">
           <div class="flex flex-col items-start justify-start gap-5 pt-16 px-12 xl:max-w-xl w-full">
             <h1 class="text-2xl xl:text-4xl leading-[36px] xl:leading-[52px]">
               {title}

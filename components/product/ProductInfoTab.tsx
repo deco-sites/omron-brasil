@@ -42,13 +42,13 @@ export default function ProductInfoTab({ type }: ProductInfoProps) {
               </select>
             </div>
 
-            <div class="hidden lg:flex flex-row justify-start items-center w-full border-b border-b-[#E5E5E5]">
+            <div class="hidden lg:flex flex-row justify-start items-center w-full border-b border-b-light-gray">
               <div class="flex items-start justify-start w-full max-w-xl gap-16">
                 <button
                   onClick={() => setSelectedInfo(type[0])}
                   class={`${
                     selectedInfo === type[0] &&
-                    "border-[#005EB8] border-b-2 font-bold"
+                    "border-blue-middle border-b-2 font-bold"
                   } pb-6`}
                 >
                   <span>Specifications</span>
@@ -58,7 +58,7 @@ export default function ProductInfoTab({ type }: ProductInfoProps) {
                   onClick={() => setSelectedInfo(type[1])}
                   class={`${
                     selectedInfo === type[1] &&
-                    "border-[#005EB8] border-b-2 font-bold"
+                    "border-blue-middle border-b-2 font-bold"
                   } pb-6`}
                 >
                   <span>Support</span>
@@ -68,7 +68,7 @@ export default function ProductInfoTab({ type }: ProductInfoProps) {
                   onClick={() => setSelectedInfo(type[2])}
                   class={`${
                     selectedInfo === type[2] &&
-                    "border-[#005EB8] border-b-2 font-bold"
+                    "border-blue-middle border-b-2 font-bold"
                   } pb-6`}
                 >
                   <span>FAQ</span>

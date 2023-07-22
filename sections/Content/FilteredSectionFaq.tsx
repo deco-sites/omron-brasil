@@ -15,11 +15,11 @@ export interface Props {
 
 function Section({ title, label, buttonTitle }: SectionProps) {
   return (
-    <section class="flex items-center justify-center w-full h-full bg-[#003153] text-white px-8 py-12 lg:py-16 lg:px-16">
+    <section class="flex items-center justify-center w-full h-full bg-dark-blue text-white px-8 py-12 lg:py-16 lg:px-16">
       <div class="flex flex-col lg:flex-row items-center justify-center md:justify-between w-full gap-4 lg:gap-8">
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-12 w-full">
           <div class="flex flex-col gap-2">
-            <p class="font-bold text-sm text-[#00F0FF]">{title}</p>
+            <p class="font-bold text-sm text-highlight-blue">{title}</p>
             <h1 class="text-2xl lg:text-3xl tracking-wider">{label}</h1>
           </div>
 
@@ -44,7 +44,7 @@ function Section({ title, label, buttonTitle }: SectionProps) {
 
 export default function FilteredSectionFaq({ title, faqs, section }: Props) {
   return (
-    <section class="flex w-full h-full items-center justify-center bg-[#F2F2F2] text-black">
+    <section class="flex w-full h-full items-center justify-center bg-pale-gray text-black">
       <div class="flex flex-col items-center justify-center w-full xl:max-w-5xl px-6 py-16 md:py-32 md:px-0">
         <h1 class="text-3xl pb-16 text-center">{title}</h1>
 

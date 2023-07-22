@@ -143,7 +143,7 @@ export default function ArticlesTab(
             </div>
           </div>
 
-          <div class="hidden lg:flex flex-row justify-start items-start w-full border-b border-b-[#E5E5E5]">
+          <div class="hidden lg:flex flex-row justify-start items-start w-full border-b border-b-light-gray">
             <div class="flex items-start justify-start w-full max-w-xl gap-16">
               {articles?.map((article) => (
                 <div class="flex flex-col w-full">
@@ -151,7 +151,7 @@ export default function ArticlesTab(
                     onClick={() => setSelectedArticle(article)}
                     class={`${
                       selectedArticle === article &&
-                      "border-[#005EB8] border-b font-bold"
+                      "border-blue-middle border-b font-bold"
                     } pb-6 flex items-center justify-center gap-7 w-full`}
                   >
                     <Icon icon={article.icon} />
@@ -171,7 +171,7 @@ export default function ArticlesTab(
                 {selectedArticle.description}
               </p>
               {selectedArticle.hasButton && (
-                <button className="border-black bg-transparent text-black hover:bg-[#003153] hover:text-white btn rounded-xl w-full max-w-[190px]">
+                <button className="border-black bg-transparent text-black hover:bg-dark-blue hover:text-white btn rounded-xl w-full max-w-[190px]">
                   {selectedArticle.hasButton.title}
                 </button>
               )}

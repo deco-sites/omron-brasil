@@ -1,8 +1,4 @@
-import { useId } from "preact/hooks";
 import Button from "$store/components/ui/Button.tsx";
-import Image from "deco-sites/std/components/Image.tsx";
-import Slider from "$store/components/ui/Slider.tsx";
-import SliderJS from "$store/components/ui/SliderJS.tsx";
 import ArticleDetails, {
   ArticleDetailsProps,
 } from "$store/components/blog/ArticleDetails.tsx";

@@ -77,8 +77,8 @@ function BannerItemFull(
 ) {
   const bgColor = !backgroundColor ||
     backgroundColor === "white" && "bg-white" ||
-    backgroundColor === "dark-blue" && "bg-[#003153]" ||
-    backgroundColor === "light-gray" && "bg-[#E5E5E5]";
+    backgroundColor === "dark-blue" && "bg-dark-blue" ||
+    backgroundColor === "light-gray" && "bg-light-gray";
 
   const textColor = backgroundColor === "white"
     ? "text-black md:text-white"
@@ -129,9 +129,9 @@ function BannerItemFull(
                 hasButton.buttonBackground === "white" &&
                   "bg-white text-black" ||
                 hasButton.buttonBackground === "dark-blue" &&
-                  "bg-[#003153] text-white" ||
+                  "bg-dark-blue text-white" ||
                 hasButton.buttonBackground === "border-black" &&
-                  "border-black bg-transparent text-black hover:bg-[#003153]"
+                  "border-black bg-transparent text-black hover:bg-dark-blue"
               } btn rounded-xl`}
             >
               {hasButton.buttonTitle}
@@ -157,7 +157,7 @@ function BannerItemSideToSide(
 ) {
   const bgColor = !backgroundColor || backgroundColor === "white"
     ? "bg-white"
-    : "bg-[#E5E5E5]";
+    : "bg-light-gray";
 
   return (
     <div
@@ -178,9 +178,9 @@ function BannerItemSideToSide(
                 hasButton.buttonBackground === "white" &&
                   "bg-white text-black" ||
                 hasButton.buttonBackground === "dark-blue" &&
-                  "bg-[#003153] text-white" ||
+                  "bg-dark-blue text-white" ||
                 hasButton.buttonBackground === "border-black" &&
-                  "border-black bg-transparent text-black hover:bg-[#003153] hover:text-white"
+                  "border-black bg-transparent text-black hover:bg-dark-blue hover:text-white"
               } btn rounded-xl`}
             >
               {hasButton.buttonTitle}
@@ -222,8 +222,8 @@ function BannerItemSideToSideWithInput(
 ) {
   const bgColor = !backgroundColor ||
     backgroundColor === "white" && "bg-white" ||
-    backgroundColor === "dark-blue" && "bg-[#003153]" ||
-    backgroundColor === "light-gray" && "bg-[#E5E5E5]";
+    backgroundColor === "dark-blue" && "bg-dark-blue" ||
+    backgroundColor === "light-gray" && "bg-light-gray";
 
   const textColor = backgroundColor === "white" ? "text-black" : "text-white";
 

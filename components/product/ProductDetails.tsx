@@ -97,7 +97,10 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
           <span class="font-medium text-xl">{name}</span>
         </h1>
         <h2>
-          <span class="font-medium text-justify" dangerouslySetInnerHTML={{ __html: description! }} />
+          <span
+            class="font-medium text-justify"
+            dangerouslySetInnerHTML={{ __html: description! }}
+          />
         </h2>
         <p class="font-bold">3 years warranty</p>
       </div>
@@ -134,7 +137,7 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
                   productGroupId={product.isVariantOf?.productGroupID ?? ""}
                 />
               )}
-              <button class="btn btn-outline hover:bg-[#005EB8] text-black border border-black px-3 md:min-w-[193px]">
+              <button class="btn btn-outline hover:bg-blue-middle text-black border border-black px-3 md:min-w-[193px]">
                 Find a store
               </button>
             </>
@@ -397,7 +400,7 @@ function ProductDetails({ page, variant: maybeVar = "auto" }: Props) {
     : maybeVar;
 
   return (
-    <div class="py-0 sm:py-10 bg-[#F2F2F2]">
+    <div class="py-0 sm:py-10 bg-pale-gray">
       <div class="container">
         {page
           ? (

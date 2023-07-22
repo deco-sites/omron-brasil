@@ -149,7 +149,7 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
           />
         </div>
         <div class="absolute top-3 z-10 left-2">
-          <div class="flex w-full rounded-md bg-[#005EB829] text-sm font-bold py-1 px-2 items-center justify-center">
+          <div class="flex w-full rounded-md bg-blue-middle-29 text-sm font-bold py-1 px-2 items-center justify-center">
             OMRON Connect compatible
           </div>
         </div>

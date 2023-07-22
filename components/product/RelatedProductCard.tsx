@@ -32,7 +32,7 @@ export default function RelatedProductCard({ product }: Props) {
       href={url}
       class="grid md:grid-cols-[186px_1fr] items-center justify-center py-7 px-2 w-full h-full bg-white"
     >
-      <figure class="flex items-center justify-center md:border-r md:border-r-[#C9C9C9] md:px-10">
+      <figure class="flex items-center justify-center md:border-r md:border-r-gray md:px-10">
         <Image
           src={front.url!}
           alt={front.alternateName}

@@ -24,7 +24,7 @@ export interface ArticleDetailsProps {
 function Button({ title, background, arrow }: ButtonProps) {
   const buttonConfig = background === "border-none"
     ? "border-black border text-black"
-    : "bg-[#005EB8] text-white";
+    : "bg-blue-middle text-white";
 
   return (
     <button
@@ -81,8 +81,8 @@ export default function ArticleDetails(
       <div class="grid lg:grid-cols-[300px_1fr] gap-y-12 lg:gap-y-0 gap-x-8 w-full h-full text-center lg:items-start lg:text-start py-20 px-6 md:px-12 pb-14">
         <div class="hidden lg:block lg:sticky lg:top-40 w-full">
           <div class="flex flex-col text-start items-start justify-start gap-4 lg:gap-8 lg:max-w-[185px]">
-            <div class="hidden lg:flex flex-col border-l border-l-[#F2F2F2] gap-8">
-              <div class="border-l-2 border-l-[#005EB8] pl-5 cursor-pointer">
+            <div class="hidden lg:flex flex-col border-l border-l-white gap-8">
+              <div class="border-l-2 border-l-blue-middle pl-5 cursor-pointer">
                 Why are there two numbers to a blood pressure reading?
               </div>
 
@@ -94,7 +94,7 @@ export default function ArticleDetails(
             <div class="flex items-center justify-center gap-8">
               <button
                 aria-label="Like Item"
-                class="px-4 py-3 flex items-center justify-center gap-2 text-black font-bold h-[48px] max-w-[90px] bg-[#CE21414D] rounded-xl"
+                class="px-4 py-3 flex items-center justify-center gap-2 text-black font-bold h-[48px] max-w-[90px] bg-red-middle rounded-xl"
               >
                 <Icon id="Heart" strokeWidth={2} />
                 <span>128</span>
@@ -136,7 +136,7 @@ export default function ArticleDetails(
       </div>
 
       <footer class="flex flex-col w-full h-full pb-6 px-6 md:px-12">
-        <div class="flex flex-col gap-6 items-start border-y border-y-[#C9C9C9] py-7 w-full h-full">
+        <div class="flex flex-col gap-6 items-start border-y border-y-gray py-7 w-full h-full">
           <h1 class="font-bold">References</h1>
 
           <p>
@@ -147,17 +147,17 @@ export default function ArticleDetails(
 
           <p>
             Bupa (2018). High blood pressure. Retrieved from{"  "}
-            <span class="text-[#005EB8] hover:underline">
+            <span class="text-blue-middle hover:underline">
               https://www.bupa.co.uk/health-information/heart-blood-circulation/high-blood-pressure-hypertension
             </span>
           </p>
 
-          <span class="text-[#005EB8] hover:underline hidden md:block">
+          <span class="text-blue-middle hover:underline hidden md:block">
             http://www.bloodpressureuk.org/BloodPressureandyou/Thebasics/Bloodpressurechart
           </span>
         </div>
 
-        <div class="flex flex-col gap-4 md:flex-row items-center justify-between border-t border-t-[#C9C9C9] pt-12 w-full">
+        <div class="flex flex-col gap-4 md:flex-row items-center justify-between border-t border-t-gray pt-12 w-full">
           <div class="flex flex-col gap-y-4 md:flex-row items-center justify-center md:gap-x-8 md:gap-y-0 lg:max-w-[600px] w-full">
             <Button
               title="Health and Lifestyle main page"
@@ -188,7 +188,7 @@ export default function ArticleDetails(
         </div>
       </footer>
 
-      <div class="flex flex-col items-center justify-center text-center w-full h-full px-6 py-14 md:py-32 bg-[#E5E5E5]">
+      <div class="flex flex-col items-center justify-center text-center w-full h-full px-6 py-14 md:py-32 bg-light-gray">
         <span class="font-bold text-sm">Lorem impsum</span>
         <h1 class="text-4xl pb-11 md:pb-20">Related blog posts</h1>
 

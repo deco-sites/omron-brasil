@@ -119,14 +119,14 @@ function Section(
     : "order-1";
   const bgColor = !backgroundColor || backgroundColor === "white"
     ? "bg-white"
-    : "bg-[#F2F2F2]";
+    : "bg-pale-gray";
   const buttonWidth = !hasButton?.width || hasButton.width === "full"
     ? "w-full md:max-w-[110px]"
     : "max-w-[110px]";
   const buttonColor =
     !hasButton?.bgColor || hasButton?.bgColor === "border-none"
       ? "border-black text-black bg-transparent"
-      : "bg-[#005EB8] text-white";
+      : "bg-blue-middle text-white";
 
   return (
     <section

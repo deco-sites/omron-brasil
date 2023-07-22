@@ -35,8 +35,8 @@ export default function Banner(
   }: BannerProps,
 ) {
   const bgColor = !backgroundColor || backgroundColor === "white"
-    ? "bg-[#F2F2F2]"
-    : "bg-[#003153]";
+    ? "bg-pale-gray"
+    : "bg-dark-blue";
   const textColor = !backgroundColor || backgroundColor === "white"
     ? "text-black"
     : "text-white";
@@ -62,7 +62,7 @@ export default function Banner(
         } card-body px-16 w-full md:max-w-2xl`}
       >
         {subtitle && (
-          <span class="text-[#00F0FF] font-bold text-normal pt-3">
+          <span class="text-highlight-blue font-bold text-normal pt-3">
             {subtitle}
           </span>
         )}
@@ -77,7 +77,7 @@ export default function Banner(
         )}
 
         {buttonTitle && (
-          <button class="flex items-center justify-center btn bg-[#005EB8] hover:bg-[#005EB8] border-none max-w-[172px] w-full rounded-xl text-white mt-12">
+          <button class="flex items-center justify-center btn bg-blue-middle hover:bg-blue-middle border-none max-w-[172px] w-full rounded-xl text-white mt-12">
             <span class="text-xs font-bold">{buttonTitle}</span>
           </button>
         )}

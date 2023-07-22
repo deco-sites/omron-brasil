@@ -19,9 +19,9 @@ export interface Props {
 
 function Section({ title, label, buttonTitle }: SectionProps) {
   return (
-    <section class="flex w-full h-full items-center justify-center md:min-h-[320px] bg-[#003153] text-white py-12">
+    <section class="flex w-full h-full items-center justify-center md:min-h-[320px] bg-dark-blue text-white py-12">
       <div class="flex flex-col lg:flex-row items-center justify-center lg:items-start lg:justify-start w-full gap-4 lg:gap-8 px-20">
-        <div className="flex font-bold items-center text-center justify-center rounded-full bg-[#FF7474] text-[#003153] uppercase p-3 w-[160px] h-[160px]">
+        <div className="flex font-bold items-center text-center justify-center rounded-full bg-[#FF7474] text-dark-blue uppercase p-3 w-[160px] h-[160px]">
           Free Download
         </div>
 
@@ -66,7 +66,7 @@ export default function FilteredProductSection(
       <div class="flex flex-col gap-12 px-6 md:px-12 w-full h-full py-16 md:py-12">
         <div class="flex flex-row items-center justify-between w-full">
           <div class="grid lg:hidden">
-            <button className="btn w-full min-w-[80px] rounded-xl flex items-center justify-between gap-1 bg-[#005EB8] text-white hover:opacity-80 hover:bg-[#005EB8]">
+            <button className="btn w-full min-w-[80px] rounded-xl flex items-center justify-between gap-1 bg-blue-middle text-white hover:opacity-80 hover:bg-blue-middle">
               <Icon
                 id="FilterList"
                 class="text-white"

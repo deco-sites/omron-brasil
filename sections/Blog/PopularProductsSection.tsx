@@ -8,7 +8,7 @@ export interface Props {
 
 export default function PopularProductsSection({ sections }: Props) {
   return (
-    <section class="bg-[#E5E5E5] w-full h-full py-14 md:py-32">
+    <section class="bg-light-gray w-full h-full py-14 md:py-32">
       <div class="flex flex-col px-12">
         {sections?.map((section) => <PopularProduct {...section} />)}
       </div>

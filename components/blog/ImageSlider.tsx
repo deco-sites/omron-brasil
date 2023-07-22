@@ -39,7 +39,7 @@ function Dots({ images, interval = 0 }: Props) {
             <Slider.Dot index={index}>
               <div class="py-5">
                 <div
-                  class="w-16 sm:w-20 h-0.5 rounded group-disabled:animate-progress bg-gradient-to-r from-[#000] from-[length:var(--dot-progress)] to-[#C9C9C9] to-[length:var(--dot-progress)]"
+                  class="w-16 sm:w-20 h-0.5 rounded group-disabled:animate-progress bg-gradient-to-r from-black from-[length:var(--dot-progress)] to-gray to-[length:var(--dot-progress)]"
                   style={{ animationDuration: `${interval}s` }}
                 />
               </div>
@@ -140,13 +140,13 @@ export default function ImageSlider({ images }: Props) {
           )}
 
           <div className="absolute bottom-0 justify-center items-center text-white -translate-y-20">
-            <div class="flex items-center justify-center text-start w-full h-full max-w-4xl gap-16 border-b border-b-[#7F7F7F] -translate-y-4">
+            <div class="flex items-center justify-center text-start w-full h-full max-w-4xl gap-16 border-b border-b-dark-gray -translate-y-4">
               {images?.map((item) => (
                 <button
                   onClick={() => setSelectedItem(item)}
                   class={`${
                     selectedItem === item &&
-                    "border-[#005EB8] border-b-4 font-bold"
+                    "border-blue-middle border-b-4 font-bold"
                   } w-full flex flex-col justify-between gap-2 h-full min-h-[110px] text-start pb-3`}
                 >
                   <h2 className="text-white text-lg">{item.title}</h2>

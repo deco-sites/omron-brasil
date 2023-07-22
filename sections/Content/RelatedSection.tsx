@@ -37,7 +37,7 @@ function FilterItem() {
           <option>Greedo</option>
         </select>
 
-        <button class="flex items-center justify-center gap-2 btn bg-[#005EB8] hover:bg-[#005EB8] w-full max-w-[80px] md:max-w-[110px] rounded-xl text-white">
+        <button class="flex items-center justify-center gap-2 btn bg-blue-middle hover:bg-blue-middle w-full max-w-[80px] md:max-w-[110px] rounded-xl text-white">
           <span class="text-xs font-bold">Download</span>
         </button>
       </div>
@@ -58,7 +58,7 @@ function RelatedArticleCard({ title }: RelatedArticleCardProps) {
 
 function RelatedArticles({ articles }: RelatedArticlesProps) {
   return (
-    <div class="flex flex-col gap-12 border-b border-b-[#C9C9C9] pb-20">
+    <div class="flex flex-col gap-12 border-b border-b-gray pb-20">
       <h1 class="font-bold text-2xl">Related articles</h1>
 
       <div
@@ -136,9 +136,9 @@ export default function RelatedSection(
   { products, articles, cardLayout }: Props,
 ) {
   return (
-    <section class="flex w-full h-full bg-[#E5E5E5] text-black">
+    <section class="flex w-full h-full bg-light-gray text-black">
       <div class="flex flex-col gap-12 px-6 md:px-12 w-full h-full py-16 md:py-12">
-        <div class="items-center justify-center flex border border-t-[#C9C9C9]">
+        <div class="items-center justify-center flex border border-t-gray">
           <div class="flex flex-col md:flex-row w-full lg:max-w-4xl items-center justify-center pt-8 md:pt-12 lg:pb-24 gap-y-8 md:gap-y-0">
             <FilterItem />
             <FilterItem />

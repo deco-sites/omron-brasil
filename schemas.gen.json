@@ -9932,8 +9932,8 @@
                 },
                 {
                   "type": "string",
-                  "const": "pegion-blue",
-                  "default": "pegion-blue"
+                  "const": "pigeon-blue",
+                  "default": "pigeon-blue"
                 }
               ],
               "type": "string",

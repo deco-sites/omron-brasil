@@ -21,7 +21,7 @@ export default function TabsSection(
   { subtitle, title, description, tabs, backgroundColor }: Props,
 ) {
   return (
-    <section class="flex items-center justify-center w-full h-full min-h-[700px] bg-[#003153] text-white">
+    <section class="flex items-center justify-center w-full h-full min-h-[700px] bg-dark-blue text-white">
       <div class="grid md:grid-cols-2 md:max-w-[1080px] w-full h-full gap-x-24 gap-y-12 md:gap-y-0 px-6 py-16 xl:px-0">
         <div class="flex flex-col gap-3 items-start justify-start w-full">
           <span class="font-bold text-sm">{subtitle}</span>

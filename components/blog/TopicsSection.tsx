@@ -22,7 +22,7 @@ export interface Props {
 function Button({ title, background, arrow }: ButtonProps) {
   const buttonConfig = background === "border-none"
     ? "border-black border text-black"
-    : "bg-[#005EB8] text-white";
+    : "bg-blue-middle text-white";
 
   return (
     <button
@@ -88,7 +88,7 @@ export default function TopicsSection({ topics }: Props) {
       <div class="grid lg:grid-cols-[300px_1fr] gap-y-12 lg:gap-y-0 gap-x-8 w-full h-full text-center lg:items-start lg:text-start py-20 px-6 md:px-12">
         <div class="lg:sticky lg:top-40 w-full">
           <div class="flex flex-col items-center justify-center text-center lg:text-start lg:items-start lg:justify-start gap-4 lg:gap-8 lg:max-w-[185px]">
-            <h1 class="font-bold leading-[36px] text-2xl md:text-3xl border-b border-b-[#C9C9C9] w-full pb-5 lg:pb-0 lg:border-none lg:w-auto">
+            <h1 class="font-bold leading-[36px] text-2xl md:text-3xl border-b border-b-gray w-full pb-5 lg:pb-0 lg:border-none lg:w-auto">
               Choose a topic
             </h1>
 
@@ -106,14 +106,14 @@ export default function TopicsSection({ topics }: Props) {
                 </select>
               </div>
 
-              <div class="hidden lg:flex flex-col border-l border-l-[#F2F2F2] gap-8">
+              <div class="hidden lg:flex flex-col border-l border-l-pale-gray gap-8">
                 {topics?.map((item) => (
                   <div
                     key={item.label}
                     onClick={() => setSelectedTopics(item)}
                     class={`${
                       selectedTopics === item &&
-                      "border-l-2 border-l-[#005EB8] font-bold"
+                      "border-l-2 border-l-blue-middle font-bold"
                     } pl-5 cursor-pointer`}
                   >
                     {item.label}
@@ -142,7 +142,7 @@ export default function TopicsSection({ topics }: Props) {
             ))}
           </div>
 
-          <div class="flex flex-col gap-4 md:flex-row items-center justify-between border-t border-t-[#C9C9C9] pt-12 w-full">
+          <div class="flex flex-col gap-4 md:flex-row items-center justify-between border-t border-t-gray pt-12 w-full">
             <Button
               title="Health and Lifestyle main page"
               background="border-none"

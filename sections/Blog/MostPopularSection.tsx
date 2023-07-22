@@ -34,7 +34,7 @@ function Header({ hasSubtitle, title, alignment }: HeaderProps) {
         (
           <span
             class={`font-bold text-lg 
-        ${hasSubtitle.color === "white" ? "text-white" : "text-[#00F0FF]"}`}
+        ${hasSubtitle.color === "white" ? "text-white" : "text-highlight-blue"}`}
           >
             {hasSubtitle.label}
           </span>
@@ -83,7 +83,7 @@ export default function MostPopularSection(
   const id = `most-popular-slider-${useId()}`;
 
   return (
-    <section class="flex flex-col w-full items-center justify-center h-full bg-[#003153]">
+    <section class="flex flex-col w-full items-center justify-center h-full bg-dark-blue">
       <div class="flex flex-col gap-16 py-16 md:py-32">
         <Header {...header} />
 

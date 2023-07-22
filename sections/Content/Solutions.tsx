@@ -113,7 +113,7 @@ function Solution({ title, image, alt, size }: SolutionProps) {
 
 function Section({ title, label, description, buttonTitle }: SectionProps) {
   return (
-    <section class="flex items-center justify-center w-full h-full bg-[#306F95] text-white px-8 py-8 lg:py-16 lg:px-40">
+    <section class="flex items-center justify-center w-full h-full bg-pigeon-blue text-white px-8 py-8 lg:py-16 lg:px-40">
       <div class="flex flex-col lg:flex-row items-center justify-center lg:justify-between max-w-5xl w-full gap-4 lg:gap-8">
         <picture className="flex items-center justify-center rounded-full border border-white p-3 w-52 h-52">
           <Icon
@@ -154,7 +154,7 @@ export default function Solutions(props: Props) {
   } = { ...DEFAULT_PROPS, ...props };
 
   return (
-    <div class="w-full bg-[#f2f2f2] px-4 py-8 flex flex-col gap-4 lg:gap-8 lg:py-10 lg:px-12">
+    <div class="w-full bg-pale-gray px-4 py-8 flex flex-col gap-4 lg:gap-8 lg:py-10 lg:px-12">
       <div class="flex flex-col gap-8 lg:gap-10">
         <Header
           title={title || ""}

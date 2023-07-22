@@ -186,7 +186,7 @@ export default function ConcernSection({ title, infos, buttonTitle }: Props) {
       <div class="flex flex-col gap-16 items-center text-center max-w-5xl w-full h-full lg:py-16">
         <h1 class="text-black font-bold text-xl">{title}</h1>
 
-        <div class="flex flex-col items-center justify-between h-full w-[85%] lg:w-full border-b border-b-[#C9C9C9] pt-12 pb-[60px] lg:pb-20">
+        <div class="flex flex-col items-center justify-between h-full w-[85%] lg:w-full border-b border-b-gray pt-12 pb-[60px] lg:pb-20">
           <div class="grid grid-cols-2 lg:grid-cols-3 grid-flow-dense gap-y-12 gap-x-8 lg:max-w-[620px]">
             {infos?.map((info) => <ConcernIcon {...info} />)}
           </div>
@@ -198,7 +198,7 @@ export default function ConcernSection({ title, infos, buttonTitle }: Props) {
             <span>Contact us for all your product questions or concerns.</span>
           </div>
 
-          <button class="flex items-center justify-center gap-2 btn bg-[#005EB8] hover:bg-[#005EB8] w-full max-w-[153px] rounded-xl text-white">
+          <button class="flex items-center justify-center gap-2 btn bg-blue-middle hover:bg-blue-middle w-full max-w-[153px] rounded-xl text-white">
             <span class="text-xs font-bold">{buttonTitle ?? "Contact us"}</span>
             <svg
               width="24"
